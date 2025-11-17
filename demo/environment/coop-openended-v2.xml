@@ -1,0 +1,1176 @@
+<mujoco model="Franka Reach">
+  
+  <compiler inertiafromgeom="auto" inertiagrouprange="3 4" angle="radian" meshdir="assets/simhive/franka_sim/" texturedir="assets/simhive/franka_sim/" autolimits="true" />
+  <option impratio="10" integrator="implicitfast" cone="elliptic" />
+  <size njmax="1000" nconmax="1000" nuser_actuator="5" />
+  <visual>
+    <global offwidth="1024" offheight="1024" />
+    <map force="0.1" fogstart="1.5" fogend="5" shadowclip="2" />
+    <scale forcewidth="0.01" camera="0.1" framelength="0.4" framewidth="0.01" />
+  </visual>
+  <statistic meansize="1.01062" extent="3.5" center="-0.779975 -1.00648 1.93057" />
+  <default class="main">
+    <default class="scene">
+      <geom contype="0" conaffinity="0" />
+    </default>
+    <default class="panda">
+      <joint limited="true" />
+      <general ctrllimited="true" forcelimited="true" biastype="affine" biasprm="0 -1 0 0 0 0 0 0 0 0" user="1002 40 2001 -0.005 0.005" />
+      <default class="panda_viz">
+        <geom type="mesh" contype="0" conaffinity="0" rgba="0.92 0.92 0.95 1" />
+        <general user="1002 40 2001 -0.005 0.005" />
+      </default>
+      <default class="panda_grey_viz">
+        <geom type="mesh" contype="0" conaffinity="0" rgba="0.4 0.4 0.4 1" />
+        <general user="1002 40 2001 -0.005 0.005" />
+      </default>
+      <default class="panda_col">
+        <geom type="mesh" group="3" rgba="0.5 0.6 0.7 1" />
+        <general user="1002 40 2001 -0.005 0.005" />
+      </default>
+      <default class="panda_arm">
+        <joint damping="100" />
+        <general user="1002 40 2001 -0.005 0.005" />
+      </default>
+      <default class="panda_forearm">
+        <joint damping="10" />
+        <general user="1002 40 2001 -0.005 0.005" />
+      </default>
+      <default class="panda_finger">
+        <joint armature="5" damping="100" />
+        <geom conaffinity="0" condim="6" group="3" friction="1 0.5 0.0001" solref="0.01 1" solimp="0.8 0.9 0.001 0.5 2" margin="0.001" rgba="0.5 0.6 0.7 0.4" />
+        <general user="1002 40 2001 -0.0001 0.0001" />
+      </default>
+    </default>
+    <default class="visual_base">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" />
+    </default>
+    <default class="collision_base">
+      <geom type="mesh" group="3" />
+    </default>
+    <default class="visual_base_1">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" />
+    </default>
+    <default class="collision_base_1">
+      <geom type="mesh" group="3" />
+    </default>
+    <default class="viz_simpleWoodTable">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="M_simpleWoodTable" />
+    </default>
+    <default class="viz_simpleMarbleTable">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="M_simpleMarbleTable" />
+    </default>
+    <default class="viz_simpleGraniteTable">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="M_simpleGraniteTable" />
+    </default>
+    <default class="body_simpleTable">
+      <joint limited="true" armature="0.01" damping="1" frictionloss="0.5" />
+      <geom group="4" rgba="0.4 0.5 0.6 1" />
+    </default>
+    <default class="hingecabinet">
+      <joint limited="true" armature="0.01" damping="2" frictionloss="2" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="M_hinge_wood" />
+      <default class="hinge_collision">
+        <geom conaffinity="1" group="4" solimp="0.8 0.9 0.01 0.5 2" margin="0.001" material="hinge_collision_blue" />
+      </default>
+    </default>
+    <default class="robotiq2f85">
+      <joint limited="true" damping="0.1" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.1 0.1 0.1 1" />
+      <default class="robotiq_col">
+        <geom contype="1" group="3" rgba="0.3 0.4 0.5 1" />
+      </default>
+      <default class="robotiq_pad_col">
+        <geom contype="1" conaffinity="1" condim="4" group="3" rgba="0.3 0.4 0.5 1" />
+      </default>
+      <default class="robotiq_spring_link">
+        <joint springref="2.62" solreflimit="0.005 1" solimplimit="0.95 0.99 0.001 0.5 2" stiffness="0.05" damping="0.00125" />
+      </default>
+    </default>
+    <default class="viz_tray0">
+      <geom type="box" contype="0" conaffinity="0" group="1" material="black" />
+    </default>
+    <default class="viz_tray1">
+      <geom type="box" contype="0" conaffinity="0" group="1" material="white" />
+    </default>
+    <default class="counters">
+      <joint limited="true" armature="0.01" damping="2" frictionloss="2" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="counter_metal" />
+      <default class="counter_collision">
+        <geom conaffinity="1" group="4" margin="0.001" material="counter_collision_blue" />
+      </default>
+    </default>
+    <default class="oven">
+      <joint limited="true" armature="0.001" damping="2" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="oven_metal" />
+      <default class="oven_collision">
+        <geom conaffinity="1" group="4" margin="0.001" material="oven_collision_blue" />
+      </default>
+    </default>
+    <default class="dish_drainer">
+      <material shininess="0.25" />
+      <site size="0.001 0.005 0.005" group="4" rgba="0.5 0.5 0.5 0.3" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" priority="1" friction="0.5 0.005 0.0001" />
+      </default>
+    </default>
+    <default class="ycb_col">
+      <geom condim="6" group="3" friction="1.95 0.5 0.5" rgba="0.4 0.5 0.6 1" />
+    </default>
+    <default class="ycb_viz">
+      <geom type="mesh" contype="0" conaffinity="0" />
+    </default>
+    <default class="grab">
+      <joint limited="false" margin="0.01" armature="0.001" frictionloss="0.001" />
+      <geom type="mesh" rgba="0.93 0.99 0.97 1" />
+      <site size="0.005 0 0" rgba="0.4 0.9 0.4 1" />
+      <default class="object_col">
+        <geom condim="4" group="3" friction="1 0.5 0.01" margin="0.0005" density="1250" rgba="0.3 0.4 0.5 1" />
+      </default>
+    </default>
+    <default class="slidecabinet">
+      <joint limited="true" armature="0.01" damping="2" frictionloss="2" />
+      <geom type="mesh" contype="0" conaffinity="0" group="1" material="M_slide_blue" />
+      <default class="slide_collision">
+        <geom conaffinity="1" group="4" margin="0.001" material="slide_collision_blue" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture type="skybox" name="skybox" file="../multi_sim/scene_sim/textures/dawn.png" gridsize="3 4" gridlayout=".U..LFRB.D.." />
+    <texture type="2d" name="texplane" file="../multi_sim/scene_sim/textures/white_marble_tile4.png" />
+    <texture type="2d" name="texwindow" file="../multi_sim/scene_sim/textures/windows0.png" />
+    <texture type="2d" name="my_floor_tex" file="../multi_sim/scene_sim/textures/white_marble_tile2.png" />
+    <texture type="cube" name="T_simpleWoodTable" file="../furniture_sim/common/textures/wood1.png" />
+    <texture type="cube" name="T_simpleMarbleTable" file="../furniture_sim/common/textures/stone0.png" />
+    <texture type="cube" name="T_simpleGraniteTable" file="../furniture_sim/common/textures/stone1.png" />
+    <texture type="cube" name="T_hinge_wood" file="../furniture_sim/common/textures/wood1.png" />
+    <texture type="cube" name="T_hinge_metal" file="../furniture_sim/common/textures/metal0.png" />
+    <texture type="cube" name="T_counter_metal" file="../furniture_sim/common/textures/metal0.png" />
+    <texture type="cube" name="T_counter_marble" file="../furniture_sim/common/textures/stone2.png" />
+    <texture type="cube" name="T_counter_wood" file="../furniture_sim/common/textures/wood1.png" />
+    <texture type="cube" name="T_oven_wood" file="../furniture_sim/common/textures/wood0.png" />
+    <texture type="cube" name="T_oven_metal" file="../furniture_sim/common/textures/metal0.png" />
+    <texture type="2d" name="dish_drainer_diffuse" file="../multi_sim/dish_drainer/assets/textures/drying_rack.png" />
+    <texture type="2d" name="fork" file="../multi_sim/YCB_sim/textures/fork.png" />
+    <texture type="2d" name="spoon" file="../multi_sim/YCB_sim/textures/spoon.png" />
+    <texture type="2d" name="knife" file="../multi_sim/YCB_sim/textures/knife.png" />
+    <texture type="2d" name="spatula" file="../multi_sim/YCB_sim/textures/spatula.png" />
+    <texture type="2d" name="plate" file="../multi_sim/YCB_sim/textures/plate.png" />
+    <texture type="2d" name="mug" file="../multi_sim/YCB_sim/textures/mug.png" />
+    <texture type="cube" name="T_slide_metal" file="../furniture_sim/common/textures/metal0.png" />
+    <texture type="cube" name="T_slide_wood" file="../furniture_sim/common/textures/wood1.png" />
+    <texture type="cube" name="sky" file="../scene_sim/textures/cloudy.png" gridsize="3 4" gridlayout=".U..LFRB.D.." />
+    <texture type="2d" name="pasta_tex" file="../multi_sim/scene_sim/textures/pasta_2.png" />
+    <texture type="2d" name="wallpaper_tex" file="../multi_sim/scene_sim/textures/colore-verde-pallido_179286-64.png" />
+    <material name="MatBulb" shininess="0" rgba="1 1 0 1" />
+    <material name="MyFloorMat" texture="my_floor_tex" texuniform="true" texrepeat="4 4" />
+    <material name="MatPlane" texture="texplane" texuniform="true" texrepeat="4 4" reflectance="0.01" />
+    <material name="MatMetal" emission="0.01" specular="0.2" rgba="0.31 0.3 0.3 1" />
+    <material name="MatGlass" emission="0.25" specular="0.4" reflectance="1" rgba="0.6 0.6 0.65 0.1" />
+    <material name="MatWindow" texture="texwindow" texuniform="true" rgba="1 0 0 1" />
+    <material name="black0" rgba="0.25 0.25 0.25 1" />
+    <material name="gray0" rgba="0.25 0.25 0.25 1" />
+    <material name="dark_gray0" rgba="0.25 0.25 0.25 1" />
+    <material name="black1" />
+    <material name="gray1" />
+    <material name="dark_gray1" />
+    <material name="M_simpleWoodTable" texture="T_simpleWoodTable" specular="0" shininess="0" rgba="0.5 0.5 0.5 1" />
+    <material name="M_simpleMarbleTable" texture="T_simpleMarbleTable" shininess="1" reflectance="1" rgba="0.75 0.75 0.75 1" />
+    <material name="M_simpleGraniteTable" texture="T_simpleGraniteTable" shininess="0" rgba="0.75 0.75 0.75 1" />
+    <material name="M_hinge_wood" texture="T_hinge_wood" texrepeat="3 3" shininess="0.4" reflectance="0.7" />
+    <material name="M_hinge_metal" texture="T_hinge_metal" texrepeat="3 3" shininess="0.4" reflectance="0.7" />
+    <material name="M_hinge_blue" texture="T_hinge_wood" shininess="0.4" reflectance="0.7" />
+    <material name="hinge_collision_blue" specular="0" shininess="0" rgba="0.3 0.3 1 0.5" />
+    <material name="black" specular="0" shininess="0" rgba="0.1 0.1 0.1 1" />
+    <material name="white" specular="0" shininess="0" />
+    <material name="counter_metal" texture="T_counter_metal" texrepeat="3 3" shininess="1" reflectance="0.5" />
+    <material name="counter_marble" texture="T_counter_marble" shininess="1" reflectance="0.2" />
+    <material name="counter_black" shininess="1" reflectance="1" rgba="0.2 0.2 0.2 1" />
+    <material name="counter_blue" texture="T_counter_wood" shininess="1" reflectance="1" />
+    <material name="counter_collision_blue" specular="0" shininess="0" rgba="0.3 0.3 1 0.5" />
+    <material name="oven_wood" texture="T_oven_wood" texrepeat="3 3" shininess="0.4" reflectance="0.7" />
+    <material name="oven_metal" texture="T_oven_metal" texrepeat="3 3" shininess="1" reflectance="1" />
+    <material name="oven_black" shininess="0.2" reflectance="0.2" rgba="0.15 0.15 0.15 1" />
+    <material name="oven_burner" shininess="0.2" reflectance="0.2" rgba="2 0 0 1" />
+    <material name="oven_block" rgba="0.1 0.1 0.1 1" />
+    <material name="oven_collision_blue" specular="0" shininess="0" rgba="0.3 0.3 1 0.5" />
+    <material name="dish_drainer" texture="dish_drainer_diffuse" />
+    <material name="fork" texture="fork" />
+    <material name="spoon" texture="spoon" />
+    <material name="knife" texture="knife" />
+    <material name="spatula" texture="spatula" />
+    <material name="plate" texture="plate" />
+    <material name="mug" texture="mug" />
+    <material name="M_slide_metal" texture="T_slide_metal" texrepeat="3 3" shininess="0.4" reflectance="0.7" />
+    <material name="M_slide_blue" texture="T_slide_wood" shininess="0.4" reflectance="0.7" />
+    <material name="slide_collision_blue" specular="0" shininess="0" rgba="0.3 0.3 1 0.5" />
+    <material name="sky" texture="sky" specular="1" shininess="1" />
+    <material name="pasta_mat" texture="pasta_tex" specular="0.3" shininess="0.1" />
+    <material name="wallpaper_mat" texture="wallpaper_tex" texuniform="true" />
+    <mesh name="wall" file="../multi_sim/scene_sim/meshes/highwindow.stl" />
+    <mesh name="skyline" file="../multi_sim/scene_sim/meshes/skyline.stl" scale="2.2 2.2 1" />
+    <mesh name="link0_col" file="../franka_sim/meshes/collision/link0.stl" />
+    <mesh name="link1_col" file="../franka_sim/meshes/collision/link1.stl" />
+    <mesh name="link2_col" file="../franka_sim/meshes/collision/link2.stl" />
+    <mesh name="link3_col" file="../franka_sim/meshes/collision/link3.stl" />
+    <mesh name="link4_col" file="../franka_sim/meshes/collision/link4.stl" />
+    <mesh name="link5_col" file="../franka_sim/meshes/collision/link5.stl" />
+    <mesh name="link6_col" file="../franka_sim/meshes/collision/link6.stl" />
+    <mesh name="link7_col" file="../franka_sim/meshes/collision/link7.stl" />
+    <mesh name="hand_col" file="../franka_sim/meshes/collision/hand.stl" />
+    <mesh name="link0_viz" file="../franka_sim/meshes/visual/link0.stl" />
+    <mesh name="link1_viz" file="../franka_sim/meshes/visual/link1.stl" />
+    <mesh name="link2_viz" file="../franka_sim/meshes/visual/link2.stl" />
+    <mesh name="link3_viz" file="../franka_sim/meshes/visual/link3.stl" />
+    <mesh name="link3_dark_viz" file="../franka_sim/meshes/visual/link3_dark.stl" scale="1.01 1.01 1.01" />
+    <mesh name="link4_viz" file="../franka_sim/meshes/visual/link4.stl" />
+    <mesh name="link4_dark_viz" file="../franka_sim/meshes/visual/link4_dark.stl" scale="1.01 1.01 1.01" />
+    <mesh name="link5_viz" file="../franka_sim/meshes/visual/link5.stl" />
+    <mesh name="link5_dark_viz" file="../franka_sim/meshes/visual/link5_dark.stl" scale="1.01 1.01 1.01" />
+    <mesh name="link6_viz" file="../franka_sim/meshes/visual/link6.stl" />
+    <mesh name="link6_dark_viz" file="../franka_sim/meshes/visual/link6_dark.stl" scale="1.01 1.01 1.01" />
+    <mesh name="link7_viz" file="../franka_sim/meshes/visual/link7.stl" />
+    <mesh name="link7_dark_viz" file="../franka_sim/meshes/visual/link7_dark.stl" scale="1.01 1.01 1.01" />
+    <mesh name="hand_viz" file="../franka_sim/meshes/visual/hand.stl" />
+    <mesh name="bumper" file="../multi_sim/movingbase/assets/meshes/bumper.stl" />
+    <mesh name="bottom_plate" file="../multi_sim/movingbase/assets/meshes/bottom_plate.stl" />
+    <mesh name="body" file="../multi_sim/movingbase/assets/meshes/body.stl" />
+    <mesh name="top_plate" file="../multi_sim/movingbase/assets/meshes/top_plate.stl" />
+    <mesh name="arm_plate" file="../multi_sim/movingbase/assets/meshes/arm_plate.stl" />
+    <mesh name="bumper_1" file="../multi_sim/movingbase/assets/meshes/bumper.stl" />
+    <mesh name="bottom_plate_1" file="../multi_sim/movingbase/assets/meshes/bottom_plate.stl" />
+    <mesh name="body_1" file="../multi_sim/movingbase/assets/meshes/body.stl" />
+    <mesh name="top_plate_1" file="../multi_sim/movingbase/assets/meshes/top_plate.stl" />
+    <mesh name="arm_plate_1" file="../multi_sim/movingbase/assets/meshes/arm_plate.stl" />
+    <mesh name="robotiq-2f-base" file="../robotiq_sim/meshes/robotiq-2f-base.stl" scale="0.001 0.001 0.001" />
+    <mesh name="robotiq-2f-driver" file="../robotiq_sim/meshes/robotiq-2f-driver.stl" scale="0.001 0.001 0.001" />
+    <mesh name="robotiq-2f-coupler" file="../robotiq_sim/meshes/robotiq-2f-coupler.stl" scale="0.001 0.001 0.001" />
+    <mesh name="robotiq-2f-follower" file="../robotiq_sim/meshes/robotiq-2f-follower.stl" scale="0.001 0.001 0.001" />
+    <mesh name="robotiq-2f-pad" file="../robotiq_sim/meshes/robotiq-2f-pad.stl" scale="0.001 0.001 0.001" />
+    <mesh name="robotiq-2f-spring_link" file="../robotiq_sim/meshes/robotiq-2f-spring_link.stl" scale="0.001 0.001 0.001" />
+    <mesh name="cabinetdrawer" file="../furniture_sim/counters/meshes/cabinetdrawer.stl" />
+    <mesh name="cabinethandle" file="../furniture_sim/counters/meshes/cabinethandle.stl" />
+    <mesh name="cabinetbase" file="../furniture_sim/counters/meshes/cabinetbase.stl" />
+    <mesh name="countertop" file="../furniture_sim/counters/meshes/countertop.stl" />
+    <mesh name="faucet" file="../furniture_sim/counters/meshes/faucet.stl" />
+    <mesh name="hood" file="../furniture_sim/oven/meshes/hood.stl" />
+    <mesh name="lightswitch" file="../furniture_sim/oven/meshes/lightswitch.stl" />
+    <mesh name="lightswitchbase" file="../furniture_sim/oven/meshes/lightswitchbase.stl" />
+    <mesh name="knob" file="../furniture_sim/oven/meshes/knob.stl" />
+    <mesh name="stoverim" file="../furniture_sim/oven/meshes/stoverim.stl" />
+    <mesh name="burnerplate" file="../furniture_sim/oven/meshes/burnerplate.stl" />
+    <mesh name="ovenhandle" file="../furniture_sim/oven/meshes/ovenhandle.stl" />
+    <mesh name="oven" file="../furniture_sim/oven/meshes/oven.stl" />
+    <mesh name="oventop" file="../furniture_sim/oven/meshes/oventop.stl" />
+    <mesh name="ovenwindow" file="../furniture_sim/oven/meshes/ovenwindow.stl" />
+    <mesh name="rack" file="../multi_sim/dish_drainer/assets/rack.obj" />
+    <mesh name="rack_collision_001" file="../multi_sim/dish_drainer/assets/rack_collision_001.obj" />
+    <mesh name="rack_collision_002" file="../multi_sim/dish_drainer/assets/rack_collision_002.obj" />
+    <mesh name="rack_collision_003" file="../multi_sim/dish_drainer/assets/rack_collision_003.obj" />
+    <mesh name="rack_collision_004" file="../multi_sim/dish_drainer/assets/rack_collision_004.obj" />
+    <mesh name="rack_collision_005" file="../multi_sim/dish_drainer/assets/rack_collision_005.obj" />
+    <mesh name="rack_collision_006" file="../multi_sim/dish_drainer/assets/rack_collision_006.obj" />
+    <mesh name="rack_collision_007" file="../multi_sim/dish_drainer/assets/rack_collision_007.obj" />
+    <mesh name="rack_collision_008" file="../multi_sim/dish_drainer/assets/rack_collision_008.obj" />
+    <mesh name="rack_collision_009" file="../multi_sim/dish_drainer/assets/rack_collision_009.obj" />
+    <mesh name="rack_collision_010" file="../multi_sim/dish_drainer/assets/rack_collision_010.obj" />
+    <mesh name="rack_collision_011" file="../multi_sim/dish_drainer/assets/rack_collision_011.obj" />
+    <mesh name="rack_collision_012" file="../multi_sim/dish_drainer/assets/rack_collision_012.obj" />
+    <mesh name="rack_collision_013" file="../multi_sim/dish_drainer/assets/rack_collision_013.obj" />
+    <mesh name="rack_collision_014" file="../multi_sim/dish_drainer/assets/rack_collision_014.obj" />
+    <mesh name="rack_collision_015" file="../multi_sim/dish_drainer/assets/rack_collision_015.obj" />
+    <mesh name="rack_collision_016" file="../multi_sim/dish_drainer/assets/rack_collision_016.obj" />
+    <mesh name="rack_collision_017" file="../multi_sim/dish_drainer/assets/rack_collision_017.obj" />
+    <mesh name="rack_collision_018" file="../multi_sim/dish_drainer/assets/rack_collision_018.obj" />
+    <mesh name="fork" file="../multi_sim/YCB_sim/meshes/fork.obj" />
+    <mesh name="spoon" file="../multi_sim/YCB_sim/meshes/spoon.obj" />
+    <mesh name="knife" file="../multi_sim/YCB_sim/meshes/knife.obj" />
+    <mesh name="spatula" file="../multi_sim/YCB_sim/meshes/spatula.obj" />
+    <mesh name="plate" file="../multi_sim/YCB_sim/meshes/plate.obj" />
+    <mesh name="mug" file="../multi_sim/YCB_sim/meshes/mug.obj" scale="1.3 1.3 1.3" />
+    <mesh name="bowl" file="../object_sim/bowl/bowl.stl" />
+    <mesh name="bowl_contact0" file="../object_sim/bowl/contact0.stl" />
+    <mesh name="bowl_contact1" file="../object_sim/bowl/contact1.stl" />
+    <mesh name="bowl_contact2" file="../object_sim/bowl/contact2.stl" />
+    <mesh name="bowl_contact3" file="../object_sim/bowl/contact3.stl" />
+    <mesh name="bowl_contact4" file="../object_sim/bowl/contact4.stl" />
+    <mesh name="bowl_contact5" file="../object_sim/bowl/contact5.stl" />
+    <mesh name="bowl_contact6" file="../object_sim/bowl/contact6.stl" />
+    <mesh name="bowl_contact7" file="../object_sim/bowl/contact7.stl" />
+    <mesh name="bowl_contact8" file="../object_sim/bowl/contact8.stl" />
+    <mesh name="bowl_contact9" file="../object_sim/bowl/contact9.stl" />
+    <mesh name="bowl_contact10" file="../object_sim/bowl/contact10.stl" />
+    <mesh name="bowl_contact11" file="../object_sim/bowl/contact11.stl" />
+    <mesh name="pasta_mesh" file="../multi_sim/pasta/new_pasta_and_mixed_dishes_2/simplify_pasta_2-3.obj" scale="0.85 0.85 0.85" />
+    <mesh name="wheelchair_mesh" file="../multi_sim/Wheelchair/simplify_Wheelchair.obj" scale="0.022 0.022 0.022" />
+    <mesh name="man_mesh" file="../multi_sim/man/sitting_mannequin.obj" scale="0.9 0.9 0.9" />
+    <mesh name="wine_mesh" file="../multi_sim/wine/Glass/Glass OBJ.obj" scale="0.016 0.024 0.016" />
+    <mesh name="pot_mesh" file="../multi_sim/pot/Pan3.obj" scale="0.04 0.04 0.04" />
+    <mesh name="pan_mesh" file="../multi_sim/pan/uploads_files_2937991_fryingpan.obj" scale="2 2 2" />
+  </asset>
+  <worldbody>
+    <geom name="skyline" class="scene" pos="0 0 -3" type="mesh" material="MatWindow" rgba="0.3 0.3 0.27 1" mesh="skyline" />
+    <geom name="floor" class="scene" size="12 12 0.1" pos="0 0 0.0001" type="plane" contype="1" conaffinity="1" material="MyFloorMat" />
+    <geom name="roof" class="scene" size="12 12 0.2" pos="0 0 8" quat="0.000796327 1 0 0" type="plane" material="MatMetal" />
+    <geom class="scene" pos="0 10 0" type="mesh" material="MatMetal" mesh="wall" />
+    <geom class="scene" size="5 0.01 3.5" pos="0 10 3.5" type="box" material="MatGlass" />
+    <geom class="scene" pos="0 -10 0" quat="0.000796327 0 0 -1" type="mesh" material="MatMetal" mesh="wall" />
+    <geom class="scene" size="5 0.01 3.5" pos="0 -10 3.5" type="box" material="MatGlass" />
+    <geom class="scene" pos="10 0 0" quat="0.707388 0 0 -0.706825" type="mesh" material="MatMetal" mesh="wall" />
+    <geom class="scene" size="0.01 5 3.5" pos="10 0 3.5" type="box" material="MatGlass" />
+    <geom class="scene" pos="-10 0 0" quat="0.707388 0 0 0.706825" type="mesh" material="MatMetal" mesh="wall" />
+    <geom class="scene" size="0.01 5 3.5" pos="-10 0 3.5" type="box" material="MatGlass" />
+    <site name="xaxis" pos="0.5 0 0" quat="0.707107 0 -0.707107 0" size="0.005 0.5" group="3" type="capsule" rgba="1 0 0 0.25" />
+    <site name="yaxis" pos="0 0.5 0" quat="0.707107 0.707107 0 0" size="0.005 0.5" group="3" type="capsule" rgba="0 1 0 0.25" />
+    <site name="ee_target0" pos="0.1 0 0" size="0.03 0.07 0.04" group="1" type="box" rgba="0 1 0.4 0" />
+    <site name="ee_target1" pos="-0.1 0 0" size="0.03 0.07 0.04" group="1" type="box" rgba="1 0 0.4 0" />
+    <site name="workspace" pos="0 0.475 1" size="0.6 0.375 0.25" group="3" type="box" rgba="0 0 0.4 0.2" />
+    <site name="landmark_stove" pos="-2.61 -1.4 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_dishware" pos="-1.6 -1.3 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_glassware" pos="-0.15 -1.35 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_cutlery" pos="0.8 -1.35 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_serveusr0" pos="-0.5 -0.4 0" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_serveusr1" pos="-1.5 -0.4 0" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_rightup" pos="-3 -0.8 0" quat="0.707388 0 0 -0.706825" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_rightdown" pos="-2.7 2 0" quat="0.707388 0 0 -0.706825" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_leftup" pos="1 -0.8 0" quat="0.707388 0 0 0.706825" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_leftdown" pos="1 2.8 0" quat="0.707388 0 0 0.706825" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_serveusr1_fromrob0" pos="-1.5 1.1 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_serveusr1_fromrob0_behind" pos="-1.5 2.8 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_serveusr0_fromrob1" pos="-0.5 1.1 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="landmark_serveusr0_fromrob1_behind" pos="-0.5 2 0" quat="0.000796327 0 0 1" size="0.1 0.01" type="cylinder" rgba="1 1 1 0.2" />
+    <site name="drop_target0_1" pos="10 10 10" size="0.1 0.1 0.005" group="1" type="box" rgba="0 1 0 0.4" />
+    <site name="drop_target1_1" pos="10 10 10" size="0.1 0.1 0.005" group="1" type="box" rgba="1 0 0 0.4" />
+    <site name="current_target0" pos="-0.4 0.5 1.4" size="0.06" group="1" rgba="1 0 0 0.4" />
+    <site name="pick_target0" pos="-0.4 0.5 1.25" size="0.088" group="1" rgba="0.1 0.8 0.2 0.4" />
+    <site name="current_target1" pos="0.4 0.5 1.4" size="0.06" group="1" rgba="1 0 0 0.4" />
+    <site name="pick_target1" pos="0.4 0.5 1.25" size="0.088" group="1" rgba="0.1 0.8 0.2 0.4" />
+    <camera name="general_view" pos="-1.015 2.115 2.98" quat="0 0 0.382683 0.92388" fovy="75" />
+    <light pos="0 0 2" dir="0 0 -1" directional="true" castshadow="false" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" />
+    <light pos="0 0 2" dir="0 0 -1" directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" />
+    <body name="mobile_manipulator0" pos="-0.5 -0.4 0">
+      <site name="base_target0" pos="0 0 0.35" size="0.03 0.07 0.04" group="1" type="box" rgba="1 1 1 1" />
+      <body name="base_link_0">
+        <joint name="joint_x_0" pos="0 0 0" axis="1 0 0" type="slide" />
+        <joint name="joint_y_0" pos="0 0 0" axis="0 1 0" type="slide" />
+        <joint name="joint_th_0" pos="0 0 0" axis="0 0 1" />
+        <geom class="visual_base" rgba="0.25 0.25 0.25 1" mesh="bumper" />
+        <geom class="visual_base" rgba="0.25 0.25 0.25 1" mesh="bottom_plate" />
+        <geom class="visual_base" rgba="0.25 0.25 0.25 1" mesh="body" />
+        <geom class="visual_base" rgba="0.25 0.25 0.25 1" mesh="top_plate" />
+        <geom class="visual_base" rgba="0.25 0.25 0.25 1" mesh="arm_plate" />
+        <geom class="collision_base" mesh="bumper" />
+        <geom class="collision_base" mesh="bottom_plate" />
+        <geom class="collision_base" group="4" mesh="body" />
+        <geom class="collision_base" mesh="top_plate" />
+        <geom class="collision_base" mesh="arm_plate" />
+        <site name="mobile_base0" pos="0 0 0.168" size="0.01" />
+      <body name="robot_panda0" pos="0 0 0.735" quat="0.707105 0 0 0.707108">
+      <geom size="0.12 0.4" pos="-0.04 0 -0.4" type="cylinder" contype="0" conaffinity="0" mass="0" rgba="0.25 0.25 0.25 1" />
+      <site name="franka0_front_cam" pos="1.7 0 0.63" quat="0.583833 0.399104 0.399421 0.583368" rgba="0.5 0.5 0.5 0" />
+      <site name="franka0_left_ego_cam" pos="0 0.65 0.7" quat="-0.389435 -0.248097 0.476591 0.748097" rgba="0.5 0.5 0.5 0" />
+      <site name="franka0_right_ego_cam" pos="0 -0.65 0.7" quat="0.748097 0.476591 -0.248097 -0.389435" rgba="0.5 0.5 0.5 0" />
+      <camera name="user0_front_view" pos="1.5 0.1 1.165" quat="0.572731 0.284432 0.341964 0.688577" />
+      <camera name="franka0_view" pos="0.1 -0.15 0.7" quat="0.52948 0.468721 -0.469094 -0.529058" fovy="95" />
+      <camera name="franka0_front_cam" pos="1.7 0 0.63" quat="0.583833 0.399104 0.399421 0.583368" fovy="65" />
+      <camera name="franka0_left_ego_cam" pos="0 0.65 0.7" quat="-0.389435 -0.248097 0.476591 0.748097" fovy="115" />
+      <camera name="franka0_right_ego_cam" pos="0 -0.65 0.7" quat="0.748097 0.476591 -0.248097 -0.389435" fovy="115" />
+      <body pos="0.22 0 0.05">
+        <body name="tray0">
+          <geom size="0.15 0.15 0.01" pos="0 0.25 0" quat="0.000796327 0 1 0" type="box" rgba="0.25 0.25 0.25 1" />
+          <geom class="viz_tray0" size="0.15 0.15 0.01" pos="0 0.25 0" quat="0.000796327 0 1 0" rgba="0.25 0.25 0.25 1" />
+          <geom size="0.15 0.15 0.01" pos="0 -0.25 0" type="box" rgba="0.25 0.25 0.25 1" />
+          <geom class="viz_tray0" size="0.15 0.15 0.01" pos="0 -0.25 0" rgba="0.25 0.25 0.25 1" />
+          <geom size="0.1 0.1 0.01" pos="0.05 0 0" type="box" rgba="0.25 0.25 0.25 1" />
+          <geom class="viz_tray0" size="0.05 0.1 0.01" pos="0.1 0 0" rgba="0.25 0.25 0.25 1" />
+          <site name="tray0_left" pos="0 0.25 0.01" size="0.15 0.15 0.01" type="box" rgba="1 0 0 0" />
+          <site name="tray0_right" pos="0 -0.25 0.01" size="0.15 0.15 0.01" type="box" rgba="1 0 0 0" />
+          <site name="mug0_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="mug1_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="wine_glass0_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="wine_glass1_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="fork0_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="fork1_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="spoon0_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="spoon1_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="mug0_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="mug1_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="wine_glass0_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="wine_glass1_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="fork0_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="fork1_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="spoon0_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+          <site name="spoon1_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="1 0 0 0" />
+        </body>
+      </body>
+      <body name="panda0_link0" childclass="panda">
+        <geom class="panda_viz" mesh="link0_viz" />
+        <geom class="panda_col" mass="2.91242" mesh="link0_col" />
+        <site name="status_led_0_2" pos="0 0 0.186" size="0.065 0.0083334" type="cylinder" rgba="10 10 10 1" />
+        <site name="status_led_0_1" pos="0 0 0.168" size="0.065 0.0083334" type="cylinder" rgba="10 10 10 1" />
+        <site name="status_led_0_0" pos="0 0 0.15" size="0.065 0.0083334" type="cylinder" rgba="10 10 10 1" />
+        <body name="panda0_link1" pos="0 0 0.333">
+          <joint name="panda0_joint1" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+          <geom class="panda_viz" mesh="link1_viz" />
+          <geom class="panda_col" mass="2.7063" mesh="link1_col" />
+          <body name="panda0_link2" quat="0.707107 -0.707107 0 0">
+            <joint name="panda0_joint2" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-1.7628 1.7628" />
+            <geom class="panda_viz" mesh="link2_viz" />
+            <geom class="panda_col" mass="2.73046" mesh="link2_col" />
+            <body name="panda0_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <joint name="panda0_joint3" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+              <geom class="panda_viz" mesh="link3_viz" />
+              <geom class="panda_grey_viz" pos="0 0.001 0" mesh="link3_dark_viz" />
+              <geom class="panda_col" mass="2.04104" mesh="link3_col" />
+              <body name="panda0_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <joint name="panda0_joint4" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-3.0718 -0.4" />
+                <geom class="panda_viz" mesh="link4_viz" />
+                <geom class="panda_grey_viz" mesh="link4_dark_viz" />
+                <geom class="panda_col" mass="2.08129" mesh="link4_col" />
+                <body name="panda0_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <joint name="panda0_joint5" class="panda_forearm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+                  <geom class="panda_viz" mesh="link5_viz" />
+                  <geom class="panda_grey_viz" mesh="link5_dark_viz" />
+                  <geom class="panda_col" mass="3.00049" mesh="link5_col" />
+                  <body name="panda0_link6" quat="0.500398 0.5 -0.499602 0.5">
+                    <joint name="panda0_joint6" class="panda_forearm" pos="0 0 0" axis="0 0 1" range="-1.6573 2.1127" />
+                    <geom class="panda_viz" mesh="link6_viz" />
+                    <geom class="panda_grey_viz" mesh="link6_dark_viz" />
+                    <geom class="panda_col" mass="1.3235" mesh="link6_col" />
+                    <body name="panda0_link7" pos="0.088 0 0" quat="0.653541 0.653021 -0.270491 0.270706">
+                      <joint name="panda0_joint7" class="panda_forearm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+                      <geom class="panda_viz" rgba="0.8 0.8 0.82 1" mesh="link7_viz" />
+                      <geom class="panda_grey_viz" pos="0 0 -0.0008" mesh="link7_dark_viz" />
+                      <geom class="panda_col" mass="0.2" mesh="link7_col" />
+                      <site name="end_effector0" pos="0 0 0.21" quat="0.92388 0 0 -0.382683" size="0.01" />
+                      <camera name="franka0_wrist_cam" pos="0.05 -0.05 0.15" quat="0.126001 0.911084 0.388578 0.0552895" />
+                    <body name="ee_mount0" pos="0 0 0.11" quat="0.92388 0 0 -0.382683">
+      <body name="robotiq0_2f_85" childclass="robotiq2f85">
+        <geom mesh="robotiq-2f-base" />
+        <geom class="robotiq_col" mesh="robotiq-2f-base" />
+        <body name="robotiq0_2f_85_right_driver" pos="0 0.0306011 0.054904">
+          <inertial pos="0 0.01575 0.05295" quat="0.738425 0.674335 0 0" mass="0.2" diaginertia="0.00043212 0.000431866 0.000360253" />
+          <joint name="robotiq0_2f_85_right_driver_joint" pos="0 0 0" axis="1 0 0" range="0 0.834" />
+          <geom mesh="robotiq-2f-driver" />
+          <geom pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <geom class="robotiq_col" pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <body name="robotiq0_2f_85_right_follower" pos="0 0.0376 0.043">
+            <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.2" diaginertia="0.000380833 0.000380833 0.00036" />
+            <joint name="robotiq0_2f_85_right_follower_joint" pos="0 0 0" axis="1 0 0" range="-2.96706 2.96706" />
+            <geom mesh="robotiq-2f-follower" />
+            <geom rgba="1 1 1 1" mesh="robotiq-2f-pad" />
+            <geom class="robotiq_pad_col" size="0.01 0.003 0.0175" pos="0 -0.021 0.031" type="box" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+          </body>
+        </body>
+        <body name="robotiq0_2f_85_right_spring_link" pos="0 0.012 0.0614">
+          <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.1" diaginertia="0.000190833 0.000190833 0.00018" />
+          <joint name="robotiq0_2f_85_right_spring_link_joint" class="robotiq_spring_link" pos="0 0 0" axis="1 0 0" springref="2.62" range="-2.96706 2.96706" />
+          <geom mesh="robotiq-2f-spring_link" />
+          <geom class="robotiq_col" size="0.0125 0.007 0.014" pos="0 0.032 0.0365" quat="0.939373 -0.342898 0 0" type="box" />
+          <geom class="robotiq_col" size="0.018 0.007 0.022" pos="0 0.012 0.013" quat="0.939373 -0.342898 0 0" type="box" />
+          <site pos="0 0.037 0.043" size="0.01" group="3" rgba="1 0 0 1" />
+        </body>
+        <body name="robotiq0_2f_85_left_driver" pos="0 -0.0306011 0.054904" quat="0 0 0 1">
+          <inertial pos="0 0.01575 0.05295" quat="0.738425 0.674335 0 0" mass="0.2" diaginertia="0.00043212 0.000431866 0.000360253" />
+          <joint name="robotiq0_2f_85_left_driver_joint" pos="0 0 0" axis="1 0 0" range="0 0.834" />
+          <geom mesh="robotiq-2f-driver" />
+          <geom pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <geom class="robotiq_col" pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <body name="robotiq0_2f_85_left_follower" pos="0 0.0376 0.043">
+            <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.2" diaginertia="0.000380833 0.000380833 0.00036" />
+            <joint name="robotiq0_2f_85_left_follower_joint" pos="0 0 0" axis="1 0 0" range="-2.96706 2.96706" />
+            <geom mesh="robotiq-2f-follower" />
+            <geom rgba="1 1 1 1" mesh="robotiq-2f-pad" />
+            <geom class="robotiq_pad_col" size="0.01 0.003 0.0175" pos="0 -0.021 0.031" type="box" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+          </body>
+        </body>
+        <body name="robotiq0_2f_85_left_spring_link" pos="0 -0.012 0.0614" quat="0 0 0 1">
+          <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.1" diaginertia="0.000190833 0.000190833 0.00018" />
+          <joint name="robotiq0_2f_85_left_spring_link_joint" class="robotiq_spring_link" pos="0 0 0" axis="1 0 0" springref="2.62" range="-2.96706 2.96706" />
+          <geom mesh="robotiq-2f-spring_link" />
+          <geom class="robotiq_col" size="0.0125 0.007 0.014" pos="0 0.032 0.0365" quat="0.939373 -0.342898 0 0" type="box" />
+          <geom class="robotiq_col" size="0.018 0.007 0.022" pos="0 0.012 0.013" quat="0.939373 -0.342898 0 0" type="box" />
+          <site pos="0 0.037 0.043" size="0.01" group="3" rgba="1 0 0 1" />
+        </body>
+      </body>
+    </body>
+    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    </body>
+    </body>
+    <body name="mobile_manipulator1" pos="-1.5 -0.4 0">
+      <site name="base_target1" pos="0 0 0.35" size="0.03 0.07 0.04" group="1" type="box" rgba="0.25 0.25 0.25 1" />
+      <body name="base_link_1">
+        <joint name="joint_x_1" pos="0 0 0" axis="1 0 0" type="slide" />
+        <joint name="joint_y_1" pos="0 0 0" axis="0 1 0" type="slide" />
+        <joint name="joint_th_1" pos="0 0 0" axis="0 0 1" />
+        <geom class="visual_base_1" rgba="1 1 1 1" mesh="bumper_1" />
+        <geom class="visual_base_1" rgba="1 1 1 1" mesh="bottom_plate_1" />
+        <geom class="visual_base_1" rgba="1 1 1 1" mesh="body_1" />
+        <geom class="visual_base_1" rgba="1 1 1 1" mesh="top_plate_1" />
+        <geom class="visual_base_1" rgba="1 1 1 1" mesh="arm_plate_1" />
+        <geom class="collision_base_1" mesh="bumper_1" />
+        <geom class="collision_base_1" mesh="bottom_plate_1" />
+        <geom class="collision_base_1" group="4" mesh="body_1" />
+        <geom class="collision_base_1" mesh="top_plate_1" />
+        <geom class="collision_base_1" mesh="arm_plate_1" />
+        <site name="mobile_base1" pos="0 0 0.168" size="0.01" />
+      <body name="robot_panda1" pos="0 0 0.735" quat="0.707105 0 0 0.707108">
+      <geom size="0.12 0.4" pos="-0.04 0 -0.4" type="cylinder" contype="0" conaffinity="0" mass="0" rgba="1 1 1 1" />
+      <site name="franka1_left_ego_cam" pos="0 0.65 0.7" quat="-0.389435 -0.248097 0.476591 0.748097" rgba="0.5 0.5 0.5 0" />
+      <site name="franka1_right_ego_cam" pos="0 -0.65 0.7" quat="0.748097 0.476591 -0.248097 -0.389435" rgba="0.5 0.5 0.5 0" />
+      <site name="franka1_front_cam" pos="1.7 0 0.63" quat="0.583833 0.399104 0.399421 0.583368" rgba="0.5 0.5 0.5 0" />
+      <camera name="user1_front_view" pos="1.5 0.1 1.165" quat="0.572731 0.284432 0.341964 0.688577" />
+      <camera name="franka1_view" pos="0.1 -0.15 0.7" quat="0.52948 0.468721 -0.469094 -0.529058" fovy="95" />
+      <camera name="franka1_left_ego_cam" pos="0 0.65 0.7" quat="-0.389435 -0.248097 0.476591 0.748097" fovy="115" />
+      <camera name="franka1_right_ego_cam" pos="0 -0.65 0.7" quat="0.748097 0.476591 -0.248097 -0.389435" fovy="115" />
+      <camera name="franka1_front_cam" pos="1.7 0 0.63" quat="0.583833 0.399104 0.399421 0.583368" fovy="65" />
+      <body pos="0.22 0 0.08">
+        <body name="tray1">
+          <geom size="0.15 0.15 0.01" pos="0 0.25 0" quat="0.707388 0 0 -0.706825" type="box" rgba="1 1 1 1" />
+          <geom class="viz_tray1" size="0.15 0.15 0.01" pos="0 0.25 0" quat="0.707388 0 0 -0.706825" rgba="1 1 1 1" />
+          <geom size="0.15 0.15 0.01" pos="0 -0.25 0" type="box" rgba="1 1 1 1" />
+          <geom class="viz_tray1" size="0.15 0.15 0.01" pos="0 -0.25 0" rgba="0.7 0.7 0.7 1" />
+          <geom size="0.1 0.1 0.01" pos="0.05 0 0" type="box" rgba="0 0 0 0" />
+          <geom class="viz_tray1" size="0.05 0.1 0.01" pos="0.1 0 0" rgba="0.7 0.7 0.7 1" />
+          <site name="tray1_left" pos="0 0.25 0.01" size="0.15 0.15 0.01" type="box" rgba="1 0 0 0" />
+          <site name="tray1_right" pos="0 -0.25 0.01" size="0.15 0.15 0.01" type="box" rgba="1 0 0 0" />
+          <site name="pasta_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pasta_pick_reset_left" pos="-0.3 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pasta_tilted_reset_left" pos="-0.3 0.4 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pasta_far_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pot_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pot_far_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="bowl0_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="bowl1_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="plate0_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="plate1_pick_goal_left" pos="0 0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pasta_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="pasta_pick_reset_right" pos="-0.3 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pasta_tilted_reset_right" pos="-0.3 -0.4 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="pasta_far_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="pot_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="pot_far_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 0 1 0" />
+          <site name="bowl0_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="bowl1_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="plate0_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+          <site name="plate1_pick_goal_right" pos="0 -0.25 0.01" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+        </body>
+      </body>
+      <body name="panda1_link0" childclass="panda">
+        <geom class="panda_viz" mesh="link0_viz" />
+        <geom class="panda_col" mass="2.91242" mesh="link0_col" />
+        <site name="status_led_1_2" pos="0 0 0.186" size="0.065 0.0083334" type="cylinder" rgba="10 10 10 1" />
+        <site name="status_led_1_1" pos="0 0 0.168" size="0.065 0.0083334" type="cylinder" rgba="10 10 10 1" />
+        <site name="status_led_1_0" pos="0 0 0.15" size="0.065 0.0083334" type="cylinder" rgba="10 10 10 1" />
+        <body name="panda1_link1" pos="0 0 0.333">
+          <joint name="panda1_joint1" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+          <geom class="panda_viz" mesh="link1_viz" />
+          <geom class="panda_col" mass="2.7063" mesh="link1_col" />
+          <body name="panda1_link2" quat="0.707107 -0.707107 0 0">
+            <joint name="panda1_joint2" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-1.7628 1.7628" />
+            <geom class="panda_viz" mesh="link2_viz" />
+            <geom class="panda_col" mass="2.73046" mesh="link2_col" />
+            <body name="panda1_link3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+              <joint name="panda1_joint3" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+              <geom class="panda_viz" mesh="link3_viz" />
+              <geom class="panda_grey_viz" pos="0 0.001 0" mesh="link3_dark_viz" />
+              <geom class="panda_col" mass="2.04104" mesh="link3_col" />
+              <body name="panda1_link4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                <joint name="panda1_joint4" class="panda_arm" pos="0 0 0" axis="0 0 1" range="-3.0718 -0.4" />
+                <geom class="panda_viz" mesh="link4_viz" />
+                <geom class="panda_grey_viz" mesh="link4_dark_viz" />
+                <geom class="panda_col" mass="2.08129" mesh="link4_col" />
+                <body name="panda1_link5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                  <joint name="panda1_joint5" class="panda_forearm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+                  <geom class="panda_viz" mesh="link5_viz" />
+                  <geom class="panda_grey_viz" mesh="link5_dark_viz" />
+                  <geom class="panda_col" mass="3.00049" mesh="link5_col" />
+                  <body name="panda1_link6" quat="0.500398 0.5 -0.499602 0.5">
+                    <joint name="panda1_joint6" class="panda_forearm" pos="0 0 0" axis="0 0 1" range="-1.6573 2.1127" />
+                    <geom class="panda_viz" mesh="link6_viz" />
+                    <geom class="panda_grey_viz" mesh="link6_dark_viz" />
+                    <geom class="panda_col" mass="1.3235" mesh="link6_col" />
+                    <body name="panda1_link7" pos="0.088 0 0" quat="0.653541 0.653021 -0.270491 0.270706">
+                      <joint name="panda1_joint7" class="panda_forearm" pos="0 0 0" axis="0 0 1" range="-2.8973 2.8973" />
+                      <geom class="panda_viz" rgba="0.8 0.8 0.82 1" mesh="link7_viz" />
+                      <geom class="panda_grey_viz" pos="0 0 -0.0008" mesh="link7_dark_viz" />
+                      <geom class="panda_col" mass="0.2" mesh="link7_col" />
+                      <site name="end_effector1" pos="0 0 0.21" quat="0.92388 0 0 -0.382683" size="0.01" />
+                      <camera name="franka1_wrist_cam" pos="0.05 -0.05 0.15" quat="0.126001 0.911084 0.388578 0.0552895" />
+                    <body name="ee_mount1" pos="0 0 0.11" quat="0.92388 0 0 -0.382683">
+      <body name="robotiq1_2f_85" childclass="robotiq2f85">
+        <geom mesh="robotiq-2f-base" />
+        <geom class="robotiq_col" mesh="robotiq-2f-base" />
+        <body name="robotiq1_2f_85_right_driver" pos="0 0.0306011 0.054904">
+          <inertial pos="0 0.01575 0.05295" quat="0.738425 0.674335 0 0" mass="0.2" diaginertia="0.00043212 0.000431866 0.000360253" />
+          <joint name="robotiq1_2f_85_right_driver_joint" pos="0 0 0" axis="1 0 0" range="0 0.834" />
+          <geom mesh="robotiq-2f-driver" />
+          <geom pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <geom class="robotiq_col" pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <body name="robotiq1_2f_85_right_follower" pos="0 0.0376 0.043">
+            <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.2" diaginertia="0.000380833 0.000380833 0.00036" />
+            <joint name="robotiq1_2f_85_right_follower_joint" pos="0 0 0" axis="1 0 0" range="-2.96706 2.96706" />
+            <geom mesh="robotiq-2f-follower" />
+            <geom rgba="1 1 1 1" mesh="robotiq-2f-pad" />
+            <geom class="robotiq_pad_col" size="0.01 0.003 0.0175" pos="0 -0.021 0.031" type="box" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+          </body>
+        </body>
+        <body name="robotiq1_2f_85_right_spring_link" pos="0 0.012 0.0614">
+          <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.1" diaginertia="0.000190833 0.000190833 0.00018" />
+          <joint name="robotiq1_2f_85_right_spring_link_joint" class="robotiq_spring_link" pos="0 0 0" axis="1 0 0" springref="2.62" range="-2.96706 2.96706" />
+          <geom mesh="robotiq-2f-spring_link" />
+          <geom class="robotiq_col" size="0.0125 0.007 0.014" pos="0 0.032 0.0365" quat="0.939373 -0.342898 0 0" type="box" />
+          <geom class="robotiq_col" size="0.018 0.007 0.022" pos="0 0.012 0.013" quat="0.939373 -0.342898 0 0" type="box" />
+          <site pos="0 0.037 0.043" size="0.01" group="3" rgba="1 0 0 1" />
+        </body>
+        <body name="robotiq1_2f_85_left_driver" pos="0 -0.0306011 0.054904" quat="0 0 0 1">
+          <inertial pos="0 0.01575 0.05295" quat="0.738425 0.674335 0 0" mass="0.2" diaginertia="0.00043212 0.000431866 0.000360253" />
+          <joint name="robotiq1_2f_85_left_driver_joint" pos="0 0 0" axis="1 0 0" range="0 0.834" />
+          <geom mesh="robotiq-2f-driver" />
+          <geom pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <geom class="robotiq_col" pos="0 0.0315 -0.0041" mesh="robotiq-2f-coupler" />
+          <body name="robotiq1_2f_85_left_follower" pos="0 0.0376 0.043">
+            <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.2" diaginertia="0.000380833 0.000380833 0.00036" />
+            <joint name="robotiq1_2f_85_left_follower_joint" pos="0 0 0" axis="1 0 0" range="-2.96706 2.96706" />
+            <geom mesh="robotiq-2f-follower" />
+            <geom rgba="1 1 1 1" mesh="robotiq-2f-pad" />
+            <geom class="robotiq_pad_col" size="0.01 0.003 0.0175" pos="0 -0.021 0.031" type="box" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.045" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.036" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.028" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+            <geom class="robotiq_pad_col" size="0.004 0.008" pos="0 -0.019 0.019" quat="0.707388 -0.0703317 0.703317 0" type="capsule" />
+          </body>
+        </body>
+        <body name="robotiq1_2f_85_left_spring_link" pos="0 -0.012 0.0614" quat="0 0 0 1">
+          <inertial pos="0 0 0.055" quat="0.707107 0.707107 0 0" mass="0.1" diaginertia="0.000190833 0.000190833 0.00018" />
+          <joint name="robotiq1_2f_85_left_spring_link_joint" class="robotiq_spring_link" pos="0 0 0" axis="1 0 0" springref="2.62" range="-2.96706 2.96706" />
+          <geom mesh="robotiq-2f-spring_link" />
+          <geom class="robotiq_col" size="0.0125 0.007 0.014" pos="0 0.032 0.0365" quat="0.939373 -0.342898 0 0" type="box" />
+          <geom class="robotiq_col" size="0.018 0.007 0.022" pos="0 0.012 0.013" quat="0.939373 -0.342898 0 0" type="box" />
+          <site pos="0 0.037 0.043" size="0.01" group="3" rgba="1 0 0 1" />
+        </body>
+      </body>
+    </body>
+    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    </body>
+    </body>
+    <body name="simpleWoodTable_body" childclass="body_simpleTable" pos="-1 0.35 0" quat="0.707388 0 0 0.706825">
+      <geom class="viz_simpleWoodTable" size="0.4 0.6 0.025" pos="0 0 0.735" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.38 0.38 0.05" pos="0 0 0.66" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.305" pos="-0.35 0.35 0.305" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.305" pos="-0.35 -0.35 0.305" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.305" pos="0.35 0.35 0.305" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.305" pos="0.35 -0.35 0.305" type="box" />
+      <geom size="0.4 0.6 0.025" pos="0 0 0.735" type="box" mass="40" />
+      <geom size="0.38 0.38 0.05" pos="0 0 0.66" type="box" />
+      <geom size="0.025 0.025 0.305" pos="-0.35 0.35 0.305" type="box" />
+      <geom size="0.025 0.025 0.305" pos="-0.35 -0.35 0.305" type="box" />
+      <geom size="0.025 0.025 0.305" pos="0.35 0.35 0.305" type="box" />
+      <geom size="0.025 0.025 0.305" pos="0.35 -0.35 0.305" type="box" />
+      <site name="handover_food" pos="0 0 0.765" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+      <site name="handover_drinks" pos="-0.2 0 0.765" size="0.05 0.05 0.01" type="box" rgba="0 1 0 0" />
+      <site name="handover_reset_pasta" pos="-0.3 0 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+      <site name="placedrink_goal_usr0" pos="-0.1 -0.2 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+      <site name="placedrink_goal_usr1" pos="0.1 0.2 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+      <site name="place_goal_usr0" pos="0 -0.45 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+      <site name="place_goal_usr1" pos="0 0.45 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+      <site name="pasta_reset_place_usr0" pos="-0.3 -0.45 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+      <site name="pasta_reset_place_usr1" pos="-0.3 0.45 0.765" size="0.05 0.05 0.01" type="box" rgba="1 1 1 0" />
+    </body>
+    <body name="slidecabinet0" pos="0 -2.22 1.7" quat="0.000796327 1 0 0">
+      <body name="slide0" childclass="slidecabinet">
+        <geom size="0.223 0.3 0.02" pos="-0.225 0 -0.18" type="box" />
+        <geom size="0.226 0.3 0.2" pos="0.224 0 0" type="box" />
+        <geom size="0.223 0.3 0.02" pos="-0.225 0 0.18" type="box" />
+        <geom size="0.022 0.3 0.16" pos="-0.426 0 0" type="box" />
+        <geom size="0.21 0.024 0.16" pos="-0.2 0.276 0" type="box" />
+        <geom class="slide_collision" size="0.223 0.3 0.02" pos="-0.225 0 -0.18" type="box" mass="0.2" />
+        <geom class="slide_collision" size="0.226 0.3 0.2" pos="0.224 0 0" type="box" mass="1" />
+        <geom class="slide_collision" size="0.223 0.3 0.02" pos="-0.225 0 0.18" type="box" mass="0.2" />
+        <geom class="slide_collision" size="0.022 0.3 0.16" pos="-0.426 0 0" type="box" mass="0.2" />
+        <geom class="slide_collision" size="0.2 0.024 0.16" pos="-0.2 0.276 0" type="box" mass="0.2" />
+        <body name="slidelink0" pos="-0.225 -0.32 0">
+          <joint name="slidedoor_joint" pos="0 0 0" axis="1 0 0" type="slide" range="0 0.44" />
+          <geom size="0.019 0.053" pos="0.185 -0.06 -0.114" quat="0.707388 0.706825 0 0" type="cylinder" material="M_slide_metal" />
+          <geom class="slide_collision" size="0.019 0.053" pos="0.185 -0.06 -0.114" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.02" />
+          <geom size="0.019 0.053" pos="0.185 -0.06 0.114" quat="0.707388 0.706825 0 0" type="cylinder" material="M_slide_metal" />
+          <geom class="slide_collision" size="0.019 0.053" pos="0.185 -0.06 0.114" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.02" />
+          <geom size="0.022 0.159" pos="0.185 -0.123 0" type="cylinder" material="M_slide_metal" />
+          <geom class="slide_collision" size="0.022 0.159" pos="0.185 -0.123 0" type="cylinder" mass="0.1" />
+          <geom size="0.225 0.03 0.195" pos="0 -0.02 0" type="box" />
+          <geom class="slide_collision" size="0.225 0.03 0.195" pos="0 -0.02 0" type="box" mass="0.2" />
+          <site name="slide0_site" pos="-0.183 -0.123 0" size="0.01" group="3" />
+        </body>
+      </body>
+    </body>
+    <body name="slidecabinet1" pos="-1.6 -2.22 1.7" quat="0.000796327 1 0 0">
+      <body name="slide1" childclass="slidecabinet">
+        <geom size="0.223 0.3 0.02" pos="-0.225 0 -0.18" type="box" />
+        <geom size="0.226 0.3 0.2" pos="0.224 0 0" type="box" />
+        <geom size="0.223 0.3 0.02" pos="-0.225 0 0.18" type="box" />
+        <geom size="0.022 0.3 0.16" pos="-0.426 0 0" type="box" />
+        <geom size="0.21 0.024 0.16" pos="-0.2 0.276 0" type="box" />
+        <geom class="slide_collision" size="0.223 0.3 0.02" pos="-0.225 0 -0.18" type="box" mass="0.2" />
+        <geom class="slide_collision" size="0.226 0.3 0.2" pos="0.224 0 0" type="box" mass="1" />
+        <geom class="slide_collision" size="0.223 0.3 0.02" pos="-0.225 0 0.18" type="box" mass="0.2" />
+        <geom class="slide_collision" size="0.022 0.3 0.16" pos="-0.426 0 0" type="box" mass="0.2" />
+        <geom class="slide_collision" size="0.2 0.024 0.16" pos="-0.2 0.276 0" type="box" mass="0.2" />
+        <body name="slidelink1" pos="-0.225 -0.32 0">
+          <joint name="slidedoor_joint1" pos="0 0 0" axis="1 0 0" type="slide" range="0 0.44" />
+          <geom size="0.019 0.053" pos="0.185 -0.06 -0.114" quat="0.707388 0.706825 0 0" type="cylinder" material="M_slide_metal" />
+          <geom class="slide_collision" size="0.019 0.053" pos="0.185 -0.06 -0.114" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.02" />
+          <geom size="0.019 0.053" pos="0.185 -0.06 0.114" quat="0.707388 0.706825 0 0" type="cylinder" material="M_slide_metal" />
+          <geom class="slide_collision" size="0.019 0.053" pos="0.185 -0.06 0.114" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.02" />
+          <geom size="0.022 0.159" pos="0.185 -0.123 0" type="cylinder" material="M_slide_metal" />
+          <geom class="slide_collision" size="0.022 0.159" pos="0.185 -0.123 0" type="cylinder" mass="0.1" />
+          <geom size="0.225 0.03 0.195" pos="0 -0.02 0" type="box" />
+          <geom class="slide_collision" size="0.225 0.03 0.195" pos="0 -0.02 0" type="box" mass="0.2" />
+          <site name="slide1_site" pos="-0.183 -0.123 0" size="0.01" group="3" />
+        </body>
+      </body>
+    </body>
+    <body name="wall_left">
+      <geom size="1 5.3 4.5" pos="-5 -0.5 2.25" type="box" material="wallpaper_mat" />
+    </body>
+    <body name="wall_right">
+      <geom size="1 5.3 4.5" pos="3 -0.5 2.25" type="box" material="wallpaper_mat" />
+    </body>
+    <body name="wall_back">
+      <geom size="4 1 4.5" pos="-1 -4 2.25" type="box" material="wallpaper_mat" />
+    </body>
+    <body name="ceiling">
+      <geom size="4.5 6.3 0.5" pos="-1 -0.9 4.15" type="box" rgba="1 1 1 1" />
+    </body>
+    <body name="wall_front" pos="-0.75 4 1">
+      <geom size="6 0.01 3" pos="0 0.8 0.2" type="box" />
+    </body>
+    <body name="wheelchair0" pos="-0.3 0.2 0" quat="0.500398 0.5 -0.5 -0.499602">
+      <geom type="mesh" contype="0" conaffinity="0" rgba="0.1 0.1 0.1 1" mesh="wheelchair_mesh" />
+      <camera name="user0_view" pos="0 1.1 -0.15" quat="0.000792348 7.95e-05 0.995004 0.0998334" />
+      <body name="user0" pos="0 0.07 -0.25">
+        <geom type="mesh" contype="0" conaffinity="0" rgba="0.25 0.25 0.25 1" mesh="man_mesh" />
+        <site name="wine_mouth_usr0" pos="0 0.9 0.065" quat="0.685397 -0.175011 0.684852 -0.174871" size="0.008" rgba="1 0 0 0" />
+        <site name="mug_mouth_usr0" pos="0 0.9 0.065" quat="0.510526 -0.859862 0 0" size="0.008" rgba="1 0 0 0" />
+      </body>
+    </body>
+    <body name="wheelchair1" pos="-1.7 0.2 0" quat="0.500398 0.5 0.5 0.499602">
+      <geom type="mesh" contype="0" conaffinity="0" rgba="0.1 0.1 0.1 1" mesh="wheelchair_mesh" />
+      <camera name="user1_view" pos="0 1.1 -0.15" quat="0.000792348 7.95e-05 0.995004 0.0998334" />
+      <body name="user1" pos="0 0.07 -0.25">
+        <geom type="mesh" contype="0" conaffinity="0" rgba="1 1 1 1" mesh="man_mesh" />
+        <site name="wine_mouth_usr1" pos="0 0.9 0.065" quat="0.685397 -0.175011 0.684852 -0.174871" size="0.008" rgba="1 0 0 0" />
+        <site name="mug_mouth_usr1" pos="0 0.9 0.065" quat="0.510526 -0.859862 0 0" size="0.008" rgba="1 0 0 0" />
+      </body>
+    </body>
+    <body name="counter0" pos="-1.5 -1.5 -0.7" quat="0.707388 0 0 0.706825">
+      <body name="box_counter0" childclass="counters">
+        <geom size="0.463 1.08 0.03" pos="-0.855 -0.508 1.57" type="box" material="counter_marble" />
+        <geom size="0.46 1.07 0.777" pos="-0.86 -0.5 0.78" type="box" material="counter_blue" />
+        <geom class="counter_collision" size="0.46 1.07 0.777" pos="-0.86 -0.5 0.78" type="box" mass="5" />
+        <geom class="counter_collision" size="0.463 1.08 0.03" pos="-0.855 -0.508 1.57" type="box" mass="0.5" />
+      </body>
+    </body>
+    <body name="oven" pos="-2.5 -2.5 -0.69" quat="0.000796327 0 0 1">
+      <light name="ovenlighta" class="oven" pos="0 0.2 2.5" dir="0 -0.196116 -0.980581" attenuation="0.05 0.05 0.05" cutoff="75" />
+      <body name="ovenroot" childclass="oven" pos="0.115 -0.2921 0.9834">
+        <geom pos="-0.24 -0.119 0.629" material="oven_black" mesh="burnerplate" />
+        <geom pos="-0.237 0.322 0.629" material="oven_black" mesh="burnerplate" />
+        <geom pos="0.204 0.322 0.629" material="oven_black" mesh="burnerplate" />
+        <geom pos="0.206 -0.119 0.629" material="oven_black" mesh="burnerplate" />
+        <geom size="0.018 0.03" pos="-0.215 -0.36 -0.682" quat="0.707388 0.706825 0 0" type="cylinder" material="oven_black" />
+        <geom size="0.018 0.03" pos="0.184 -0.36 -0.682" quat="0.707388 0.706825 0 0" type="cylinder" material="oven_black" />
+        <geom size="0.022 0.28" pos="-0.015 -0.39 -0.682" quat="0.707388 0 0.706825 0" type="cylinder" material="oven_black" />
+        <geom size="0.018 0.03" pos="-0.215 -0.36 0.254" quat="0.707388 0.706825 0 0" type="cylinder" material="oven_black" />
+        <geom size="0.018 0.03" pos="0.184 -0.36 0.254" quat="0.707388 0.706825 0 0" type="cylinder" material="oven_black" />
+        <geom size="0.022 0.28" pos="-0.015 -0.39 0.254" quat="0.707388 0 0.706825 0" type="cylinder" material="oven_black" />
+        <geom pos="-0.017 0.275 0.607" material="oven_black" mesh="oventop" />
+        <geom pos="0.9793 0.2921 -1.1877" material="oven_black" mesh="ovenwindow" />
+        <geom size="0.35 0.016 0.22" pos="-0.011 -0.327 -0.05" type="box" material="oven_black" />
+        <geom pos="0.203 0.323 0.619" mesh="stoverim" />
+        <geom pos="-0.24 -0.12 0.619" mesh="stoverim" />
+        <geom pos="-0.237 0.323 0.619" mesh="stoverim" />
+        <geom pos="0.207 -0.12 0.619" mesh="stoverim" />
+        <geom pos="-0.115 0.295 -0.98" mesh="oven" />
+        <geom class="oven_collision" size="0.5 0.625 0.81" pos="-0.017 0.28 -0.175" type="box" mass="5" />
+        <geom class="oven_collision" size="0.018 0.03" pos="-0.215 -0.36 -0.682" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.2" />
+        <geom class="oven_collision" size="0.018 0.03" pos="0.184 -0.36 -0.682" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.2" />
+        <geom class="oven_collision" size="0.022 0.28" pos="-0.015 -0.39 -0.682" quat="0.707388 0 0.706825 0" type="cylinder" mass="0.2" />
+        <geom class="oven_collision" size="0.018 0.03" pos="-0.215 -0.36 0.254" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.2" />
+        <geom class="oven_collision" size="0.018 0.03" pos="0.184 -0.36 0.254" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.2" />
+        <geom class="oven_collision" size="0.022 0.28" pos="-0.015 -0.39 0.254" quat="0.707388 0 0.706825 0" type="cylinder" mass="0.2" />
+        <body name="knob 1" pos="-0.148 0.22 1.243" quat="0.707388 0.706825 0 0">
+          <joint name="knob1_joint" pos="0 0 0" axis="0 0 1" range="-1.57 0" />
+          <geom size="0.014 0.048 0.018" pos="0 0 0.038" type="box" />
+          <geom size="0.05 0.008" pos="0 0 0.013" type="cylinder" />
+          <geom size="0.014 0.018" pos="0 0.048 0.037" type="cylinder" rgba="1 0 0 1" />
+          <geom class="oven_collision" size="0.014 0.048 0.018" pos="0 0 0.038" type="box" mass="0.01" />
+          <geom class="oven_collision" size="0.05 0.008" pos="0 0 0.013" type="cylinder" mass="0.01" />
+          <site name="knob1_site" pos="0 0 0.038" size="0.01" group="3" rgba="1 1 0 1" />
+        </body>
+        <body name="Burner 1" pos="0.206 -0.119 0.61">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.001 0.001 0.001" />
+          <joint name="burner1_joint" pos="0 0 0" axis="0 0 -1" type="slide" range="-0.009 0" />
+          <geom size="0.1 0.01" type="cylinder" material="oven_burner" />
+        </body>
+        <body name="knob 2" pos="-0.271 0.22 1.243" quat="0.707388 0.706825 0 0">
+          <joint name="knob2_joint" pos="0 0 0" axis="0 0 1" range="-1.57 0" />
+          <geom size="0.014 0.048 0.018" pos="0 0 0.038" type="box" />
+          <geom size="0.05 0.008" pos="0 0 0.013" type="cylinder" />
+          <geom size="0.014 0.018" pos="0 0.048 0.037" type="cylinder" rgba="1 0 0 1" />
+          <geom class="oven_collision" size="0.014 0.048 0.018" pos="0 0 0.038" type="box" mass="0.01" />
+          <geom class="oven_collision" size="0.05 0.008" pos="0 0 0.013" type="cylinder" mass="0.01" />
+          <site name="knob2_site" pos="0 0 0.038" size="0.01" group="3" rgba="0 0 1 1" />
+        </body>
+        <body name="Burner 2" pos="-0.24 -0.119 0.61">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.001 0.001 0.001" />
+          <joint name="burner2_joint" pos="0 0 0" axis="0 0 -1" type="slide" stiffness="1" range="-0.009 0" />
+          <geom size="0.1 0.01" type="cylinder" material="oven_burner" />
+        </body>
+        <body name="knob 3" pos="-0.148 0.22 1.357" quat="0.707388 0.706825 0 0">
+          <joint name="knob3_joint" pos="0 0 0" axis="0 0 1" range="-1.57 0" />
+          <geom size="0.014 0.048 0.018" pos="0 0 0.038" type="box" />
+          <geom size="0.05 0.008" pos="0 0 0.013" type="cylinder" />
+          <geom size="0.014 0.018" pos="0 0.048 0.037" type="cylinder" rgba="1 0 0 1" />
+          <geom class="oven_collision" size="0.014 0.048 0.018" pos="0 0 0.038" type="box" mass="0.01" />
+          <geom class="oven_collision" size="0.05 0.008" pos="0 0 0.013" type="cylinder" mass="0.01" />
+          <site name="knob3_site" pos="0 0 0.038" size="0.01" group="3" rgba="0 1 0 1" />
+        </body>
+        <body name="Burner 3" pos="0.204 0.322 0.61">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.001 0.001 0.001" />
+          <joint name="burner3_joint" pos="0 0 0" axis="0 0 -1" type="slide" stiffness="1" range="-0.009 0" />
+          <geom size="0.1 0.01" type="cylinder" material="oven_burner" />
+        </body>
+        <body name="knob 4" pos="-0.271 0.22 1.357" quat="0.707388 0.706825 0 0">
+          <joint name="knob4_joint" pos="0 0 0" axis="0 0 1" range="-1.57 0" />
+          <geom size="0.014 0.048 0.018" pos="0 0 0.038" type="box" />
+          <geom size="0.05 0.008" pos="0 0 0.013" type="cylinder" />
+          <geom size="0.014 0.018" pos="0 0.048 0.037" type="cylinder" rgba="1 0 0 1" />
+          <geom class="oven_collision" size="0.014 0.048 0.018" pos="0 0 0.038" type="box" mass="0.01" />
+          <geom class="oven_collision" size="0.05 0.008" pos="0 0 0.013" type="cylinder" mass="0.01" />
+          <site name="knob4_site" pos="0 0 0.038" size="0.01" group="3" rgba="1 0 0 1" />
+        </body>
+        <body name="Burner 4" pos="-0.237 0.322 0.61">
+          <inertial pos="0 0 0" mass="0.01" diaginertia="0.001 0.001 0.001" />
+          <joint name="burner4_joint" pos="0 0 0" axis="0 0 -1" type="slide" stiffness="1" range="-0.009 0" />
+          <geom size="0.1 0.01" type="cylinder" material="oven_burner" />
+        </body>
+      </body>
+      <body name="hoodroot" childclass="oven" pos="0.1 0.188 2.33">
+        <geom pos="-0.1 -0.2896 -2.329" material="oven_black" mesh="hood" />
+        <geom class="oven_collision" size="0.502 0.336 0.12" pos="0 0.073 -0.046" type="box" mass="2" />
+        <body name="lightswitchbaseroot" pos="-0.4 -0.2473 -0.05">
+          <geom pos="0 -0.0123 0" quat="0.707388 -0.706825 0 0" mesh="lightswitchbase" />
+          <body name="lightswitchroot">
+            <inertial pos="-0.0046 0.35 0.0131" mass="0.1" diaginertia="0.001 0.001 0.001" />
+            <joint name="lightswitch_joint" pos="0 0 0" axis="0 0 1" range="-0.7 0" frictionloss="1" />
+            <geom size="0.02 0.035" pos="0.0252 -0.06 0" quat="0.693288 -0.692736 -0.140536 0.140424" type="capsule" />
+            <geom class="oven_collision" size="0.021 0.03" pos="0.0263 -0.065 0" quat="0.693288 -0.692736 -0.140536 0.140424" type="capsule" mass="0" />
+            <site name="light_site" pos="0.0315 -0.075 0" size="0.01" group="3" rgba="1 0 0 1" />
+          </body>
+        </body>
+        <body name="lightblock_hinge" pos="-0.0044 -0.3 -0.1361">
+          <inertial pos="-0.0046 0.35 0.0131" mass="0.01" diaginertia="0.001 0.001 0.001" />
+          <joint name="light_joint" pos="0 0 0" axis="0 0 -1" type="slide" range="-0.05 0" frictionloss="1" />
+          <geom size="0.4 0.3 0.015" pos="-0.008 0.4 -0.01" type="box" material="oven_block" />
+        </body>
+      </body>
+    </body>
+    <body name="dish_drainer" childclass="dish_drainer" pos="-1.8 -2.1 0.9" quat="0.884675 0 0 0.466208">
+      <geom class="visual" quat="0.707105 0.707108 0 0" mass="0" material="dish_drainer" mesh="rack" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_001" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_002" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_003" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_004" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_005" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_006" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_007" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_008" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_009" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_010" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_011" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_012" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_013" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_014" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_015" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_016" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_017" />
+      <geom class="collision" quat="0.707105 0.707108 0 0" mass="0.1" mesh="rack_collision_018" />
+      <site name="plate_slot_1" pos="0 0.08 0.15" quat="0.707105 0.707108 0 0" />
+      <site name="plate_slot_2" pos="0 0.05 0.15" quat="0.707105 0.707108 0 0" />
+      <site name="plate_slot_3" pos="0 0.02 0.15" quat="0.707105 0.707108 0 0" />
+      <site name="plate_slot_4" pos="0 -0.01 0.15" quat="0.707105 0.707108 0 0" />
+      <site name="plate_slot_5" pos="0 -0.04 0.15" quat="0.707105 0.707108 0 0" />
+      <site name="plate_slot_6" pos="0 -0.07 0.15" quat="0.707105 0.707108 0 0" />
+    </body>
+    <body name="spoon0" pos="1 -2.05 0.93" quat="0.601835 0 0 0.798621">
+      <joint name="spoon0_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="spoon" mesh="spoon" />
+      <geom class="ycb_col" type="mesh" mass="0.03" material="spoon" mesh="spoon" />
+    </body>
+    <body name="spoon1" pos="0.85 -2.05 0.93" quat="0.601835 0 0 0.798621">
+      <joint name="spoon1_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="spoon" mesh="spoon" />
+      <geom class="ycb_col" type="mesh" mass="0.03" material="spoon" mesh="spoon" />
+    </body>
+    <body name="fork0" pos="0.65 -2.05 0.93" quat="0.707388 0 0 0.706825">
+      <joint name="fork0_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="fork" mesh="fork" />
+      <geom class="ycb_col" size="0.1 0.02 0.01" pos="-0.02 -0.02 0" type="box" mass="0.034" material="fork" />
+    </body>
+    <body name="fork1" pos="0.5 -2.05 0.93" quat="0.707388 0 0 0.706825">
+      <joint name="fork1_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="fork" mesh="fork" />
+      <geom class="ycb_col" size="0.1 0.02 0.01" pos="-0.02 -0.02 0" type="box" mass="0.034" material="fork" />
+    </body>
+    <body name="cutlery_tray" pos="0.8 -2.1 0.88">
+      <geom size="0.4 0.2 0.005" type="box" rgba="1 1 1 1" />
+      <geom size="0.4 0.2 0.005" type="box" rgba="1 1 1 1" />
+      <geom size="0.4 0.005 0.02" pos="0 0.2 0.015" type="box" rgba="1 1 1 1" />
+      <geom size="0.4 0.005 0.02" pos="0 -0.2 0.015" type="box" rgba="1 1 1 1" />
+      <geom size="0.005 0.2 0.02" pos="0.4 0 0.015" type="box" rgba="1 1 1 1" />
+      <geom size="0.005 0.2 0.02" pos="-0.4 0 0.015" type="box" rgba="1 1 1 1" />
+    </body>
+    <body name="plate0" pos="-1.55 -2.05 1.05" quat="0.675336 -0.209301 -0.675714 -0.208625">
+      <joint name="plate0_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="plate" mesh="plate" />
+      <geom class="ycb_col" type="mesh" mass="0" material="plate" mesh="plate" />
+      <geom class="ycb_col" size="0.015 0.01 0.045" pos="0.14 0 0.01" quat="0.707388 0 0.706825 0" type="box" mass="0.279" />
+      <geom class="ycb_viz" size="0.015 0.01 0.045" pos="0.14 0 0.01" quat="0.707388 0 0.706825 0" type="box" mass="0" rgba="1 1 1 1" />
+    </body>
+    <body name="plate1" pos="-1.58 -2.05 1.05" quat="0.675336 -0.209301 -0.675714 -0.208625">
+      <joint name="plate1_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="plate" mesh="plate" />
+      <geom class="ycb_col" type="mesh" mass="0" material="plate" mesh="plate" />
+      <geom class="ycb_col" size="0.015 0.01 0.045" pos="0.14 0 0.01" quat="0.707388 0 0.706825 0" type="box" mass="0.279" />
+      <geom class="ycb_viz" size="0.015 0.01 0.045" pos="0.14 0 0.01" quat="0.707388 0 0.706825 0" type="box" mass="0" rgba="1 1 1 1" />
+    </body>
+    <body name="bowl_section" pos="-1.8 -2.05 1.75">
+      <geom name="bowl_shelf_1" size="0.2 0.12 0.005" pos="0 0 -0.08" type="box" rgba="0 0 0 1" />
+    </body>
+    <body name="bowl0" childclass="grab" pos="-1.85 -2.05 1.6" quat="0.707388 0 0 0.706825">
+      <joint name="bowl0_joint" type="free" margin="0" armature="0" frictionloss="0" />
+      <geom name="bowl0_visual" mesh="bowl" />
+      <geom name="bowl0_contact0" class="object_col" mass="0" mesh="bowl_contact0" />
+      <geom name="bowl0_contact1" class="object_col" mass="0" mesh="bowl_contact1" />
+      <geom name="bowl0_contact2" class="object_col" mass="0" mesh="bowl_contact2" />
+      <geom name="bowl0_contact3" class="object_col" mass="0" mesh="bowl_contact3" />
+      <geom name="bowl0_contact4" class="object_col" mass="0" mesh="bowl_contact4" />
+      <geom name="bowl0_contact5" class="object_col" mass="0" mesh="bowl_contact5" />
+      <geom name="bowl0_contact6" class="object_col" mass="0" mesh="bowl_contact6" />
+      <geom name="bowl0_contact7" class="object_col" mass="0" mesh="bowl_contact7" />
+      <geom name="bowl0_contact8" class="object_col" mass="0" mesh="bowl_contact8" />
+      <geom name="bowl0_contact9" class="object_col" mass="0" mesh="bowl_contact9" />
+      <geom name="bowl0_contact10" class="object_col" mass="0" mesh="bowl_contact10" />
+      <geom name="bowl0_contact11" class="object_col" mass="0" mesh="bowl_contact11" />
+      <geom class="object_col" size="0.02 0.01 0.05" pos="0.08 0 -0.019" quat="0.707388 0 0.706825 0" type="box" />
+      <geom size="0.02 0.01 0.05" pos="0.08 0 -0.019" quat="0.707388 0 0.706825 0" type="box" contype="0" conaffinity="0" rgba="1 0 0 1" />
+    </body>
+    <body name="bowl1" childclass="grab" pos="-1.85 -2.05 1.75" quat="0.707388 0 0 0.706825">
+      <joint name="bowl1_joint" type="free" margin="0" armature="0" frictionloss="0" />
+      <geom name="bowl1_visual" mesh="bowl" />
+      <geom name="bowl1_contact0" class="object_col" mass="0" mesh="bowl_contact0" />
+      <geom name="bowl1_contact1" class="object_col" mass="0" mesh="bowl_contact1" />
+      <geom name="bowl1_contact2" class="object_col" mass="0" mesh="bowl_contact2" />
+      <geom name="bowl1_contact3" class="object_col" mass="0" mesh="bowl_contact3" />
+      <geom name="bowl1_contact4" class="object_col" mass="0" mesh="bowl_contact4" />
+      <geom name="bowl1_contact5" class="object_col" mass="0" mesh="bowl_contact5" />
+      <geom name="bowl1_contact6" class="object_col" mass="0" mesh="bowl_contact6" />
+      <geom name="bowl1_contact7" class="object_col" mass="0" mesh="bowl_contact7" />
+      <geom name="bowl1_contact8" class="object_col" mass="0" mesh="bowl_contact8" />
+      <geom name="bowl1_contact9" class="object_col" mass="0" mesh="bowl_contact9" />
+      <geom name="bowl1_contact10" class="object_col" mass="0" mesh="bowl_contact10" />
+      <geom name="bowl1_contact11" class="object_col" mass="0" mesh="bowl_contact11" />
+      <geom class="object_col" size="0.02 0.01 0.05" pos="0.08 0 -0.019" quat="0.707388 0 0.706825 0" type="box" />
+      <geom size="0.02 0.01 0.05" pos="0.08 0 -0.019" quat="0.707388 0 0.706825 0" type="box" contype="0" conaffinity="0" rgba="1 0 0 1" />
+    </body>
+    <body name="wine_glass0" pos="-0.13 -1.95 1.665" quat="0.707388 0.706825 0 0">
+      <joint name="wine_glass0_joint" type="free" />
+      <geom class="ycb_viz" mass="0" mesh="wine_mesh" />
+      <geom class="ycb_col" size="0.022 0.022 0.055" pos="0 0.065 -0.01" quat="0.707388 0.706825 0 0" type="box" mass="0.03" />
+      <geom class="ycb_col" size="0.01 0.01 0.065" pos="0 -0.054 -0.01" quat="0.707388 0.706825 0 0" type="box" mass="0.01" />
+      <geom class="ycb_col" size="0.03 0.03 0.007" pos="0 -0.115 -0.01" quat="0.707388 0.706825 0 0" type="box" mass="0.01" />
+    </body>
+    <body name="wine_glass1" pos="-0.3 -1.95 1.665" quat="0.707388 0.706825 0 0">
+      <joint name="wine_glass1_joint" type="free" />
+      <geom class="ycb_viz" mass="0" mesh="wine_mesh" />
+      <geom class="ycb_col" size="0.022 0.022 0.055" pos="0 0.065 -0.01" quat="0.707388 0.706825 0 0" type="box" mass="0.03" />
+      <geom class="ycb_col" size="0.01 0.01 0.065" pos="0 -0.054 -0.01" quat="0.707388 0.706825 0 0" type="box" mass="0.01" />
+      <geom class="ycb_col" size="0.03 0.03 0.007" pos="0 -0.115 -0.01" quat="0.707388 0.706825 0 0" type="box" mass="0.01" />
+    </body>
+    <body name="mug0" pos="0 -1.93 0.9" quat="0.707388 0 0 0.706825">
+      <joint name="mug0_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="mug" mesh="mug" />
+      <geom class="ycb_col" size="0.06 0.06 0.05" pos="-0.03 0.025 0.05" type="box" mass="0.06" material="mug" />
+      <geom class="ycb_col" size="0.015 0.01 0.038" pos="0.047 0.025 0.05" type="box" mass="0.06" material="mug" />
+      <site name="mug0" pos="0 0 0" />
+    </body>
+    <body name="mug1" pos="-0.4 -1.93 0.9" quat="0.707388 0 0 0.706825">
+      <joint name="mug1_joint" type="free" />
+      <geom class="ycb_viz" mass="0" material="mug" mesh="mug" />
+      <geom class="ycb_col" size="0.06 0.06 0.05" pos="-0.03 0.025 0.05" type="box" mass="0.06" material="mug" />
+      <geom class="ycb_col" size="0.015 0.01 0.038" pos="0.047 0.025 0.05" type="box" mass="0.06" material="mug" />
+      <site name="mug1" pos="0 0 0" />
+    </body>
+    <body name="simpleWoodTable_holder_body" childclass="body_simpleTable" pos="0.8 -2.3 0" quat="0.707388 0 0 0.706825">
+      <geom class="viz_simpleWoodTable" size="0.4 0.6 0.025" pos="0 0 0.85" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.38 0.38 0.05" pos="0 0 0.775" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.42" pos="-0.35 0.35 0.42" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.42" pos="-0.35 -0.35 0.42" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.42" pos="0.35 0.35 0.42" type="box" />
+      <geom class="viz_simpleWoodTable" size="0.025 0.025 0.42" pos="0.35 -0.35 0.42" type="box" />
+      <geom size="0.4 0.6 0.025" pos="0 0 0.85" type="box" mass="40" />
+      <geom size="0.38 0.38 0.05" pos="0 0 0.775" type="box" />
+      <geom size="0.025 0.025 0.42" pos="-0.35 0.35 0.42" type="box" />
+      <geom size="0.025 0.025 0.42" pos="-0.35 -0.35 0.42" type="box" />
+      <geom size="0.025 0.025 0.42" pos="0.35 0.35 0.42" type="box" />
+      <geom size="0.025 0.025 0.42" pos="0.35 -0.35 0.42" type="box" />
+    </body>
+    <body name="pan" pos="-2.15 -1.7 0.93" quat="0.683248 0.682704 -0.183223 -0.183077">
+      <joint name="pan_joint" type="free" />
+      <geom class="ycb_viz" mass="0" mesh="pan_mesh" />
+      <geom class="ycb_col" size="0.02 0.01 0.1" pos="0 0.06 0.12" quat="0.99639 0.0848977 0 0" type="box" mass="0.3" />
+      <geom class="ycb_col" size="0.12 0.01" pos="0 0.01 0.33" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.3" />
+      <body name="pasta" pos="0 0.01 0.36" quat="0.707388 -0.706825 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" material="pasta_mat" mesh="pasta_mesh" />
+      </body>
+    </body>
+    <body name="pan_far" pos="-2.365 -2 0.93" quat="0.707388 0.706825 0 0">
+      <joint name="pan_far_joint" type="free" />
+      <geom class="ycb_viz" mass="0" mesh="pan_mesh" />
+      <geom class="ycb_col" size="0.02 0.01 0.1" pos="0 0.06 0.12" quat="0.99639 0.0848977 0 0" type="box" mass="0.3" />
+      <geom class="ycb_col" size="0.12 0.01" pos="0 0.01 0.33" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.3" />
+      <body name="pasta_far" pos="0 0.01 0.36" quat="0.707388 -0.706825 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" material="pasta_mat" mesh="pasta_mesh" />
+      </body>
+    </body>
+    <body name="pot" pos="-2.82 -2.1 0.935" quat="0.35355 0.35355 0.612375 0.612375">
+      <joint name="pot_joint" type="free" />
+      <geom class="ycb_viz" mass="0" mesh="pot_mesh" />
+      <geom class="ycb_col" size="0.03 0.11 0.015" pos="0.23 0.11 0" quat="0.63329 0 0 0.773915" type="box" mass="0.3" />
+      <geom class="ycb_col" size="0.13 0.015" pos="0 0.01 0" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.2" />
+      <geom name="soup" size="0.12 0.12 0.03" pos="0 0.05 0" quat="0.707388 0.706825 0 0" type="ellipsoid" contype="0" conaffinity="0" rgba="0.9 0.3 0.1 1" />
+    </body>
+    <body name="pot_far" pos="-2.82 -2.4 0.935" quat="0.500398 0.499602 0.5 0.5">
+      <joint name="pot_far_joint" type="free" />
+      <geom class="ycb_viz" mass="0" mesh="pot_mesh" />
+      <geom class="ycb_col" size="0.03 0.11 0.015" pos="0.23 0.11 0" quat="0.63329 0 0 0.773915" type="box" mass="0.3" />
+      <geom class="ycb_col" size="0.13 0.015" pos="0 0.01 0" quat="0.707388 0.706825 0 0" type="cylinder" mass="0.2" />
+      <geom name="soup_far" size="0.12 0.12 0.03" pos="0 0.05 0" quat="0.707388 0.706825 0 0" type="ellipsoid" contype="0" conaffinity="0" rgba="0.9 0.3 0.1 1" />
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="robotiq0_2f_85_right_follower" body2="robotiq0_2f_85_right_spring_link" />
+    <exclude body1="robotiq0_2f_85_left_follower" body2="robotiq0_2f_85_left_spring_link" />
+    <exclude body1="robotiq1_2f_85_right_follower" body2="robotiq1_2f_85_right_spring_link" />
+    <exclude body1="robotiq1_2f_85_left_follower" body2="robotiq1_2f_85_left_spring_link" />
+  </contact>
+  <equality>
+    <connect name="robotiq0_2f_85_right" body1="robotiq0_2f_85_right_spring_link" body2="robotiq0_2f_85_right_follower" anchor="0 0.037 0.043" solref="0.005 1" solimp="0.95 0.99 0.001 0.5 2" />
+    <connect name="robotiq0_2f_85_left" body1="robotiq0_2f_85_left_spring_link" body2="robotiq0_2f_85_left_follower" anchor="0 0.037 0.043" solref="0.005 1" solimp="0.95 0.99 0.001 0.5 2" />
+    <joint joint1="robotiq0_2f_85_right_driver_joint" joint2="robotiq0_2f_85_left_driver_joint" polycoef="0 1 0 0 0" solref="0.005 1" solimp="0.95 0.99 0.001 0.5 2" />
+    <connect name="robotiq1_2f_85_right" body1="robotiq1_2f_85_right_spring_link" body2="robotiq1_2f_85_right_follower" anchor="0 0.037 0.043" solref="0.005 1" solimp="0.95 0.99 0.001 0.5 2" />
+    <connect name="robotiq1_2f_85_left" body1="robotiq1_2f_85_left_spring_link" body2="robotiq1_2f_85_left_follower" anchor="0 0.037 0.043" solref="0.005 1" solimp="0.95 0.99 0.001 0.5 2" />
+    <joint joint1="robotiq1_2f_85_right_driver_joint" joint2="robotiq1_2f_85_left_driver_joint" polycoef="0 1 0 0 0" solref="0.005 1" solimp="0.95 0.99 0.001 0.5 2" />
+    <joint joint1="knob1_joint" joint2="burner1_joint" polycoef="0 174 0 0 0" />
+    <joint joint1="knob2_joint" joint2="burner2_joint" polycoef="0 174 0 0 0" />
+    <joint joint1="knob3_joint" joint2="burner3_joint" polycoef="0 174 0 0 0" />
+    <joint joint1="knob4_joint" joint2="burner4_joint" polycoef="0 174 0 0 0" />
+    <joint joint1="lightswitch_joint" joint2="light_joint" polycoef="0 14 0 0 0" />
+  </equality>
+  <actuator>
+    <general name="joint_x_0" joint="joint_x_0" ctrlrange="-5 5" forcerange="-100 100" biastype="affine" gainprm="10000 0 0 0 0 0 0 0 0 0" biasprm="0 -10000 -5000 0 0 0 0 0 0 0" />
+    <general name="joint_y_0" joint="joint_y_0" ctrlrange="-5 5" forcerange="-100 100" biastype="affine" gainprm="10000 0 0 0 0 0 0 0 0 0" biasprm="0 -10000 -5000 0 0 0 0 0 0 0" />
+    <general name="joint_th_0" joint="joint_th_0" ctrlrange="-34.1 34.1" forcerange="-10 10" biastype="affine" gainprm="300 0 0 0 0 0 0 0 0 0" biasprm="0 -300 -200 0 0 0 0 0 0 0" />
+    <general name="panda0_joint1" class="panda" joint="panda0_joint1" ctrlrange="-2.9671 2.9671" forcerange="-87 87" gainprm="4500 0 0 0 0 0 0 0 0 0" biasprm="0 -4500 -135 0 0 0 0 0 0 0" />
+    <general name="panda0_joint2" class="panda" joint="panda0_joint2" ctrlrange="-1.8326 1.8326" forcerange="-87 87" gainprm="4500 0 0 0 0 0 0 0 0 0" biasprm="0 -4500 -135 0 0 0 0 0 0 0" />
+    <general name="panda0_joint3" class="panda" joint="panda0_joint3" ctrlrange="-2.9671 2.9671" forcerange="-87 87" gainprm="3500 0 0 0 0 0 0 0 0 0" biasprm="0 -3500 -118 0 0 0 0 0 0 0" />
+    <general name="panda0_joint4" class="panda" joint="panda0_joint4" ctrlrange="-3.1416 0" forcerange="-87 87" gainprm="3500 0 0 0 0 0 0 0 0 0" biasprm="0 -3500 -118 0 0 0 0 0 0 0" />
+    <general name="panda0_joint5" class="panda" joint="panda0_joint5" ctrlrange="-2.9671 2.9671" forcerange="-12 12" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    <general name="panda0_joint6" class="panda" joint="panda0_joint6" ctrlrange="-1.66 2.1817" forcerange="-12 12" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    <general name="panda0_joint7" class="panda" joint="panda0_joint7" ctrlrange="-2.9671 2.9671" forcerange="-12 12" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    <general name="robotiq0_2f_85" joint="robotiq0_2f_85_right_driver_joint" ctrlrange="0 1" biastype="affine" biasprm="0 -1 0 0 0 0 0 0 0 0" />
+    <general name="joint_x_1" joint="joint_x_1" ctrlrange="-5 5" forcerange="-100 100" biastype="affine" gainprm="10000 0 0 0 0 0 0 0 0 0" biasprm="0 -10000 -5000 0 0 0 0 0 0 0" />
+    <general name="joint_y_1" joint="joint_y_1" ctrlrange="-5 5" forcerange="-100 100" biastype="affine" gainprm="10000 0 0 0 0 0 0 0 0 0" biasprm="0 -10000 -5000 0 0 0 0 0 0 0" />
+    <general name="joint_th_1" joint="joint_th_1" ctrlrange="-34.1 34.1" forcerange="-10 10" biastype="affine" gainprm="300 0 0 0 0 0 0 0 0 0" biasprm="0 -300 -200 0 0 0 0 0 0 0" />
+    <general name="panda1_joint1" class="panda" joint="panda1_joint1" ctrlrange="-2.9671 2.9671" forcerange="-87 87" gainprm="4500 0 0 0 0 0 0 0 0 0" biasprm="0 -4500 -135 0 0 0 0 0 0 0" />
+    <general name="panda1_joint2" class="panda" joint="panda1_joint2" ctrlrange="-1.8326 1.8326" forcerange="-87 87" gainprm="4500 0 0 0 0 0 0 0 0 0" biasprm="0 -4500 -135 0 0 0 0 0 0 0" />
+    <general name="panda1_joint3" class="panda" joint="panda1_joint3" ctrlrange="-2.9671 2.9671" forcerange="-87 87" gainprm="3500 0 0 0 0 0 0 0 0 0" biasprm="0 -3500 -118 0 0 0 0 0 0 0" />
+    <general name="panda1_joint4" class="panda" joint="panda1_joint4" ctrlrange="-3.1416 0" forcerange="-87 87" gainprm="3500 0 0 0 0 0 0 0 0 0" biasprm="0 -3500 -118 0 0 0 0 0 0 0" />
+    <general name="panda1_joint5" class="panda" joint="panda1_joint5" ctrlrange="-2.9671 2.9671" forcerange="-12 12" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    <general name="panda1_joint6" class="panda" joint="panda1_joint6" ctrlrange="-1.66 2.1817" forcerange="-12 12" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    <general name="panda1_joint7" class="panda" joint="panda1_joint7" ctrlrange="-2.9671 2.9671" forcerange="-12 12" gainprm="120 0 0 0 0 0 0 0 0 0" biasprm="0 -120 0 0 0 0 0 0 0 0" />
+    <general name="robotiq1_2f_85" joint="robotiq1_2f_85_right_driver_joint" ctrlrange="0 1" biastype="affine" biasprm="0 -1 0 0 0 0 0 0 0 0" />
+  </actuator>
+  <sensor>
+    <jointpos joint="panda0_joint1" name="fr_arm_jp1" />
+    <jointpos joint="panda0_joint2" name="fr_arm_jp2" />
+    <jointpos joint="panda0_joint3" name="fr_arm_jp3" />
+    <jointpos joint="panda0_joint4" name="fr_arm_jp4" />
+    <jointpos joint="panda0_joint5" name="fr_arm_jp5" />
+    <jointpos joint="panda0_joint6" name="fr_arm_jp6" />
+    <jointpos joint="panda0_joint7" name="fr_arm_jp7" />
+    <jointvel joint="panda0_joint1" name="fr_arm_jv1" />
+    <jointvel joint="panda0_joint2" name="fr_arm_jv2" />
+    <jointvel joint="panda0_joint3" name="fr_arm_jv3" />
+    <jointvel joint="panda0_joint4" name="fr_arm_jv4" />
+    <jointvel joint="panda0_joint5" name="fr_arm_jv5" />
+    <jointvel joint="panda0_joint6" name="fr_arm_jv6" />
+    <jointvel joint="panda0_joint7" name="fr_arm_jv7" />
+    <jointpos joint="robotiq0_2f_85_right_driver_joint" name="robotiq0_2f_85" />
+    <jointpos joint="robotiq1_2f_85_right_driver_joint" name="robotiq1_2f_85" />
+    <jointpos joint="knob1_joint" name="knob1_joint" />
+    <jointpos joint="knob2_joint" name="knob2_joint" />
+    <jointpos joint="knob3_joint" name="knob3_joint" />
+    <jointpos joint="knob4_joint" name="knob4_joint" />
+    <jointpos joint="lightswitch_joint" name="lightswitch_joint" />
+    <jointpos joint="slidedoor_joint" name="slidedoor_joint" />
+  </sensor>
+</mujoco>

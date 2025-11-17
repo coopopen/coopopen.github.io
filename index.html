@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Levels of Shared Autonomy in Brain-Robot Interfaces: Enabling Multi-Human Multi-Robot Collaboration for Activities of Daily Living.">
+  <meta name="keywords" content="Brain-Robot Interface, Shared Autonomy, Multi-Robot, Multi-Human">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Levels of Shared Autonomy in Brain-Robot Interfaces</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">More Research</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Your Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title" style="white-space: nowrap;">
+              Levels of Shared Autonomy in Brain-Robot Interfaces
+            </h1>
+            <h2 class="subtitle is-4" style="white-space: nowrap;">
+              Enabling Multi-Human Multi-Robot Collaboration for Activities of Daily Living
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <strong>
+                  Hannah Douglas†, Marina Di Vincenzo†, Rousslan Fernand Julien Dossa†,<br>
+                  Luca Nunziante†, Shivakanth Sujit, Kai Arulkumaran
+                </strong>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Araya Inc., Tokyo, Japan</span>
+              <span class="author-block"><em>†Equal contributions</em></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./static/pdf/yourpaper.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper PDF</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview Section -->
+  <section class="section" id="overview">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Project Overview</h2>
+          <div class="content">
+            <video src="static/videos/NavigationLevel1.mp4" controls
+              style="display:block; margin:0 auto; max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Individuals with ALS and other severe motor impairments often rely on caregivers for daily tasks, which
+              limits their independence and sense of control.
+              Brain-robot interfaces (BRIs) have the potential to restore autonomy, but existing systems are often
+              task-specific and highly automated.
+            </p>
+            <p>
+              In this work, we introduce a collaborative BRI that integrates non-invasive EEG, EMG, and eye tracking to
+              enable multi-user, multi-robot interaction in a shared kitchen environment.
+              Our system supports three levels of autonomy, balancing user control and robotic assistance.
+            </p>
+            <p>
+              Results from our study show that intermediate autonomy provided the highest task success and fastest
+              completion times while maintaining user agency and trust.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivation Section -->
+  <section class="section" id="motivation">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Motivation</h2>
+          <div class="content">
+            <p>
+              We aim to advance assistive robotics to empower people using wheelchairs in their daily
+              lives. By enabling intuitive collaboration between humans and robots,
+              <strong>Coop OpenEnded</strong> explores how technology can support independence
+              and improve quality of life.
+            </p>
+          </div>
+          <figure class="image" style="margin-top:20px;">
+            <img src="static/images/love.jpg" alt="Motivation image"
+              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assistive Kitchen Section -->
+  <section class="section" id="assistive-kitchen">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Assistive Kitchen</h2>
+          <div class="content">
+            <p>
+              Our experiments take place in a simulated assistive kitchen, a testbed designed to study how people and
+              robots collaborate in everyday tasks. The environment includes a central table, storage areas, and common
+              objects such as cubes, utensils, and containers, arranged to mimic a realistic household setup.
+            </p>
+            <p>
+              Within this setting, participants and robots work together on pick-and-place tasks, such as moving objects
+              from one area to another, organizing items on the table, or retrieving them from storage. These tasks
+              allow us to evaluate different forms of human input and robot autonomy in a familiar and meaningful
+              context.
+            </p>
+            <p>
+              The assistive kitchen is more than just a testbed—it provides a controlled yet realistic environment where
+              we can explore how collaboration unfolds, how users adapt to varying autonomy levels, and what design
+              choices make robotic systems more usable and supportive in everyday life.
+            </p>
+          </div>
+          <figure class="image" style="margin-top:20px;">
+            <video controls
+              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
+              <source src="static/videos/NavigationLevel1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robot's Task Execution Section -->
+  <section class="section" id="robots-task-execution">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Robot’s Task Execution</h2>
+          <div class="content">
+            <p>
+              Each robot arm is mounted on a holonomic base and manipulation tasks are learned via Imitation Learning
+              from 70 human demonstrations. We use a flow-matching deep learning model trained on RGB point clouds. We
+              ensure safe and reliable motion using a control barrier function based controller on top of the learned
+              policy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Robot Task Videos Grid -->
+  <section id="robot-task-videos" style="padding:1rem 0;">
+    <div class="container is-max-desktop">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem 0.5rem;">
+
+        <!-- Video 1 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/pickpasta.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Pick Pasta</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/picksoup.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Pick Soup</p>
+        </div>
+
+        <!-- Video 3 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/pickwine.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Pick Wine</p>
+        </div>
+
+        <!-- Video 4 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/pickbeer.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Pick Beer</p>
+        </div>
+
+        <!-- Video 5 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/placepasta.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Place Pasta</p>
+        </div>
+
+        <!-- Video 6 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/placesoup.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Place Soup</p>
+        </div>
+
+        <!-- Video 7 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/placewine.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Place Wine</p>
+        </div>
+
+        <!-- Video 8 -->
+        <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
+          <video src="static/videos/placebeer.mp4" loop autoplay muted
+            style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          </video>
+          <p style="margin:0.25rem 0 0 0;">Place Beer</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- System's Interface Devices and Control Section -->
+  <section class="section" id="system-interface">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">System’s Interface Devices and Control</h2>
+          <div class="content">
+            <p>
+              Our platform integrates multiple input devices to enable intuitive human–robot interaction. Participants
+              controlled the robot using a combination of EEG signals (motor imagery), EMG activity (muscle signals),
+              and eye-tracking (gaze selection).
+            </p>
+            <p>
+              These signals were mapped to different robot autonomy levels: from direct teleoperation, where users
+              managed movements step by step, to shared autonomy, where human intent guided the robot, up to full
+              automation, where the system acted independently after goal selection.
+            </p>
+            <p>
+              This multimodal approach allowed us to explore how different control strategies affect performance,
+              workload, and the overall collaboration experience.
+            </p>
+          </div>
+          <figure class="image" style="margin-top:20px;">
+            <video controls
+              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
+              <source src="static/videos/navigationlevel1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- The Shared Autonomy Study Section -->
+  <section class="section" id="shared-autonomy-study">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">The Shared Autonomy Study</h2>
+          <div class="content">
+            <p>
+              We conducted a user study to explore how different levels of robot autonomy affect human-robot
+              collaboration in pick-and-place tasks. A total of 18 participants were involved, divided across three
+              experimental conditions representing low, medium, and high autonomy. Participants interacted with the
+              robot in a controlled kitchen setting.
+            </p>
+            <p>
+              The study provides insights into how autonomy influences engagement, efficiency, and perceived control in
+              shared human-robot tasks.
+            </p>
+          </div>
+          <figure class="image" style="margin-top:20px;">
+            <video controls
+              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
+              <source src="static/videos/navigationlevel1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Control Across Autonomy Levels Section -->
+  <section class="section" id="control-autonomy-levels">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Control Across Autonomy Levels</h2>
+          <div class="content">
+            <p>
+              Participants controlled the robot using a combination of EEG, EMG, and eye-tracking signals. These input
+              modalities were mapped differently depending on the robot's autonomy level.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Scroll Video Strip with Bigger Black Strip and Bottom Arrows -->
+  <section id="autonomy-videos-strip"
+    style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
+
+    <!-- Scrollable Video Container -->
+    <div id="video-strip" style="
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 64px;
+    padding: 2rem 200px;  /* spazio a sinistra e destra e verticale */
+    scrollbar-width: none;
+  ">
+      <!-- Video 1 -->
+      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+        <video src="static/videos/navigationlevel1.mp4" loop autoplay muted
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);">
+        </video>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 1<br>Assisted Teleoperation</p>
+      </div>
+      <!-- Video 2 -->
+      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+        <video src="static/videos/navigationlevel1.mp4" loop autoplay muted
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);">
+        </video>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 2<br>Shared Autonomy</p>
+      </div>
+      <!-- Video 3 -->
+      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+        <video src="static/videos/navigationlevel1.mp4" loop autoplay muted
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);">
+        </video>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 3<br>Full Automation</p>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Arrows -->
+    <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
+      <button id="scroll-left" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
+      <button id="scroll-right" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+    </div>
+
+  </section>
+
+  <script>
+    const videoStrip = document.getElementById('video-strip');
+    const gap = 64;
+    const videoWidth = 800;
+    const sidePadding = 200; // padding sinistro/destro
+
+    document.getElementById('scroll-left').addEventListener('click', () => {
+      videoStrip.scrollBy({ left: -(videoWidth + gap), behavior: 'smooth' });
+    });
+
+    document.getElementById('scroll-right').addEventListener('click', () => {
+      videoStrip.scrollBy({ left: videoWidth + gap, behavior: 'smooth' });
+    });
+
+    // Centrare inizialmente il livello 2
+    window.addEventListener('load', () => {
+      const containerWidth = videoStrip.clientWidth;
+      const video2Center = sidePadding + (videoWidth + gap) + videoWidth / 2;
+      videoStrip.scrollLeft = video2Center - containerWidth / 2;
+    });
+  </script>
+
+  <style>
+    .nav-arrow {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 28px;
+      /* Posizione delle frecce sotto i video */
+      position: relative;
+    }
+
+    /* Nascondi scrollbar su Webkit */
+    #video-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Responsive Scaling */
+    @media (max-width: 1400px) {
+      .video-item video {
+        width: 600px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .video-item video {
+        width: 500px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .video-item video {
+        width: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-item video {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-item video {
+        width: 250px;
+        padding: 0 16px;
+      }
+    }
+  </style>
+
+  <!-- Results Section -->
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+          <div class="content">
+            <p>
+              Our study revealed clear differences across the three autonomy levels. Task performance improved with
+              higher autonomy: <strong>SA (Level 2)</strong> and <strong>FA (Level 3)</strong> achieved higher success
+              rates and faster completion times compared to <strong>AT (Level 1)</strong>. Cognitive workload decreased
+              as autonomy increased, with participants reporting the highest effort during AT.
+            </p>
+            <p>
+              Usability also improved, with SUS scores rising from AT to SA and FA. Measures of sense of agency and
+              ownership showed that AT and SA provided more control and engagement, while FA offered efficiency at the
+              cost of reduced direct control. Qualitative feedback highlighted that participants appreciated the balance
+              of SA, valued FA for routine tasks, and recognized the high effort required for AT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Horizontal Scroll Image Strip with Zoom -->
+  <section id="results-images-strip"
+    style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
+
+    <!-- Scrollable Image Container -->
+    <div id="image-strip" style="
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 64px;
+    padding: 2rem 200px;
+    scrollbar-width: none;
+  ">
+      <!-- Image 1 -->
+      <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
+        <img src="static/images/love.jpg" alt="Result Image 1"
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
+          class="zoomable">
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Result 1</p>
+        <!-- Lente sopra l'immagine -->
+        <div class="zoom-icon" style="
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+      ">&#128269;</div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
+        <img src="static/images/love.jpg" alt="Result Image 2" class="zoomable"
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;">
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Result 2</p>
+        <div class="zoom-icon" style="
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+      ">&#128269;</div>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
+        <img src="static/images/love.jpg" alt="Result Image 3" class="zoomable"
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;">
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Result 3</p>
+        <div class="zoom-icon" style="
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+      ">&#128269;</div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Arrows -->
+    <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
+      <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
+      <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  ">
+      <img id="lightbox-img" src="" style="max-width: 90%; max-height: 90%; border-radius:5px;">
+    </div>
+
+  </section>
+
+  <script>
+    const imageStrip = document.getElementById('image-strip');
+    const gapImg = 64;
+    const imageWidth = 800;
+    const sidePaddingImg = 200;
+
+    // Scroll frecce
+    document.getElementById('scroll-left-img').addEventListener('click', () => {
+      imageStrip.scrollBy({ left: -(imageWidth + gapImg), behavior: 'smooth' });
+    });
+
+    document.getElementById('scroll-right-img').addEventListener('click', () => {
+      imageStrip.scrollBy({ left: imageWidth + gapImg, behavior: 'smooth' });
+    });
+
+    // Centrare inizialmente la seconda immagine
+    window.addEventListener('load', () => {
+      const containerWidth = imageStrip.clientWidth;
+      const img2Center = sidePaddingImg + (imageWidth + gapImg) + imageWidth / 2;
+      imageStrip.scrollLeft = img2Center - containerWidth / 2;
+    });
+
+    // Lightbox Zoom su immagine e lente
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      const parent = img.parentElement;
+      const zoomIcon = parent.querySelector('.zoom-icon');
+
+      const openLightbox = () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      };
+
+      img.addEventListener('click', openLightbox);
+      if (zoomIcon) zoomIcon.addEventListener('click', openLightbox);
+    });
+
+    // Chiudi lightbox cliccando sullo sfondo
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+  </script>
+
+  <style>
+    .nav-arrow {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 28px;
+      position: relative;
+    }
+
+    #image-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 1400px) {
+      .image-item img {
+        width: 600px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .image-item img {
+        width: 500px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .image-item img {
+        width: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .image-item img {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-item img {
+        width: 250px;
+        padding: 0 16px;
+      }
+    }
+
+    .zoom-icon:hover {
+      background: rgba(255, 255, 255, 0.7);
+      color: #000;
+      transition: all 0.2s ease;
+    }
+  </style>
+
+  <!-- What We Learned Section -->
+  <section class="section" id="what-we-learned" style="padding: 4rem 0; background-color: #f9f9f9;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">What We Learned</h2>
+          <div class="content" style="margin-top: 1.5rem; font-size: 1.1rem; line-height: 1.7;">
+            <p>
+              <strong>Shared Autonomy (SA, level 2)</strong> offered the most balanced experience – high task success,
+              moderate workload, and preserved user agency.
+            </p>
+            <p>
+              <strong>Full Automation (FA, level 3)</strong> maximized speed and reduced effort – but users had less
+              control, and occasional EEG mis-selections affected accuracy.
+            </p>
+            <p>
+              <strong>Assisted Teleoperation (AT, level 1)</strong> gave full control – but required higher mental and
+              physical effort and longer task times.
+            </p>
+            <p>
+              Sense of control varied with autonomy – AT and SA gave stronger prospective agency, FA increased sense of
+              ownership by the robot.
+            </p>
+            <p>
+              User feedback highlights context-dependent preferences – hybrid or adaptive systems could provide the best
+              support, especially for tasks involving motor impairments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Meet the Team Section -->
+  <section class="section" id="meet-the-team" style="padding: 4rem 0; background-color: #f9f9f9;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Meet the Team</h2>
+
+          <!-- Video Strip -->
+          <div id="team-image-strip" style="
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: center;
+          gap: 16px;
+          margin-top: 2rem;
+        ">
+            <!-- 1 -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/1.png" alt="Example image"
+                style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            </div>
+            <!--  2 -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/2.png" alt="Example image"
+                style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            </div>
+            <!--  3 -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/3.png" alt="Example image"
+                style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            </div>
+            <!--  4 -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/4.png" alt="Example image"
+                style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            </div>
+            <!--  5 -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/5.png" alt="Example image"
+                style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            </div>
+            <!--  6 -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/6.png" alt="Example image"
+                style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Nessuno scroll, tutti i video visibili */
+    #team-video-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 1200px) {
+      #team-video-strip video {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      #team-video-strip video {
+        width: 160px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #team-video-strip video {
+        width: 140px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #team-video-strip video {
+        width: 120px;
+      }
+    }
+  </style>
+
+
+
+
+  <!-- Citation Section -->
+  <section class="section" id="citation" style="padding: 4rem 0; background-color: #f9f9f9;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto;">
+      <h2 class="title is-3" style="text-align: center;">Citation</h2>
+
+      <!-- Citation Card -->
+      <div style="
+      margin-top: 2rem;
+      background-color: #fdfdfd;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 2rem 3rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    ">
+        @inproceedings{jenamani2025feast,
+        title = {FEAST: A Flexible Mealtime-Assistance System Towards In-the-Wild Personalization},
+        author = {Rajat Kumar Jenamani and Tom Silver and Ben Dodson and Shiqin Tong and Anthony Song and
+        Yuting Yang and Ziang Liu and Benjamin Howe and Aimee Whitneck and Tapomayukh Bhattacharjee},
+        booktitle = {Robotics: Science and Systems (RSS)},
+        year = {1995},
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer style="
+  background-color: #e0e0e0;  /* leggermente più scuro dello sfondo */
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+">
+    Website template borrowed from <strong>Mobi-π</strong> and <strong>NeRFies</strong>.
+  </footer>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "coop-openended",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for the Coop-Openended website.  \r This project is currently under development and not yet finalized.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MareDiVino/Coop-Openended.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MareDiVino/Coop-Openended/issues"
+  },
+  "homepage": "https://github.com/MareDiVino/Coop-Openended#readme",
+  "dependencies": {
+    "three": "^0.180.0"
+  }
+}

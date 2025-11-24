@@ -229,7 +229,7 @@
 
         <!-- Video 1 -->
         <div style="flex:0 0 calc(25% - 0.375rem); text-align:center;">
-          <video src="static/videos/pickpasta.mp4" loop autoplay muted
+          <video src="static/videos/pickpastanewfast.mp4" loop autoplay muted
             style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:5px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
           </video>
           <p style="margin:0.25rem 0 0 0;">Pick Pasta</p>
@@ -317,13 +317,12 @@
               This multimodal approach allowed us to explore how different control strategies affect performance,
               workload, and the overall collaboration experience.
             </p>
+
           </div>
           <figure class="image" style="margin-top:20px;">
-            <video controls
-              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
-              <source src="static/videos/navigationlevel1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <img src="static/images/participants.jpg"
+                alt="participants"
+                style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
           </figure>
         </div>
       </div>
@@ -350,11 +349,9 @@
             </p>
           </div>
           <figure class="image" style="margin-top:20px;">
-            <video controls
-              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
-              <source src="static/videos/navigationlevel1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <img src="static/images/pipeline.png"
+                alt="pipeline"
+                style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
           </figure>
         </div>
       </div>
@@ -436,7 +433,7 @@
       videoStrip.scrollBy({ left: videoWidth + gap, behavior: 'smooth' });
     });
 
-    // Centrare inizialmente il livello 2
+    
     window.addEventListener('load', () => {
       const containerWidth = videoStrip.clientWidth;
       const video2Center = sidePadding + (videoWidth + gap) + videoWidth / 2;
@@ -633,7 +630,7 @@
     const imageWidth = 800;
     const sidePaddingImg = 200;
 
-    // Scroll frecce
+    
     document.getElementById('scroll-left-img').addEventListener('click', () => {
       imageStrip.scrollBy({ left: -(imageWidth + gapImg), behavior: 'smooth' });
     });
@@ -642,14 +639,14 @@
       imageStrip.scrollBy({ left: imageWidth + gapImg, behavior: 'smooth' });
     });
 
-    // Centrare inizialmente la seconda immagine
+    
     window.addEventListener('load', () => {
       const containerWidth = imageStrip.clientWidth;
       const img2Center = sidePaddingImg + (imageWidth + gapImg) + imageWidth / 2;
       imageStrip.scrollLeft = img2Center - containerWidth / 2;
     });
 
-    // Lightbox Zoom su immagine e lente
+    
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
@@ -666,7 +663,7 @@
       if (zoomIcon) zoomIcon.addEventListener('click', openLightbox);
     });
 
-    // Chiudi lightbox cliccando sullo sfondo
+    
     lightbox.addEventListener('click', () => {
       lightbox.style.display = 'none';
       lightboxImg.src = '';

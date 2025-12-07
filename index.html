@@ -383,22 +383,26 @@
     </p>
   </div>
 
-    <!-- Video 2 -->
-    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-      <video src="static/videos/navigationlevel1.mp4" loop muted
-        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-        onclick="openLightbox(this)">
-      </video>
-      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 2<br>Shared Autonomy</p>
-    </div>
+  <!-- Video 2 -->
+  <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+    <video src="static/videos/Level_2.mp4" autoplay muted loop playsinline
+      style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+      onclick="openLightbox(this)">
+    </video>
+    <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+      Level 2<br>Shared Autonomy
+    </p>
+  </div>
+
     <!-- Video 3 -->
-    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-      <video src="static/videos/navigationlevel1.mp4" loop muted
-        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-        onclick="openLightbox(this)">
-      </video>
-      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 3<br>Full Automation</p>
-    </div>
+  <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+    <video src="static/videos/Level_3.mp4" autoplay muted loop playsinline
+      style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+      onclick="openLightbox(this)">
+    </video>
+    <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+      Level 3<br>Full Automation
+    </p>
   </div>
 
   <!-- Bottom Navigation Arrows -->
@@ -514,210 +518,286 @@ window.addEventListener('load', () => {
   </section>
 
 
-  <!-- Horizontal Scroll Image Strip with Zoom -->
+    <!-- Horizontal Scroll Image Strip with Zoom (clean, no id conflicts) -->
   <section id="results-images-strip"
     style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
 
     <!-- Scrollable Image Container -->
-    <div id="image-strip" style="
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 64px;
-    padding: 2rem 200px;
-    scrollbar-width: none;
-  ">
+    <div id="image-strip-images" style="
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 64px;
+        padding: 2rem 200px;
+        scrollbar-width: none;
+      ">
+      
       <!-- Image 1 -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
-        <img src="static/images/love.jpg" alt="Result Image 1"
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
-          class="zoomable">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Result 1</p>
-        <!-- Lente sopra l'immagine -->
-        <div class="zoom-icon" style="
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: rgba(0,0,0,0.6);
-        color: #fff;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        font-size: 18px;
-      ">&#128269;</div>
+        <img data-index="0" src="static/images/nasa.png" alt="NASA-TLX"
+          style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
+          class="zoomable-img">
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">NASA-TLX</p>
+        <div class="zoom-icon" data-index="0" style="
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+          ">&#128269;</div>
       </div>
 
       <!-- Image 2 -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
-        <img src="static/images/love.jpg" alt="Result Image 2" class="zoomable"
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Result 2</p>
-        <div class="zoom-icon" style="
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: rgba(0,0,0,0.6);
-        color: #fff;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        font-size: 18px;
-      ">&#128269;</div>
+        <img data-index="1" src="static/images/sus.png" alt="SUS"
+          style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
+          class="zoomable-img">
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">SUS</p>
+        <div class="zoom-icon" data-index="1" style="
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+          ">&#128269;</div>
       </div>
 
       <!-- Image 3 -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
-        <img src="static/images/love.jpg" alt="Result Image 3" class="zoomable"
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Result 3</p>
-        <div class="zoom-icon" style="
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: rgba(0,0,0,0.6);
-        color: #fff;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
+        <img data-index="2" src="static/images/soas.png" alt="SoARS"
+          style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
+          class="zoomable-img">
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">SoARS</p>
+        <div class="zoom-icon" data-index="2" style="
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+          ">&#128269;</div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Arrows (centered) -->
+    <div id="image-strip-controls" style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; z-index: 10;">
+      <button id="scroll-left-img-btn" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
+      <button id="scroll-right-img-btn" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+    </div>
+
+    <!-- LIGHTBOX specific for images (unique IDs to avoid conflicts) -->
+    <div id="img-lightbox-overlay" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.95);
         justify-content: center;
         align-items: center;
-        cursor: pointer;
-        font-size: 18px;
-      ">&#128269;</div>
-      </div>
-    </div>
+        z-index: 99999;
+        padding: 24px;
+      ">
+      <button id="img-lightbox-close" style="
+          position: absolute; top: 20px; right: 20px; z-index:100001;
+          background: rgba(255,255,255,0.9); border: none; border-radius: 8px; padding:8px 12px; cursor:pointer;
+        ">Close ✕</button>
 
-    <!-- Bottom Navigation Arrows -->
-    <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
-      <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
-      <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
-    </div>
+      <!-- left/right inside lightbox -->
+      <button id="img-lightbox-prev" aria-label="Previous" style="
+          position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+          background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width:44px; height:44px; cursor:pointer; z-index:100001;">&#10094;</button>
+      <button id="img-lightbox-next" aria-label="Next" style="
+          position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+          background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width:44px; height:44px; cursor:pointer; z-index:100001;">&#10095;</button>
 
-    <!-- Lightbox Overlay -->
-    <div id="lightbox" style="
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  ">
-      <img id="lightbox-img" src="" style="max-width: 90%; max-height: 90%; border-radius:5px;">
+      <img id="img-lightbox-img" src="" alt="Expanded image" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); object-fit: contain;">
     </div>
 
   </section>
 
   <script>
-    const imageStrip = document.getElementById('image-strip');
-    const gapImg = 64;
-    const imageWidth = 800;
-    const sidePaddingImg = 200;
+    (function(){
+      const imageStrip = document.getElementById('image-strip-images');
+      const gapImg = 64;
+      const imageWidth = 800;
 
-    
-    document.getElementById('scroll-left-img').addEventListener('click', () => {
-      imageStrip.scrollBy({ left: -(imageWidth + gapImg), behavior: 'smooth' });
-    });
+      // Buttons
+      const btnLeft = document.getElementById('scroll-left-img-btn');
+      const btnRight = document.getElementById('scroll-right-img-btn');
 
-    document.getElementById('scroll-right-img').addEventListener('click', () => {
-      imageStrip.scrollBy({ left: imageWidth + gapImg, behavior: 'smooth' });
-    });
+      btnLeft?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        imageStrip.scrollBy({ left: -(imageWidth + gapImg), behavior: 'smooth' });
+      });
 
-    
-    window.addEventListener('load', () => {
-      const containerWidth = imageStrip.clientWidth;
-      const img2Center = sidePaddingImg + (imageWidth + gapImg) + imageWidth / 2;
-      imageStrip.scrollLeft = img2Center - containerWidth / 2;
-    });
+      btnRight?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        imageStrip.scrollBy({ left: imageWidth + gapImg, behavior: 'smooth' });
+      });
 
-    
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+      // Center second image on load (more robust)
+      window.addEventListener('load', () => {
+        const items = document.querySelectorAll('#image-strip-images .image-item');
+        if (items.length > 1) {
+          const target = items[1]; // second image
+          const rect = target.getBoundingClientRect();
+          const stripRect = imageStrip.getBoundingClientRect();
+          // Calculate the scrollLeft needed to center target
+          const offsetLeft = target.offsetLeft;
+          const scrollTo = offsetLeft - (stripRect.width / 2) + (target.offsetWidth / 2);
+          imageStrip.scrollTo({ left: Math.max(0, scrollTo), behavior: 'smooth' });
+        }
+      });
 
-    document.querySelectorAll('.zoomable').forEach(img => {
-      const parent = img.parentElement;
-      const zoomIcon = parent.querySelector('.zoom-icon');
+      // LIGHTBOX logic (image-only, no conflicts)
+      const lightbox = document.getElementById('img-lightbox-overlay');
+      const lightboxImg = document.getElementById('img-lightbox-img');
+      const closeBtn = document.getElementById('img-lightbox-close');
+      const prevBtn = document.getElementById('img-lightbox-prev');
+      const nextBtn = document.getElementById('img-lightbox-next');
 
-      const openLightbox = () => {
-        lightbox.style.display = 'flex';
+      const images = Array.from(document.querySelectorAll('#image-strip-images .zoomable-img'));
+      let currentIndex = 0;
+
+      function openLightbox(index){
+        currentIndex = index;
+        const img = images[index];
         lightboxImg.src = img.src;
-      };
+        lightbox.style.display = 'flex';
+        // prevent body scroll while open
+        document.body.style.overflow = 'hidden';
+      }
 
-      img.addEventListener('click', openLightbox);
-      if (zoomIcon) zoomIcon.addEventListener('click', openLightbox);
-    });
+      function closeLightbox(){
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
 
-    
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      lightboxImg.src = '';
-    });
+      function showPrev(){
+        if (currentIndex > 0) {
+          currentIndex--;
+          lightboxImg.src = images[currentIndex].src;
+        } else {
+          // loop to last
+          currentIndex = images.length - 1;
+          lightboxImg.src = images[currentIndex].src;
+        }
+      }
+      function showNext(){
+        if (currentIndex < images.length - 1) {
+          currentIndex++;
+          lightboxImg.src = images[currentIndex].src;
+        } else {
+          currentIndex = 0;
+          lightboxImg.src = images[currentIndex].src;
+        }
+      }
+
+      // Attach click on images and zoom icons
+      images.forEach((img, idx) => {
+        const parent = img.parentElement;
+        const zoomIcon = parent.querySelector('.zoom-icon');
+
+        // stop propagation to prevent accidental strip clicks
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openLightbox(idx);
+        });
+
+        if (zoomIcon) {
+          zoomIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(idx);
+          });
+        }
+      });
+
+      // Close on background click
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === closeBtn) {
+          closeLightbox();
+        }
+      });
+
+      // Buttons inside lightbox
+      closeBtn.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+      // Keyboard navigation while lightbox open
+      window.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') showPrev();
+          if (e.key === 'ArrowRight') showNext();
+        }
+      });
+
+      // Prevent clicks on the strip from opening lightbox accidentally
+      imageStrip.addEventListener('click', (e) => {
+        // don't open anything here; images themselves handle click
+      });
+
+    })();
   </script>
 
   <style>
     .nav-arrow {
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.9);
       border: none;
       border-radius: 50%;
       width: 50px;
       height: 50px;
       cursor: pointer;
       font-size: 28px;
-      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    #image-strip::-webkit-scrollbar {
-      display: none;
-    }
+    /* hide native scrollbar on WebKit */
+    #image-strip-images::-webkit-scrollbar { display: none; }
 
-    @media (max-width: 1400px) {
-      .image-item img {
-        width: 600px;
-      }
-    }
+    @media (max-width: 1400px) { .image-item img { width: 600px; } }
+    @media (max-width: 1200px) { .image-item img { width: 500px; } }
+    @media (max-width: 992px)  { .image-item img { width: 400px; } }
+    @media (max-width: 768px)  { .image-item img { width: 300px; } }
+    @media (max-width: 480px)  { .image-item img { width: 250px; padding:0 16px; } }
 
-    @media (max-width: 1200px) {
-      .image-item img {
-        width: 500px;
-      }
-    }
+    /* zoom icon hover */
+    .zoom-icon:hover { background: rgba(255,255,255,0.9); color:#000; transition: all 0.15s ease; }
 
-    @media (max-width: 992px) {
-      .image-item img {
-        width: 400px;
-      }
-    }
+    /* lightbox transitions */
+    #img-lightbox-overlay { transition: opacity 0.12s ease; }
+    #img-lightbox-overlay img { user-select: none; -webkit-user-drag: none; }
 
-    @media (max-width: 768px) {
-      .image-item img {
-        width: 300px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .image-item img {
-        width: 250px;
-        padding: 0 16px;
-      }
-    }
-
-    .zoom-icon:hover {
-      background: rgba(255, 255, 255, 0.7);
-      color: #000;
-      transition: all 0.2s ease;
-    }
   </style>
 
   <!-- What We Learned Section -->

@@ -27,10 +27,11 @@
 
 <body>
 
-<h1 style="text-align:center; font-size:140px; margin-top:40px; color:black; opacity:0.25;">
+<!--
+  <h1 style="text-align:center; font-size:140px; margin-top:40px; color:black; opacity:0.25;">
     WIP
 </h1>
-
+-->
   <!-- Navbar -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -372,13 +373,16 @@
     scrollbar-width: none;
   ">
     <!-- Video 1 -->
-    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-      <video src="static/videos/Level 1.mp4" loop muted autoplay
-        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-        onclick="openLightbox(this)">
-      </video>
-      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 1<br>Assisted Teleoperation</p>
-    </div>
+  <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+    <video src="static/videos/Level_1.mp4" autoplay muted loop playsinline
+      style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+      onclick="openLightbox(this)">
+    </video>
+    <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+      Level 1<br>Assisted Teleoperation
+    </p>
+  </div>
+
     <!-- Video 2 -->
     <div class="video-item" style="flex: 0 0 auto; text-align: center;">
       <video src="static/videos/navigationlevel1.mp4" loop muted

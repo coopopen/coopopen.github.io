@@ -101,23 +101,6 @@
     </div>
   </section>
 
-  <!-- Project Overview Section -->
-  <section class="section" id="overview">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Project Overview</h2>
-          <div class="content">
-            <video src="static/videos/NavigationLevel1.mp4" controls
-              style="display:block; margin:0 auto; max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Abstract Section -->
   <section class="section" id="abstract">
     <div class="container is-max-desktop">
@@ -193,12 +176,10 @@
               choices make robotic systems more usable and supportive in everyday life.
             </p>
           </div>
-          <figure class="image" style="margin-top:20px;">
-            <video controls
-              style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
-              <source src="static/videos/NavigationLevel1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+          <figure class="image" style="margin-top: 20px; text-align: center;">
+            <img src="static/images/Ak.png" 
+                alt="AK Image"
+                style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); max-width: 70%; height: auto; display: inline-block;">
           </figure>
         </div>
       </div>
@@ -377,122 +358,131 @@
     </div>
   </section>
 
-  <!-- Horizontal Scroll Video Strip with Bigger Black Strip and Bottom Arrows -->
-  <section id="autonomy-videos-strip"
+<!-- Horizontal Scroll Video Strip -->
+<section id="autonomy-videos-strip"
     style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
 
-    <!-- Scrollable Video Container -->
-    <div id="video-strip" style="
+  <!-- Scrollable Video Container -->
+  <div id="video-strip" style="
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
     gap: 64px;
-    padding: 2rem 200px;  /* spazio a sinistra e destra e verticale */
+    padding: 2rem 200px;
     scrollbar-width: none;
   ">
-      <!-- Video 1 -->
-      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-        <video src="static/videos/navigationlevel1.mp4" loop autoplay muted
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);">
-        </video>
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 1<br>Assisted Teleoperation</p>
-      </div>
-      <!-- Video 2 -->
-      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-        <video src="static/videos/navigationlevel1.mp4" loop autoplay muted
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);">
-        </video>
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 2<br>Shared Autonomy</p>
-      </div>
-      <!-- Video 3 -->
-      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-        <video src="static/videos/navigationlevel1.mp4" loop autoplay muted
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);">
-        </video>
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 3<br>Full Automation</p>
-      </div>
+    <!-- Video 1 -->
+    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+      <video src="static/videos/Level 1.mp4" loop muted autoplay
+        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+        onclick="openLightbox(this)">
+      </video>
+      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 1<br>Assisted Teleoperation</p>
     </div>
-
-    <!-- Bottom Navigation Arrows -->
-    <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
-      <button id="scroll-left" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
-      <button id="scroll-right" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+    <!-- Video 2 -->
+    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+      <video src="static/videos/navigationlevel1.mp4" loop muted
+        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+        onclick="openLightbox(this)">
+      </video>
+      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 2<br>Shared Autonomy</p>
     </div>
+    <!-- Video 3 -->
+    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+      <video src="static/videos/navigationlevel1.mp4" loop muted
+        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+        onclick="openLightbox(this)">
+      </video>
+      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Level 3<br>Full Automation</p>
+    </div>
+  </div>
 
-  </section>
+  <!-- Bottom Navigation Arrows -->
+  <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
+    <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
+    <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+  </div>
+</section>
 
-  <script>
-    const videoStrip = document.getElementById('video-strip');
-    const gap = 64;
-    const videoWidth = 800;
-    const sidePadding = 200; // padding sinistro/destro
+<!-- Lightbox overlay -->
+<div id="lightbox" style="
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+">
+  <video id="lightbox-video" controls style="max-width:90%; max-height:90%; border-radius:10px;"></video>
+</div>
 
-    document.getElementById('scroll-left').addEventListener('click', () => {
-      videoStrip.scrollBy({ left: -(videoWidth + gap), behavior: 'smooth' });
-    });
+<script>
+function openLightbox(videoElement) {
+    var lightbox = document.getElementById('lightbox');
+    var lbVideo = document.getElementById('lightbox-video');
+    lbVideo.src = videoElement.src;
+    lbVideo.currentTime = 0;
+    lbVideo.play();
+    lightbox.style.display = "flex";
+}
 
-    document.getElementById('scroll-right').addEventListener('click', () => {
-      videoStrip.scrollBy({ left: videoWidth + gap, behavior: 'smooth' });
-    });
-
-    
-    window.addEventListener('load', () => {
-      const containerWidth = videoStrip.clientWidth;
-      const video2Center = sidePadding + (videoWidth + gap) + videoWidth / 2;
-      videoStrip.scrollLeft = video2Center - containerWidth / 2;
-    });
-  </script>
-
-  <style>
-    .nav-arrow {
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      font-size: 28px;
-      /* Posizione delle frecce sotto i video */
-      position: relative;
+// Close lightbox on click outside video
+document.getElementById('lightbox').addEventListener('click', function(e){
+    if(e.target.id === 'lightbox'){
+        var lbVideo = document.getElementById('lightbox-video');
+        lbVideo.pause();
+        lbVideo.src = "";
+        this.style.display = "none";
     }
+});
 
-    /* Nascondi scrollbar su Webkit */
-    #video-strip::-webkit-scrollbar {
-      display: none;
-    }
+// Horizontal scroll with bottom arrows
+const videoStrip = document.getElementById('video-strip');
+const gap = 64;
+const videoWidth = 800;
+const sidePadding = 200; // padding sinistro/destro
 
-    /* Responsive Scaling */
-    @media (max-width: 1400px) {
-      .video-item video {
-        width: 600px;
-      }
-    }
+document.getElementById('scroll-left-img')?.addEventListener('click', () => {
+  videoStrip.scrollBy({ left: -(videoWidth + gap), behavior: 'smooth' });
+});
 
-    @media (max-width: 1200px) {
-      .video-item video {
-        width: 500px;
-      }
-    }
+document.getElementById('scroll-right-img')?.addEventListener('click', () => {
+  videoStrip.scrollBy({ left: videoWidth + gap, behavior: 'smooth' });
+});
 
-    @media (max-width: 992px) {
-      .video-item video {
-        width: 400px;
-      }
-    }
+window.addEventListener('load', () => {
+  const containerWidth = videoStrip.clientWidth;
+  const video2Center = sidePadding + (videoWidth + gap) + videoWidth / 2;
+  videoStrip.scrollLeft = video2Center - containerWidth / 2;
+});
+</script>
 
-    @media (max-width: 768px) {
-      .video-item video {
-        width: 300px;
-      }
-    }
+<style>
+.nav-arrow {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 28px;
+}
 
-    @media (max-width: 480px) {
-      .video-item video {
-        width: 250px;
-        padding: 0 16px;
-      }
-    }
-  </style>
+#video-strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1400px) { .video-item video { width: 600px; } }
+@media (max-width: 1200px) { .video-item video { width: 500px; } }
+@media (max-width: 992px)  { .video-item video { width: 400px; } }
+@media (max-width: 768px)  { .video-item video { width: 300px; } }
+@media (max-width: 480px)  { .video-item video { width: 250px; padding:0 16px; } }
+</style>
+
+
 
   <!-- Results Section -->
   <section class="section" id="results">

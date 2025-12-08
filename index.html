@@ -428,6 +428,7 @@
 </div>
 
 <script>
+// --- LIGHTBOX (unchanged, left as you provided) ---
 function openLightbox(videoElement) {
     var lightbox = document.getElementById('lightbox');
     var lbVideo = document.getElementById('lightbox-video');
@@ -437,7 +438,7 @@ function openLightbox(videoElement) {
     lightbox.style.display = "flex";
 }
 
-// Close lightbox on click outside video
+// Close lightbox on click outside video (unchanged)
 document.getElementById('lightbox').addEventListener('click', function(e){
     if(e.target.id === 'lightbox'){
         var lbVideo = document.getElementById('lightbox-video');
@@ -447,26 +448,76 @@ document.getElementById('lightbox').addEventListener('click', function(e){
     }
 });
 
-// Horizontal scroll with bottom arrows
+// --- Carousel centering logic (minimal modifications only) ---
+
+// Keep your original constants (unused parts left intact to avoid touching other code)
 const videoStrip = document.getElementById('video-strip');
 const gap = 64;
 const videoWidth = 800;
-const sidePadding = 200; // padding sinistro/destro
+const sidePadding = 200; // left/right padding you may have used
 
+// Collect the video items
+const videos = document.querySelectorAll('.video-item');
+
+// currentView: 0 = left view (video 1), 1 = center view (video 2), 2 = right view (video 3)
+let currentView = 1; // start in center view (Level 2)
+
+// Helper: center a specific video element by index inside the visible viewport of the strip
+function centerVideoByIndex(index) {
+    if (!videos || videos.length === 0) return;
+    const containerWidth = videoStrip.clientWidth;
+    // find the <video> element inside the .video-item
+    const videoEl = videos[index].querySelector('video');
+    if (!videoEl) return;
+
+    // compute exact width of that video element (handles responsive sizes)
+    const videoRect = videoEl.getBoundingClientRect();
+    const videoActualWidth = videoRect.width;
+
+    // offsetLeft relative to scroll container
+    const offsetLeft = videoEl.offsetLeft;
+
+    // scrollTo value that centers the video in the container
+    const scrollTo = offsetLeft - (containerWidth / 2) + (videoActualWidth / 2);
+
+    videoStrip.scrollTo({
+        left: scrollTo,
+        behavior: 'smooth'
+    });
+}
+
+// Map currentView to video index: view 0 -> index 0, view 1 -> index 1, view 2 -> index 2
+function centerCurrentView() {
+    const idx = Math.min(Math.max(currentView, 0), videos.length - 1);
+    centerVideoByIndex(idx);
+}
+
+// Replace the simple scrollBy listeners with "three-view" navigation (minimal change)
 document.getElementById('scroll-left-img')?.addEventListener('click', () => {
-  videoStrip.scrollBy({ left: -(videoWidth + gap), behavior: 'smooth' });
+    // Move one view to the left (clamped), then center the corresponding video
+    if (currentView > 0) currentView--;
+    centerCurrentView();
 });
 
 document.getElementById('scroll-right-img')?.addEventListener('click', () => {
-  videoStrip.scrollBy({ left: videoWidth + gap, behavior: 'smooth' });
+    // Move one view to the right (clamped), then center the corresponding video
+    if (currentView < Math.min(2, videos.length - 1)) currentView++;
+    centerCurrentView();
 });
 
+// On load: ensure the center view is shown and Video 2 is centered
 window.addEventListener('load', () => {
-  const containerWidth = videoStrip.clientWidth;
-  const video2Center = sidePadding + (videoWidth + gap) + videoWidth / 2;
-  videoStrip.scrollLeft = video2Center - containerWidth / 2;
+    // ensure there are at least 2 videos; otherwise center the first
+    if (videos.length > 1) {
+        currentView = 1; // center view -> video index 1 (Level 2)
+    } else {
+        currentView = 0;
+    }
+    // small timeout to let layout settle (helps on slow renders)
+    setTimeout(() => centerCurrentView(), 50);
 });
 </script>
+
 
 <style>
 .nav-arrow {
@@ -642,132 +693,167 @@ window.addEventListener('load', () => {
 
   </section>
 
-  <script>
-    (function(){
-      const imageStrip = document.getElementById('image-strip-images');
-      const gapImg = 64;
-      const imageWidth = 800;
+<script>
+(function(){
+  // minimal comments
+  let imageStrip, items, btnLeft, btnRight;
+  let currentView = 1; // 0 = left, 1 = center (SUS), 2 = right
+  let images = [];
+  let lightbox, lightboxImg, closeBtn, prevBtn, nextBtn;
+  let currentIndex = 0;
 
-      // Buttons
-      const btnLeft = document.getElementById('scroll-left-img-btn');
-      const btnRight = document.getElementById('scroll-right-img-btn');
+  function clampView(v) {
+    const maxView = Math.max(0, Math.min(2, items.length - 1));
+    return Math.max(0, Math.min(v, maxView));
+  }
 
-      btnLeft?.addEventListener('click', (e) => {
+  // Center target index using viewport rects (robust with padding)
+  function centerImageByIndex(index, smooth = true) {
+    if (!imageStrip || !items || !items.length) return;
+    const idx = clampView(index);
+    const targetItem = items[idx];
+    if (!targetItem) return;
+
+    const imgEl = targetItem.querySelector('img') || targetItem;
+    const containerRect = imageStrip.getBoundingClientRect();
+    const imgRect = imgEl.getBoundingClientRect();
+
+    // distance between centers in viewport coords
+    const containerCenter = containerRect.left + containerRect.width / 2;
+    const imgCenter = imgRect.left + imgRect.width / 2;
+    const delta = imgCenter - containerCenter;
+
+    // desired scrollLeft is current scrollLeft + delta
+    const desired = imageStrip.scrollLeft + delta;
+    imageStrip.scrollTo({ left: Math.max(0, Math.round(desired)), behavior: smooth ? 'smooth' : 'auto' });
+  }
+
+  function centerCurrent(smooth = true) {
+    currentView = clampView(currentView);
+    centerImageByIndex(currentView, smooth);
+  }
+
+  function attachArrowHandlers() {
+    if (!btnLeft || !btnRight) return;
+
+    btnLeft.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentView = clampView(currentView - 1);
+      centerCurrent();
+    });
+
+    btnRight.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentView = clampView(currentView + 1);
+      centerCurrent();
+    });
+  }
+
+  function openLightbox(index){
+    if (!lightbox || !lightboxImg) return;
+    currentIndex = index;
+    const img = images[index];
+    if (!img) return;
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    if (!lightbox || !lightboxImg) return;
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  function showPrev(){
+    if (images.length === 0) return;
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function showNext(){
+    if (images.length === 0) return;
+    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  // Setup after load so sizes/styling/padding are ready
+  window.addEventListener('load', () => {
+    imageStrip = document.getElementById('image-strip-images');
+    items = Array.from(document.querySelectorAll('#image-strip-images .image-item'));
+    btnLeft = document.getElementById('scroll-left-img-btn');
+    btnRight = document.getElementById('scroll-right-img-btn');
+
+    lightbox = document.getElementById('img-lightbox-overlay');
+    lightboxImg = document.getElementById('img-lightbox-img');
+    closeBtn = document.getElementById('img-lightbox-close');
+    prevBtn = document.getElementById('img-lightbox-prev');
+    nextBtn = document.getElementById('img-lightbox-next');
+
+    images = Array.from(document.querySelectorAll('#image-strip-images .zoomable-img'));
+
+    // ensure view is set so SUS (index 1) is center on load
+    currentView = items.length > 1 ? 1 : 0;
+
+    // initial center (no animation first to avoid visual jump)
+    centerCurrent(false);
+    // slight delayed smooth recenter to ensure final layout settles
+    setTimeout(() => centerCurrent(true), 80);
+
+    // attach arrows
+    attachArrowHandlers();
+
+    // attach image/zoom handlers (zoom icon or image click)
+    images.forEach((img, idx) => {
+      const parent = img.parentElement;
+      const zoomIcon = parent?.querySelector('.zoom-icon');
+
+      img.addEventListener('click', (e) => {
         e.stopPropagation();
-        imageStrip.scrollBy({ left: -(imageWidth + gapImg), behavior: 'smooth' });
+        openLightbox(idx);
       });
 
-      btnRight?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        imageStrip.scrollBy({ left: imageWidth + gapImg, behavior: 'smooth' });
-      });
-
-      // Center second image on load (more robust)
-      window.addEventListener('load', () => {
-        const items = document.querySelectorAll('#image-strip-images .image-item');
-        if (items.length > 1) {
-          const target = items[1]; // second image
-          const rect = target.getBoundingClientRect();
-          const stripRect = imageStrip.getBoundingClientRect();
-          // Calculate the scrollLeft needed to center target
-          const offsetLeft = target.offsetLeft;
-          const scrollTo = offsetLeft - (stripRect.width / 2) + (target.offsetWidth / 2);
-          imageStrip.scrollTo({ left: Math.max(0, scrollTo), behavior: 'smooth' });
-        }
-      });
-
-      // LIGHTBOX logic (image-only, no conflicts)
-      const lightbox = document.getElementById('img-lightbox-overlay');
-      const lightboxImg = document.getElementById('img-lightbox-img');
-      const closeBtn = document.getElementById('img-lightbox-close');
-      const prevBtn = document.getElementById('img-lightbox-prev');
-      const nextBtn = document.getElementById('img-lightbox-next');
-
-      const images = Array.from(document.querySelectorAll('#image-strip-images .zoomable-img'));
-      let currentIndex = 0;
-
-      function openLightbox(index){
-        currentIndex = index;
-        const img = images[index];
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-        // prevent body scroll while open
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox(){
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-        document.body.style.overflow = '';
-      }
-
-      function showPrev(){
-        if (currentIndex > 0) {
-          currentIndex--;
-          lightboxImg.src = images[currentIndex].src;
-        } else {
-          // loop to last
-          currentIndex = images.length - 1;
-          lightboxImg.src = images[currentIndex].src;
-        }
-      }
-      function showNext(){
-        if (currentIndex < images.length - 1) {
-          currentIndex++;
-          lightboxImg.src = images[currentIndex].src;
-        } else {
-          currentIndex = 0;
-          lightboxImg.src = images[currentIndex].src;
-        }
-      }
-
-      // Attach click on images and zoom icons
-      images.forEach((img, idx) => {
-        const parent = img.parentElement;
-        const zoomIcon = parent.querySelector('.zoom-icon');
-
-        // stop propagation to prevent accidental strip clicks
-        img.addEventListener('click', (e) => {
+      if (zoomIcon) {
+        zoomIcon.addEventListener('click', (e) => {
           e.stopPropagation();
           openLightbox(idx);
         });
+      }
+    });
 
-        if (zoomIcon) {
-          zoomIcon.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openLightbox(idx);
-          });
-        }
-      });
+    // lightbox controls
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === closeBtn) closeLightbox();
+    });
+    closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-      // Close on background click
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target === closeBtn) {
-          closeLightbox();
-        }
-      });
+    // keyboard nav
+    window.addEventListener('keydown', (e) => {
+      if (!lightbox) return;
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      }
+    });
 
-      // Buttons inside lightbox
-      closeBtn.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
-      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+    // prevent strip click interference
+    imageStrip?.addEventListener('click', (e) => { e.stopPropagation(); });
 
-      // Keyboard navigation while lightbox open
-      window.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
-          if (e.key === 'Escape') closeLightbox();
-          if (e.key === 'ArrowLeft') showPrev();
-          if (e.key === 'ArrowRight') showNext();
-        }
-      });
+    // recenter on resize (final layout changed)
+    window.addEventListener('resize', () => {
+      // recenter without smooth to avoid odd animations during resize
+      setTimeout(() => centerCurrent(false), 80);
+      setTimeout(() => centerCurrent(true), 200);
+    });
+  });
+})();
+</script>
 
-      // Prevent clicks on the strip from opening lightbox accidentally
-      imageStrip.addEventListener('click', (e) => {
-        // don't open anything here; images themselves handle click
-      });
 
-    })();
-  </script>
 
   <style>
     .nav-arrow {

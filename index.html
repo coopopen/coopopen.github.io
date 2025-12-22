@@ -33,32 +33,13 @@
 </h1>
 -->
   <!-- Navbar -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="#">
-          <span class="icon">
-            <i class="fas fa-home"></i>
-          </span>
-        </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">More Research</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://research.araya.org/research/reinforcement-learning-team" target="_blank">
-              Araya Reinforcement Learning Team
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+    <a class="navbar-item" 
+      href="https://research.araya.org/research/reinforcement-learning-team" 
+      target="_blank">
+      ARAYA RL Team
+    </a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -119,21 +100,21 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <p>
-              Individuals with ALS and other severe motor impairments often rely on caregivers for daily tasks, which
-              limits their independence and sense of control.
-              Brain-robot interfaces (BRIs) have the potential to restore autonomy, but existing systems are often
-              task-specific and highly automated.
-            </p>
-            <p>
-              In this work, we introduce a collaborative BRI that integrates non-invasive EEG, EMG, and eye tracking to
-              enable multi-user, multi-robot interaction in a shared kitchen environment.
-              Our system supports three levels of autonomy, balancing user control and robotic assistance.
-            </p>
-            <p>
-              Results from our study show that intermediate autonomy provided the highest task success and fastest
-              completion times while maintaining user agency and trust.
-            </p>
+          <p>
+          Individuals with ALS and other severe motor impairments often rely on caregivers for daily tasks, which limits their independence and sense of control. Brain-robot interfaces (BRIs) have the potential to restore autonomy, but many existing systems are task-specific and highly automated, which reduces the users’ sense of empowerment and limits opportunities to exercise autonomy. In particular, shared autonomy approaches hold promise for overcoming current BRI limitations, by balancing user control with increased robot capabilities.
+          </p>
+
+          <p>
+          In this work, we introduce a collaborative BRI that integrates non-invasive EEG, EMG, and eye tracking to enable multi-user, multi-robot interaction in a shared kitchen environment with mobile manipulators. Our system modulates assistance through three levels of autonomy—Assisted Teleoperation, Shared Autonomy, and Full Automation—allowing users to retain meaningful control over task execution while reducing effort for routine operations. We conducted a controlled user study comparing autonomy conditions, evaluating performance, workload, ease of use, and agency.
+          </p>
+
+          <p>
+          Our results show that, while Full Automation was generally preferred by users due to lower workload and higher usability, Shared Autonomy provided higher reliability and preserved user agency, especially in the presence of noisy EEG decoding. Although there was significant individual variability in EEG decoding performance, our post-hoc analysis revealed the potential benefits of customizing pipelines for each user.
+          </p>
+
+          <p>
+          Finally, we note that our findings are specific to the multi-modal configuration tested and should not be interpreted as a universal claim about the superiority of any autonomy level, and, furthermore, our user study was limited by the use of healthy adults rather than target population (e.g., individuals with ALS), gender imbalance, and a relatively small sample size, which may affect generalizability.
+          </p>
           </div>
         </div>
       </div>
@@ -147,12 +128,13 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Motivation</h2>
           <div class="content">
-            <p>
-              We aim to advance assistive robotics to empower people using wheelchairs in their daily
-              lives. By enabling intuitive collaboration between humans and robots,
-              <strong>Coop OpenEnded</strong> explores how technology can support independence
-              and improve quality of life.
-            </p>
+          <p>
+          We aim to advance assistive robotics to empower people with physical disabilities in activities of daily living (ADLs).
+          </p>
+
+          <p>
+          By using shared autonomy to enable multi-agent collaboration between humans and robots, our research explores how technology can support independence and improve quality of life.
+          </p>
           </div>
           <figure class="image" style="margin-top:20px;">
             <img src="static/images/Motiv.png" alt="Motivation image"
@@ -170,22 +152,17 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Assistive Kitchen</h2>
           <div class="content">
-            <p>
-              Our experiments take place in a simulated assistive kitchen, a testbed designed to study how people and
-              robots collaborate in everyday tasks. The environment includes a central table, storage areas, and common
-              objects such as cubes, utensils, and containers, arranged to mimic a realistic household setup.
-            </p>
-            <p>
-              Within this setting, participants and robots work together on pick-and-place tasks, such as moving objects
-              from one area to another, organizing items on the table, or retrieving them from storage. These tasks
-              allow us to evaluate different forms of human input and robot autonomy in a familiar and meaningful
-              context.
-            </p>
-            <p>
-              The assistive kitchen is more than just a testbed—it provides a controlled yet realistic environment where
-              we can explore how collaboration unfolds, how users adapt to varying autonomy levels, and what design
-              choices make robotic systems more usable and supportive in everyday life.
-            </p>
+          <p>
+          Our experiments take place in a simulated kitchen, designed to study how people and robots can collaborate in everyday tasks. The environment includes a central table, storage areas, and common objects such as plates, cutlery, and cups, arranged to mimic a realistic household setup.
+          </p>
+
+          <p>
+          Within this setting, participants and robots work together on various tasks, such as moving food and drink containers from one area to another, organizing items on the table, or retrieving them from storage. These tasks allow us to evaluate different forms of human input and robot autonomy in a familiar and meaningful context.
+          </p>
+
+          <p>
+          The assistive kitchen enivonrment is more than just a testbed—it provides a controlled yet realistic environment where we can explore how collaboration unfolds, how users adapt to varying autonomy levels, and what design choices make robotic systems more usable and supportive in everyday life.
+          </p>
           </div>
           <figure class="image" style="margin-top: 20px; text-align: center;">
             <img src="static/images/Ak.png" 
@@ -197,18 +174,27 @@
     </div>
   </section>
 
-  <!-- Robot's Task Execution Section -->
+  <!-- Mobile Manipulators -->
   <section class="section" id="robots-task-execution">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Robot’s Task Execution</h2>
+          <h2 class="title is-3">Mobile Manipulators</h2>
           <div class="content">
             <p>
-              Each robot arm is mounted on a holonomic base and manipulation tasks are learned via Imitation Learning
-              from 70 human demonstrations. We use a flow-matching deep learning model trained on RGB point clouds. We
-              ensure safe and reliable motion using a control barrier function based controller on top of the learned
-              policy.
+            Each participant is given control of a mobile manipulator robot—a <a href="https://franka.de/" target="_blank">Franka</a> Panda Emika arm on top of a <a href="https://tidybot2.github.io/" target="_blank">Tidybot++</a> holonomic mobile base.
+            </p>
+
+            <p>
+            The mobile base is controlled via path planning, and the robot arm is trained to perform manipulation tasks via imitation learning.
+            </p>
+
+            <p>
+            For the latter, we use the <a href="https://rise-policy.github.io/" target="_blank">RISE</a> point cloud encoder, trained with a flow matching objective on 70 human demonstrations per task.
+            </p>
+
+            <p>
+            We ensure safe and reliable motion using an <a href="https://stanfordasl.github.io/oscbf/" target="_blank">operational space control barrier function</a> controller on top of the learned policy.
             </p>
           </div>
         </div>
@@ -290,28 +276,20 @@
   </section>
 
 
-  <!-- System's Interface Devices and Control Section -->
+  <!-- User Interface Devices and Control -->
   <section class="section" id="system-interface">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">System’s Interface Devices and Control</h2>
+          <h2 class="title is-3">User Interface Devices and Control</h2>
           <div class="content">
-            <p>
-              Our platform integrates multiple input devices to enable intuitive human–robot interaction. Participants
-              controlled the robot using a combination of EEG signals (motor imagery), EMG activity (muscle signals),
-              and eye-tracking (gaze selection).
-            </p>
-            <p>
-              These signals were mapped to different robot autonomy levels: from direct teleoperation, where users
-              managed movements step by step, to shared autonomy, where human intent guided the robot, up to full
-              automation, where the system acted independently after goal selection.
-            </p>
-            <p>
-              This multimodal approach allowed us to explore how different control strategies affect performance,
-              workload, and the overall collaboration experience.
-            </p>
+          <p>
+          Our platform, built on top of <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1528754/full" target="_blank">M4Bench</a> integrates multiple input devices to enable intuitive human–robot interaction. Participants control the robots using a combination of EEG signals (with the motor imagery paradigm), EMG activity (muscle signals), and eye-tracking (gaze selection).
+          </p>
 
+          <p>
+          These signals were mapped via different user interfaces to increasing levels of robot autonomy: from Assisted Teleoperation, where users managed movements step by step, to Shared Autonomy, where human intent guided the robot, up to Full Automation, where the system acted independently after goal selection.
+          </p>
           </div>
           <figure class="image" style="margin-top:20px;">
             <img src="static/images/participants.jpg"
@@ -323,6 +301,190 @@
     </div>
   </section>
 
+    <!-- Horizontal Scroll Video Strip -->
+  <section id="autonomy-videos-strip"
+      style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
+
+    <!-- Scrollable Video Container -->
+    <div id="video-strip" style="
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 64px;
+      padding: 2rem 200px;
+      scrollbar-width: none;
+    ">
+      <!-- Video 1 -->
+    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+      <video src="static/videos/Level_1.mp4" autoplay muted loop playsinline
+        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+        onclick="openLightbox(this)">
+      </video>
+      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+        Level 1<br>Assisted Teleoperation
+      </p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+      <video src="static/videos/Level_2.mp4" autoplay muted loop playsinline
+        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+        onclick="openLightbox(this)">
+      </video>
+      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+        Level 2<br>Shared Autonomy
+      </p>
+    </div>
+
+      <!-- Video 3 -->
+    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+      <video src="static/videos/Level_3.mp4" autoplay muted loop playsinline
+        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+        onclick="openLightbox(this)">
+      </video>
+      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+        Level 3<br>Full Automation
+      </p>
+    </div>
+
+    <!-- Bottom Navigation Arrows -->
+    <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
+      <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
+      <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" style="
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.9);
+      justify-content:center;
+      align-items:center;
+      z-index:1000;
+  ">
+    <video id="lightbox-video" controls style="max-width:90%; max-height:90%; border-radius:10px;"></video>
+  </div>
+
+  <script>
+  // --- LIGHTBOX (unchanged, left as you provided) ---
+  function openLightbox(videoElement) {
+      var lightbox = document.getElementById('lightbox');
+      var lbVideo = document.getElementById('lightbox-video');
+      lbVideo.src = videoElement.src;
+      lbVideo.currentTime = 0;
+      lbVideo.play();
+      lightbox.style.display = "flex";
+  }
+
+  // Close lightbox on click outside video (unchanged)
+  document.getElementById('lightbox').addEventListener('click', function(e){
+      if(e.target.id === 'lightbox'){
+          var lbVideo = document.getElementById('lightbox-video');
+          lbVideo.pause();
+          lbVideo.src = "";
+          this.style.display = "none";
+      }
+  });
+
+  // --- Carousel centering logic (minimal modifications only) ---
+
+  // Keep your original constants (unused parts left intact to avoid touching other code)
+  const videoStrip = document.getElementById('video-strip');
+  const gap = 64;
+  const videoWidth = 800;
+  const sidePadding = 200; // left/right padding you may have used
+
+  // Collect the video items
+  const videos = document.querySelectorAll('.video-item');
+
+  // currentView: 0 = left view (video 1), 1 = center view (video 2), 2 = right view (video 3)
+  let currentView = 1; // start in center view (Level 2)
+
+  // Helper: center a specific video element by index inside the visible viewport of the strip
+  function centerVideoByIndex(index) {
+      if (!videos || videos.length === 0) return;
+      const containerWidth = videoStrip.clientWidth;
+      // find the <video> element inside the .video-item
+      const videoEl = videos[index].querySelector('video');
+      if (!videoEl) return;
+
+      // compute exact width of that video element (handles responsive sizes)
+      const videoRect = videoEl.getBoundingClientRect();
+      const videoActualWidth = videoRect.width;
+
+      // offsetLeft relative to scroll container
+      const offsetLeft = videoEl.offsetLeft;
+
+      // scrollTo value that centers the video in the container
+      const scrollTo = offsetLeft - (containerWidth / 2) + (videoActualWidth / 2);
+
+      videoStrip.scrollTo({
+          left: scrollTo,
+          behavior: 'smooth'
+      });
+  }
+
+  // Map currentView to video index: view 0 -> index 0, view 1 -> index 1, view 2 -> index 2
+  function centerCurrentView() {
+      const idx = Math.min(Math.max(currentView, 0), videos.length - 1);
+      centerVideoByIndex(idx);
+  }
+
+  // Replace the simple scrollBy listeners with "three-view" navigation (minimal change)
+  document.getElementById('scroll-left-img')?.addEventListener('click', () => {
+      // Move one view to the left (clamped), then center the corresponding video
+      if (currentView > 0) currentView--;
+      centerCurrentView();
+  });
+
+  document.getElementById('scroll-right-img')?.addEventListener('click', () => {
+      // Move one view to the right (clamped), then center the corresponding video
+      if (currentView < Math.min(2, videos.length - 1)) currentView++;
+      centerCurrentView();
+  });
+
+  // On load: ensure the center view is shown and Video 2 is centered
+  window.addEventListener('load', () => {
+      // ensure there are at least 2 videos; otherwise center the first
+      if (videos.length > 1) {
+          currentView = 1; // center view -> video index 1 (Level 2)
+      } else {
+          currentView = 0;
+      }
+      // small timeout to let layout settle (helps on slow renders)
+      setTimeout(() => centerCurrentView(), 50);
+  });
+  </script>
+
+
+  <style>
+  .nav-arrow {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 28px;
+  }
+
+  #video-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Responsive Scaling */
+  @media (max-width: 1400px) { .video-item video { width: 600px; } }
+  @media (max-width: 1200px) { .video-item video { width: 500px; } }
+  @media (max-width: 992px)  { .video-item video { width: 400px; } }
+  @media (max-width: 768px)  { .video-item video { width: 300px; } }
+  @media (max-width: 480px)  { .video-item video { width: 250px; padding:0 16px; } }
+  </style>
+
+
+
 
   <!-- The Shared Autonomy Study Section -->
   <section class="section" id="shared-autonomy-study">
@@ -332,15 +494,11 @@
           <h2 class="title is-3">The Shared Autonomy Study</h2>
           <div class="content">
           <p>
-            We conducted a within-subjects user study to examine how different levels of robot autonomy influence
-            human–robot collaboration in assistive pick-and-place tasks. Each participant interacted with the system
-            across <strong>three autonomy levels</strong>—Autonomous Teleoperation, Shared Autonomy, and Full Autonomy—
-            presented in a randomized order.
+          We conducted a within-subjects user study to examine how different levels of robot autonomy influence human–robot collaboration in activities of daily living. Each participant interacted with the system across three autonomy level—Assisted Teleoperation, Shared Autonomy, and Full Automation—presented in a randomized order.
           </p>
+
           <p>
-            The study evaluates how autonomy shapes user experience, performance, cognitive workload, and perceived
-            control when operating an assistive robot in a realistic kitchen scenario. Our results highlight how humans
-            adapt to increasing autonomy and how shared control can balance efficiency and engagement.
+          Our study evaluated how autonomy shapes user experience, performance, cognitive workload, and perceived control when operating an assistive robot in a kitchen scenario. Our results highlight how humans adapt to increasing autonomy and how shared control can balance efficiency and engagement.
           </p>
           </div>
           <figure class="image" style="margin-top:20px;">
@@ -353,207 +511,6 @@
     </div>
   </section>
 
-  <!-- Control Across Autonomy Levels Section -->
-  <section class="section" id="control-autonomy-levels">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Control Across Autonomy Levels</h2>
-          <div class="content">
-            <p>
-              Participants controlled the robot using a combination of EEG, EMG, and eye-tracking signals. These input
-              modalities were mapped differently depending on the robot's autonomy level.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Horizontal Scroll Video Strip -->
-<section id="autonomy-videos-strip"
-    style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
-
-  <!-- Scrollable Video Container -->
-  <div id="video-strip" style="
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 64px;
-    padding: 2rem 200px;
-    scrollbar-width: none;
-  ">
-    <!-- Video 1 -->
-  <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-    <video src="static/videos/Level_1.mp4" autoplay muted loop playsinline
-      style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-      onclick="openLightbox(this)">
-    </video>
-    <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
-      Level 1<br>Assisted Teleoperation
-    </p>
-  </div>
-
-  <!-- Video 2 -->
-  <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-    <video src="static/videos/Level_2.mp4" autoplay muted loop playsinline
-      style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-      onclick="openLightbox(this)">
-    </video>
-    <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
-      Level 2<br>Shared Autonomy
-    </p>
-  </div>
-
-    <!-- Video 3 -->
-  <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-    <video src="static/videos/Level_3.mp4" autoplay muted loop playsinline
-      style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-      onclick="openLightbox(this)">
-    </video>
-    <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
-      Level 3<br>Full Automation
-    </p>
-  </div>
-
-  <!-- Bottom Navigation Arrows -->
-  <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
-    <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
-    <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
-  </div>
-</section>
-
-<!-- Lightbox overlay -->
-<div id="lightbox" style="
-    display:none;
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.9);
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
-">
-  <video id="lightbox-video" controls style="max-width:90%; max-height:90%; border-radius:10px;"></video>
-</div>
-
-<script>
-// --- LIGHTBOX (unchanged, left as you provided) ---
-function openLightbox(videoElement) {
-    var lightbox = document.getElementById('lightbox');
-    var lbVideo = document.getElementById('lightbox-video');
-    lbVideo.src = videoElement.src;
-    lbVideo.currentTime = 0;
-    lbVideo.play();
-    lightbox.style.display = "flex";
-}
-
-// Close lightbox on click outside video (unchanged)
-document.getElementById('lightbox').addEventListener('click', function(e){
-    if(e.target.id === 'lightbox'){
-        var lbVideo = document.getElementById('lightbox-video');
-        lbVideo.pause();
-        lbVideo.src = "";
-        this.style.display = "none";
-    }
-});
-
-// --- Carousel centering logic (minimal modifications only) ---
-
-// Keep your original constants (unused parts left intact to avoid touching other code)
-const videoStrip = document.getElementById('video-strip');
-const gap = 64;
-const videoWidth = 800;
-const sidePadding = 200; // left/right padding you may have used
-
-// Collect the video items
-const videos = document.querySelectorAll('.video-item');
-
-// currentView: 0 = left view (video 1), 1 = center view (video 2), 2 = right view (video 3)
-let currentView = 1; // start in center view (Level 2)
-
-// Helper: center a specific video element by index inside the visible viewport of the strip
-function centerVideoByIndex(index) {
-    if (!videos || videos.length === 0) return;
-    const containerWidth = videoStrip.clientWidth;
-    // find the <video> element inside the .video-item
-    const videoEl = videos[index].querySelector('video');
-    if (!videoEl) return;
-
-    // compute exact width of that video element (handles responsive sizes)
-    const videoRect = videoEl.getBoundingClientRect();
-    const videoActualWidth = videoRect.width;
-
-    // offsetLeft relative to scroll container
-    const offsetLeft = videoEl.offsetLeft;
-
-    // scrollTo value that centers the video in the container
-    const scrollTo = offsetLeft - (containerWidth / 2) + (videoActualWidth / 2);
-
-    videoStrip.scrollTo({
-        left: scrollTo,
-        behavior: 'smooth'
-    });
-}
-
-// Map currentView to video index: view 0 -> index 0, view 1 -> index 1, view 2 -> index 2
-function centerCurrentView() {
-    const idx = Math.min(Math.max(currentView, 0), videos.length - 1);
-    centerVideoByIndex(idx);
-}
-
-// Replace the simple scrollBy listeners with "three-view" navigation (minimal change)
-document.getElementById('scroll-left-img')?.addEventListener('click', () => {
-    // Move one view to the left (clamped), then center the corresponding video
-    if (currentView > 0) currentView--;
-    centerCurrentView();
-});
-
-document.getElementById('scroll-right-img')?.addEventListener('click', () => {
-    // Move one view to the right (clamped), then center the corresponding video
-    if (currentView < Math.min(2, videos.length - 1)) currentView++;
-    centerCurrentView();
-});
-
-// On load: ensure the center view is shown and Video 2 is centered
-window.addEventListener('load', () => {
-    // ensure there are at least 2 videos; otherwise center the first
-    if (videos.length > 1) {
-        currentView = 1; // center view -> video index 1 (Level 2)
-    } else {
-        currentView = 0;
-    }
-    // small timeout to let layout settle (helps on slow renders)
-    setTimeout(() => centerCurrentView(), 50);
-});
-</script>
-
-
-<style>
-.nav-arrow {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  font-size: 28px;
-}
-
-#video-strip::-webkit-scrollbar {
-  display: none;
-}
-
-/* Responsive Scaling */
-@media (max-width: 1400px) { .video-item video { width: 600px; } }
-@media (max-width: 1200px) { .video-item video { width: 500px; } }
-@media (max-width: 992px)  { .video-item video { width: 400px; } }
-@media (max-width: 768px)  { .video-item video { width: 300px; } }
-@media (max-width: 480px)  { .video-item video { width: 250px; padding:0 16px; } }
-</style>
-
-
-
   <!-- Results Section -->
   <section class="section" id="results">
     <div class="container is-max-desktop">
@@ -562,22 +519,11 @@ window.addEventListener('load', () => {
           <h2 class="title is-3">Results</h2>
       <div class="content">
         <p>
-          Our study revealed clear differences across the three autonomy levels.
-          Higher autonomy consistently improved task performance:
-          <strong>SA (Level 2)</strong> and <strong>FA (Level 3)</strong>
-          required less user interaction, reduced workload, and enabled smoother task
-          execution compared to <strong>AT (Level 1)</strong>.
-          Participants reported the highest cognitive and physical effort during AT,
-          highlighting the difficulty of fully manual gaze–EEG control.
+        Our study revealed clear differences across the three autonomy levels. Higher autonomy consistently improved task performance: Shared Autonomy and Full Automation required less user interaction, reduced workload, and enabled smoother task execution compared to Assisted Teleoperation. Participants reported the highest cognitive and physical effort during Assisted Teleoperation, highlighting the difficulty of fully manual gaze–EEG control.
         </p>
 
         <p>
-          Usability also increased with autonomy, with SUS scores rising from AT to SA and FA.
-          Measures of agency and ownership showed that <strong>AT and SA</strong> provided
-          a stronger sense of control and involvement, while <strong>FA</strong> offered the
-          greatest efficiency but at the cost of reduced direct control.
-          Qualitative feedback confirmed that participants appreciated the balance offered by SA,
-          recognized FA as ideal for routine tasks, and found AT demanding and effortful.
+        Usability also increased with autonomy, with system usability scores rising from Assisted Teleoperation to Shared Autonomy and Full Automation. Measures of agency and ownership showed that Assisted Teleoperation and Shared Autonomy provided a stronger sense of control and involvement, while Full Automation offered the greatest efficiency but at the cost of reduced direct control. Qualitative feedback confirmed that participants appreciated the balance offered by Shared Autonomy, recognized Full Automation as ideal for routine tasks, and found Assisted Teleoperation demanding and effortful.
         </p>
         </div>
       </div>
@@ -604,7 +550,7 @@ window.addEventListener('load', () => {
         <img data-index="0" src="static/images/nasa.png" alt="NASA-TLX"
           style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
           class="zoomable-img">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">NASA-TLX</p>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">NASA Task Load Index</p>
         <div class="zoom-icon" data-index="0" style="
             position: absolute;
             top: 8px;
@@ -627,7 +573,7 @@ window.addEventListener('load', () => {
         <img data-index="1" src="static/images/sus.png" alt="SUS"
           style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
           class="zoomable-img">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">SUS</p>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">System Usability Scale</p>
         <div class="zoom-icon" data-index="1" style="
             position: absolute;
             top: 8px;
@@ -650,7 +596,7 @@ window.addEventListener('load', () => {
         <img data-index="2" src="static/images/soas.png" alt="SoARS"
           style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
           class="zoomable-img">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">SoARS</p>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Sense of Agency Rating Scale</p>
         <div class="zoom-icon" data-index="2" style="
             position: absolute;
             top: 8px;
@@ -902,34 +848,36 @@ window.addEventListener('load', () => {
 
   </style>
 
-  <!-- What We Learned Section -->
+  <!-- Takeaways Section -->
   <section class="section" id="what-we-learned" style="padding: 4rem 0; background-color: #f9f9f9;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">What We Learned</h2>
+          <h2 class="title is-3">Takeaways</h2>
         <div class="content">
 
-          <p><strong>Autonomous Teleoperation (AT – Level 1)</strong></p>
           <p>
+            <strong>Assisted Teleoperation</strong><br>
             The most demanding mode, requiring continuous attention and fine control. Participants felt strongly involved, but the effort and fatigue were noticeably higher.
           </p>
 
-          <p><strong>Shared Autonomy (SA – Level 2)</strong></p>
           <p>
+            <strong>Shared Autonomy</strong><br>
             The most balanced mode. Users remained in control while receiving meaningful assistance, resulting in smoother interaction, lower workload, and a natural sense of agency.
           </p>
 
-          <p><strong>Full Autonomy (FA – Level 3)</strong></p>
           <p>
+            <strong>Full Automation</strong><br>
             The fastest and most efficient level. Workload was minimal, though participants reported reduced direct control as the robot handled most of the task independently.
           </p>
 
-          <p><strong>General Findings</strong></p>
           <p>
-            Higher autonomy improved performance and reduced workload, while lower autonomy increased engagement and sense of control. 
-            <p></p>
-            Overall, SA emerged as the most appreciated balance between effort and efficiency.
+            <strong>General Findings</strong><br>
+            Higher autonomy improved performance and reduced workload, while lower autonomy increased engagement and sense of control.
+          </p>
+
+          <p>
+            Overall, Shared Autonomy emerged as the most appreciated balance between effort and efficiency.
           </p>
         </div>
       </div>
@@ -963,6 +911,7 @@ window.addEventListener('load', () => {
                 <img src="static/images/1.png" alt="Anna" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Hannah Kodama Douglas</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
+                  <a href="https://scholar.google.com/citations?user=UGqp8vUAAAAJ " target="_blank"><i class="fab fa-google"></i></a>
                   <a href="https://x.com/hmdougla" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="mailto:hannah_kodama_douglas@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
                 </div>
@@ -978,9 +927,9 @@ window.addEventListener('load', () => {
                 </div>
               </div>
 
-              <!-- 3. Ruslan -->
+              <!-- 3. Rousslan -->
               <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/3.png" alt="Ruslan" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <img src="static/images/3.png" alt="Rousslan" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Rousslan Dossa, Ph.D.</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
                   <a href="https://scholar.google.com/citations?user=ZDWS2CMAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
@@ -996,6 +945,7 @@ window.addEventListener('load', () => {
                 <div class="member_name">Luca Nunziante</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
                   <a href="https://scholar.google.com/citations?user=0XjgMocAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
+                  <a href="https://https://x.com/lucanunz" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="mailto:luca_nunziante@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
                 </div>
               </div>
@@ -1008,6 +958,7 @@ window.addEventListener('load', () => {
                   <a href="https://scholar.google.com/citations?user=oXpK8V8AAAAJ" target="_blank"><i class="fab fa-google"></i></a>
                   <a href="https://twitter.com/ShivaSujit" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="https://shivakanthsujit.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
+                  <a href="mailto:sujit_shivakanth@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
                 </div>
               </div>
 
@@ -1087,6 +1038,28 @@ window.addEventListener('load', () => {
       </div>
     </div>
   </section>
+
+    <!-- Funding Section -->
+    <section class="section" id="funding" style="padding: 3.5rem 0; background-color: #ffffff;">
+      <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+
+        <h2 class="title is-4">Funding</h2>
+
+        <p style="margin-top: 1.2rem; font-size: 1rem; color: #333;">
+          This work was supported by JST under Moonshot R&amp;D Grant Number JPMJMS2012.
+        </p>
+
+        <div style="margin-top: 2.2rem;">
+          <img src="/static/images/araya.jpg"
+              alt="Araya"
+              style="height: 72px; margin: 0 32px; vertical-align: middle;">
+          <img src="/static/images/iob.png"
+              alt="Internet of Brains"
+              style="height: 72px; margin: 0 32px; vertical-align: middle;">
+        </div>
+
+      </div>
+    </section>
 
   <!-- Footer Section -->
   <footer style="

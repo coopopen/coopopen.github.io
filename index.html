@@ -34,10 +34,10 @@
 -->
   <!-- Navbar -->
   <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-    <a class="navbar-item" 
-      href="https://research.araya.org/research/reinforcement-learning-team" 
+    <a class="araya-button"
+      href="https://research.araya.org/research/reinforcement-learning-team"
       target="_blank">
-      ARAYA RL Team
+      Araya Reinforcement Learning Team
     </a>
   </div>
 
@@ -67,12 +67,17 @@
             </div>
 
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="./static/pdf/yourpaper.pdf" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper PDF</span>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://www.frontiersin.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -130,9 +135,6 @@
           <div class="content">
           <p>
           We aim to advance assistive robotics to empower people with physical disabilities in activities of daily living (ADLs).
-          </p>
-
-          <p>
           By using shared autonomy to enable multi-agent collaboration between humans and robots, our research explores how technology can support independence and improve quality of life.
           </p>
           </div>
@@ -183,17 +185,8 @@
           <div class="content">
             <p>
             Each participant is given control of a mobile manipulator robot—a <a href="https://franka.de/" target="_blank">Franka</a> Panda Emika arm on top of a <a href="https://tidybot2.github.io/" target="_blank">Tidybot++</a> holonomic mobile base.
-            </p>
-
-            <p>
             The mobile base is controlled via path planning, and the robot arm is trained to perform manipulation tasks via imitation learning.
-            </p>
-
-            <p>
-            For the latter, we use the <a href="https://rise-policy.github.io/" target="_blank">RISE</a> point cloud encoder, trained with a flow matching objective on 70 human demonstrations per task.
-            </p>
-
-            <p>
+            For the latter, we use the <a href="https://rise-policy.github.io/" target="_blank">RISE</a> point cloud encoder, trained with a flow matching objective on 70 human demonstrations per task. With the same dataset, we also finetuned a single multitask VLA &pi;<sub>0.5</sub> <a href="https://www.physicalintelligence.company/blog/pi05" target="_blank">[link]</a> that we will use in future iterations of this work.
             We ensure safe and reliable motion using an <a href="https://stanfordasl.github.io/oscbf/" target="_blank">operational space control barrier function</a> controller on top of the learned policy.
             </p>
           </div>
@@ -276,30 +269,43 @@
   </section>
 
 
-  <!-- User Interface Devices and Control -->
-  <section class="section" id="system-interface">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">User Interface Devices and Control</h2>
-          <div class="content">
-          <p>
-          Our platform, built on top of <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1528754/full" target="_blank">M4Bench</a> integrates multiple input devices to enable intuitive human–robot interaction. Participants control the robots using a combination of EEG signals (with the motor imagery paradigm), EMG activity (muscle signals), and eye-tracking (gaze selection).
-          </p>
+    <!-- User Interface Devices and Control -->
+    <section class="section" id="system-interface">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
 
-          <p>
-          These signals were mapped via different user interfaces to increasing levels of robot autonomy: from Assisted Teleoperation, where users managed movements step by step, to Shared Autonomy, where human intent guided the robot, up to Full Automation, where the system acted independently after goal selection.
-          </p>
+            <h2 class="title is-3">User Interface Devices and Control</h2>
+
+            <!-- Image moved just below the title -->
+            <figure class="image" style="margin: 1.5rem auto 2rem;">
+              <img src="static/images/participants.jpg"
+                  alt="participants"
+                  style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto;">
+            </figure>
+
+            <div class="content">
+              <p>
+                Our platform, built on top of
+                <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1528754/full"
+                  target="_blank">M4Bench</a>
+                integrates multiple input devices to enable intuitive human–robot interaction.
+                Participants control the robots using a combination of EEG signals (with the motor imagery paradigm),
+                EMG activity (muscle signals), and eye-tracking (gaze selection).
+              </p>
+
+              <p>
+                These signals were mapped via different user interfaces to increasing levels of robot autonomy:
+                from Assisted Teleoperation, where users managed movements step by step, to Shared Autonomy,
+                where human intent guided the robot, up to Full Automation, where the system acted independently
+                after goal selection.
+              </p>
+            </div>
+
           </div>
-          <figure class="image" style="margin-top:20px;">
-            <img src="static/images/participants.jpg"
-                alt="participants"
-                style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto; margin:0 auto;">
-          </figure>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <!-- Horizontal Scroll Video Strip -->
   <section id="autonomy-videos-strip"
@@ -531,26 +537,37 @@
   </section>
 
 
-    <!-- Horizontal Scroll Image Strip with Zoom (clean, no id conflicts) -->
-  <section id="results-images-strip"
-    style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
+    <!-- Horizontal Scroll Image Strip with Zoom -->
+    <section id="results-images-strip"
+      style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
 
-    <!-- Scrollable Image Container -->
-    <div id="image-strip-images" style="
-        display: flex;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        gap: 64px;
-        padding: 2rem 200px;
-        scrollbar-width: none;
-      ">
-      
-      <!-- Image 1 -->
+      <!-- Scrollable Image Container -->
+      <div id="image-strip-images" style="
+          display: flex;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          gap: 64px;
+          padding: 2rem 200px;
+          scrollbar-width: none;
+        ">
+
+      <!-- Image 1: NASA-TLX -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
-        <img data-index="0" src="static/images/nasa.png" alt="NASA-TLX"
-          style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
-          class="zoomable-img">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">NASA Task Load Index</p>
+        <img data-index="0"
+            src="static/images/nasa.png"
+            alt="NASA-TLX"
+            class="zoomable-img"
+            style="
+              height: 480px;
+              width: auto;
+              object-fit: contain;
+              border-radius: 5px;
+              box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+              cursor: zoom-in;
+            ">
+        <p style="color:#fff; margin-top:0.75rem; font-size:1.2rem;">
+          NASA Task Load Index
+        </p>
         <div class="zoom-icon" data-index="0" style="
             position: absolute;
             top: 8px;
@@ -565,15 +582,28 @@
             align-items: center;
             cursor: pointer;
             font-size: 18px;
-          ">&#128269;</div>
+          ">
+          &#128269;
+        </div>
       </div>
 
-      <!-- Image 2 -->
+      <!-- Image 2: SUS (reference height) -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
-        <img data-index="1" src="static/images/sus.png" alt="SUS"
-          style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
-          class="zoomable-img">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">System Usability Scale</p>
+        <img data-index="1"
+            src="static/images/sus.png"
+            alt="SUS"
+            class="zoomable-img"
+            style="
+              height: 480px;
+              width: auto;
+              object-fit: contain;
+              border-radius: 5px;
+              box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+              cursor: zoom-in;
+            ">
+        <p style="color:#fff; margin-top:0.75rem; font-size:1.2rem;">
+          System Usability Scale
+        </p>
         <div class="zoom-icon" data-index="1" style="
             position: absolute;
             top: 8px;
@@ -588,15 +618,28 @@
             align-items: center;
             cursor: pointer;
             font-size: 18px;
-          ">&#128269;</div>
+          ">
+          &#128269;
+        </div>
       </div>
 
-      <!-- Image 3 -->
+      <!-- Image 3: SoARS -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
-        <img data-index="2" src="static/images/soas.png" alt="SoARS"
-          style="width: 800px; height: auto; object-fit: contain; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor: zoom-in;"
-          class="zoomable-img">
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">Sense of Agency Rating Scale</p>
+        <img data-index="2"
+            src="static/images/soas.png"
+            alt="SoARS"
+            class="zoomable-img"
+            style="
+              height: 480px;
+              width: auto;
+              object-fit: contain;
+              border-radius: 5px;
+              box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+              cursor: zoom-in;
+            ">
+        <p style="color:#fff; margin-top:0.75rem; font-size:1.2rem;">
+          Sense of Agency Rating Scale
+        </p>
         <div class="zoom-icon" data-index="2" style="
             position: absolute;
             top: 8px;
@@ -611,16 +654,33 @@
             align-items: center;
             cursor: pointer;
             font-size: 18px;
-          ">&#128269;</div>
+          ">
+          &#128269;
+        </div>
       </div>
 
+</div>
+
+    <!-- ✅ Bottom Navigation Arrows -->
+    <div id="image-strip-controls"
+      style="
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 16px;
+        z-index: 20;
+      ">
+      <button id="scroll-left-img-btn" class="nav-arrow" aria-label="Scroll Left">
+        &#10094;
+      </button>
+      <button id="scroll-right-img-btn" class="nav-arrow" aria-label="Scroll Right">
+        &#10095;
+      </button>
     </div>
 
-    <!-- Bottom Navigation Arrows (centered) -->
-    <div id="image-strip-controls" style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; z-index: 10;">
-      <button id="scroll-left-img-btn" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
-      <button id="scroll-right-img-btn" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
-    </div>
+  </section>
 
     <!-- LIGHTBOX specific for images (unique IDs to avoid conflicts) -->
     <div id="img-lightbox-overlay" style="
@@ -911,9 +971,9 @@
                 <img src="static/images/1.png" alt="Anna" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Hannah Kodama Douglas</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://scholar.google.com/citations?user=UGqp8vUAAAAJ " target="_blank"><i class="fab fa-google"></i></a>
-                  <a href="https://x.com/hmdougla" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="mailto:hannah_kodama_douglas@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                  <a href="https://x.com/hmdougla" target="_blank"><i class="fab fa-twitter"></i></a>                  
+                  <a href="https://scholar.google.com/citations?user=UGqp8vUAAAAJ " target="_blank"><i class="fab fa-google"></i></a>
                 </div>
               </div>
 
@@ -922,8 +982,8 @@
                 <img src="static/images/2.png" alt="Marina" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Marina Di Vincenzo</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://scholar.google.com/citations?user=SYGaeJIAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
                   <a href="mailto:marina_vincenzo@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                  <a href="https://scholar.google.com/citations?user=SYGaeJIAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
                 </div>
               </div>
 
@@ -932,10 +992,10 @@
                 <img src="static/images/3.png" alt="Rousslan" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Rousslan Dossa, Ph.D.</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://scholar.google.com/citations?user=ZDWS2CMAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                  <a href="https://twitter.com/RousslanDossa" target="_blank"><i class="fab fa-twitter"></i></a>
-                  <a href="mailto:dossa@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
                   <a href="https://dosssman.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
+                  <a href="mailto:dossa@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                  <a href="https://twitter.com/RousslanDossa" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://scholar.google.com/citations?user=ZDWS2CMAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
                 </div>
               </div>
 
@@ -944,9 +1004,9 @@
                 <img src="static/images/4.png" alt="Luca" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Luca Nunziante</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://scholar.google.com/citations?user=0XjgMocAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                  <a href="https://https://x.com/lucanunz" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="mailto:luca_nunziante@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                  <a href="https://https://x.com/lucanunz" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://scholar.google.com/citations?user=0XjgMocAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
                 </div>
               </div>
 
@@ -955,10 +1015,10 @@
                 <img src="static/images/5.png" alt="Shiva" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Shivakanth Sujit</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://scholar.google.com/citations?user=oXpK8V8AAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                  <a href="https://twitter.com/ShivaSujit" target="_blank"><i class="fab fa-twitter"></i></a>
                   <a href="https://shivakanthsujit.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
                   <a href="mailto:sujit_shivakanth@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                  <a href="https://twitter.com/ShivaSujit" target="_blank"><i class="fab fa-twitter"></i></a>
+                  <a href="https://scholar.google.com/citations?user=oXpK8V8AAAAJ" target="_blank"><i class="fab fa-google"></i></a>
                 </div>
               </div>
 
@@ -967,11 +1027,10 @@
                 <img src="static/images/6.png" alt="Kai" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
                 <div class="member_name">Kai Arulkumaran, Ph.D.</div>
                 <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://scholar.google.com/citations?user=QKCypSoAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                  <a href="https://twitter.com/kaixhin" target="_blank"><i class="fab fa-twitter"></i></a>
-                  <a href="mailto:kai_arulkumaran@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
-                  <a href="http://kaixhin.com" target="_blank"><i class="fas fa-globe"></i></a>
-                </div>
+                <a href="http://kaixhin.com" target="_blank"><i class="fas fa-globe"></i></a>
+                <a href="mailto:kai_arulkumaran@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://twitter.com/kaixhin" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://scholar.google.com/citations?user=QKCypSoAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
               </div>
 
             </div>
@@ -1014,32 +1073,7 @@
 
 
 
-  <!-- Citation Section -->
-  <section class="section" id="citation" style="padding: 4rem 0; background-color: #f9f9f9;">
-    <div class="container" style="max-width: 1000px; margin: 0 auto;">
-      <h2 class="title is-3" style="text-align: center;">Citation</h2>
-
-      <!-- Citation Card -->
-      <div style="
-      margin-top: 2rem;
-      background-color: #fdfdfd;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 2rem 3rem;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 1rem;
-      color: #333;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      line-height: 1.6;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    ">
-        TBD
-      </div>
-    </div>
-  </section>
-
-    <!-- Funding Section -->
+      <!-- Funding Section -->
     <section class="section" id="funding" style="padding: 3.5rem 0; background-color: #ffffff;">
       <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
 
@@ -1049,30 +1083,81 @@
           This work was supported by JST under Moonshot R&amp;D Grant Number JPMJMS2012.
         </p>
 
-        <div style="margin-top: 2.2rem;">
-          <img src="/static/images/araya.jpg"
-              alt="Araya"
-              style="height: 72px; margin: 0 32px; vertical-align: middle;">
-          <img src="/static/images/iob.png"
-              alt="Internet of Brains"
-              style="height: 72px; margin: 0 32px; vertical-align: middle;">
+        <div style="margin-top: 2.5rem; display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;">
+          
+          <a href="https://research.araya.org/" target="_blank" rel="noopener noreferrer">
+            <img src="/static/images/araya.jpg"
+                alt="Araya"
+                style="height: 90px; vertical-align: middle;">
+          </a>
+
+          <a href="https://brains.link/en" target="_blank" rel="noopener noreferrer">
+            <img src="/static/images/iob.png"
+                alt="Internet of Brains"
+                style="height: 72px; vertical-align: middle;">
+          </a>
+
         </div>
 
       </div>
     </section>
 
-  <!-- Footer Section -->
-  <footer style="
-  background-color: #e0e0e0;  /* leggermente più scuro dello sfondo */
-  padding: 1rem 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #333;
-">
-    Website template borrowed from <strong>Mobi-π</strong> and <strong>NeRFies</strong>.
+
+    <!-- Citation Section -->
+    <section class="section" id="citation" style="padding: 4rem 0; background-color: #f9f9f9;">
+      <div class="container" style="max-width: 1000px; margin: 0 auto;">
+        <h2 class="title is-3" style="text-align: center;">Citation</h2>
+
+        <div style="
+          margin-top: 2rem;
+          background-color: #fdfdfd;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          padding: 2rem 3rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        ">
+
+    <pre style="
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+      white-space: pre;
+    ">
+    @article{douglas2026levels,
+      title   = {Levels of shared autonomy in brain-robot interfaces:
+                enabling multi-robot multi-human collaboration
+                for activities of daily living},
+      author  = {Douglas, Hannah and
+                Di Vincenzo, Marina and
+                Dossa, Rousslan Fernand Julien and
+                Nunziante, Luca and
+                Sujit, Shivakanth and
+                Arulkumaran, Kai},
+      journal = {Frontiers in Human Neuroscience},
+      volume  = {x},
+      pages   = {x},
+      year    = {2026}
+    }
+    </pre>
+
+        </div>
+      </div>
+    </section>
+
+    <footer style="
+    background-color: #e0e0e0;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+  ">
+    Website template borrowed from
+    <a href="https://mobipi.github.io/" target="_blank" rel="noopener noreferrer"><strong>Mobi-π</strong></a>
+    and
+    <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer"><strong>NeRFies</strong></a>.
   </footer>
-
-
 
 </body>
 

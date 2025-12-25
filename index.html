@@ -23,17 +23,93 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .nav-arrow {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 28px;
+    }
+
+    #video-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Responsive Scaling */
+    @media (max-width: 1400px) { .video-item video { width: 600px; } }
+    @media (max-width: 1200px) { .video-item video { width: 500px; } }
+    @media (max-width: 992px)  { .video-item video { width: 400px; } }
+    @media (max-width: 768px)  { .video-item video { width: 300px; } }
+    @media (max-width: 480px)  { .video-item video { width: 250px; padding:0 16px; } }
+
+    .nav-arrow {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* hide native scrollbar on WebKit */
+    #image-strip-images::-webkit-scrollbar { display: none; }
+
+    @media (max-width: 1400px) { .image-item img { width: 600px; } }
+    @media (max-width: 1200px) { .image-item img { width: 500px; } }
+    @media (max-width: 992px)  { .image-item img { width: 400px; } }
+    @media (max-width: 768px)  { .image-item img { width: 300px; } }
+    @media (max-width: 480px)  { .image-item img { width: 250px; padding:0 16px; } }
+
+    /* zoom icon hover */
+    .zoom-icon:hover { background: rgba(255,255,255,0.9); color:#000; transition: all 0.15s ease; }
+
+    /* lightbox transitions */
+    #img-lightbox-overlay { transition: opacity 0.12s ease; }
+    #img-lightbox-overlay img { user-select: none; -webkit-user-drag: none; }
+
+        #team-video-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 1200px) {
+      #team-video-strip video {
+        width: 180px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      #team-video-strip video {
+        width: 160px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #team-video-strip video {
+        width: 140px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #team-video-strip video {
+        width: 120px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<!--
-  <h1 style="text-align:center; font-size:140px; margin-top:40px; color:black; opacity:0.25;">
-    WIP
-</h1>
--->
   <!-- Navbar -->
-  <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+  <div class="navbar-start" style="flex-grow: 1; justify-content: center; margin-top: 24px;" >
     <a class="araya-button"
       href="https://research.araya.org/research/reinforcement-learning-team"
       target="_blank">
@@ -42,7 +118,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" style="position: relative; top: -14px;">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -65,7 +141,6 @@
               <span class="author-block">Araya Inc., Tokyo, Japan</span><br>
               <span class="author-block"><em>†Equal contributions</em></span>
             </div>
-
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -99,7 +174,7 @@
   </section>
 
   <!-- Abstract Section -->
-  <section class="section" id="abstract">
+  <section class="section" id="abstract" style="position: relative; top: -60px;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -117,9 +192,9 @@
           Our results show that, while Full Automation was generally preferred by users due to lower workload and higher usability, Shared Autonomy provided higher reliability and preserved user agency, especially in the presence of noisy EEG decoding. Although there was significant individual variability in EEG decoding performance, our post-hoc analysis revealed the potential benefits of customizing pipelines for each user.
           </p>
 
-          <p>
+          <!-- <p>
           Finally, we note that our findings are specific to the multi-modal configuration tested and should not be interpreted as a universal claim about the superiority of any autonomy level, and, furthermore, our user study was limited by the use of healthy adults rather than target population (e.g., individuals with ALS), gender imbalance, and a relatively small sample size, which may affect generalizability.
-          </p>
+          </p> -->
           </div>
         </div>
       </div>
@@ -127,12 +202,12 @@
   </section>
 
   <!-- Motivation Section -->
-  <section class="section" id="motivation">
+  <section class="section" id="motivation" style="position: relative; top: -96px;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Motivation</h2>
-          <div class="content">
+          <div class="content has-text-justified">
           <p>
           We aim to advance assistive robotics to empower people with physical disabilities in activities of daily living (ADLs).
           By using shared autonomy to enable multi-agent collaboration between humans and robots, our research explores how technology can support independence and improve quality of life.
@@ -148,12 +223,12 @@
   </section>
 
   <!-- Assistive Kitchen Section -->
-  <section class="section" id="assistive-kitchen">
+  <section class="section" id="assistive-kitchen" style="position: relative; top: -106px;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Assistive Kitchen</h2>
-          <div class="content">
+          <div class="content has-text-justified">
           <p>
           Our experiments take place in a simulated kitchen, designed to study how people and robots can collaborate in everyday tasks. The environment includes a central table, storage areas, and common objects such as plates, cutlery, and cups, arranged to mimic a realistic household setup.
           </p>
@@ -177,12 +252,12 @@
   </section>
 
   <!-- Mobile Manipulators -->
-  <section class="section" id="robots-task-execution">
+  <section class="section" id="robots-task-execution" style="position: relative; top: -116px;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Mobile Manipulators</h2>
-          <div class="content">
+          <div class="content has-text-justified">
             <p>
             Each participant is given control of a mobile manipulator robot—a <a href="https://franka.de/" target="_blank">Franka</a> Panda Emika arm on top of a <a href="https://tidybot2.github.io/" target="_blank">Tidybot++</a> holonomic mobile base.
             The mobile base is controlled via path planning, and the robot arm is trained to perform manipulation tasks via imitation learning.
@@ -196,7 +271,7 @@
   </section>
 
   <!-- Robot Task Videos Grid -->
-  <section id="robot-task-videos" style="padding:1rem 0;">
+  <section id="robot-task-videos" style="position: relative; top: -116px;">
     <div class="container is-max-desktop">
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem 0.5rem;">
 
@@ -268,48 +343,46 @@
     </div>
   </section>
 
+  <!-- User Interface Devices and Control -->
+  <section class="section" id="system-interface" style="position: relative; top: -88px;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
 
-    <!-- User Interface Devices and Control -->
-    <section class="section" id="system-interface">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
+          <h2 class="title is-3">User Interface Devices and Control</h2>
 
-            <h2 class="title is-3">User Interface Devices and Control</h2>
+          <!-- Image moved just below the title -->
+          <figure class="image" style="margin: 1.5rem auto 2rem;">
+            <img src="static/images/participants.jpg"
+                alt="participants"
+                style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto;">
+          </figure>
 
-            <!-- Image moved just below the title -->
-            <figure class="image" style="margin: 1.5rem auto 2rem;">
-              <img src="static/images/participants.jpg"
-                  alt="participants"
-                  style="border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.2); max-width:100%; height:auto;">
-            </figure>
+          <div class="content has-text-justified">
+            <p>
+              Our platform, built on top of
+              <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1528754/full"
+                target="_blank">M4Bench</a>
+              integrates multiple input devices to enable intuitive human–robot interaction.
+              Participants control the robots using a combination of EEG signals (with the motor imagery paradigm),
+              EMG activity (muscle signals), and eye-tracking (gaze selection).
+            </p>
 
-            <div class="content">
-              <p>
-                Our platform, built on top of
-                <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1528754/full"
-                  target="_blank">M4Bench</a>
-                integrates multiple input devices to enable intuitive human–robot interaction.
-                Participants control the robots using a combination of EEG signals (with the motor imagery paradigm),
-                EMG activity (muscle signals), and eye-tracking (gaze selection).
-              </p>
-
-              <p>
-                These signals were mapped via different user interfaces to increasing levels of robot autonomy:
-                from Assisted Teleoperation, where users managed movements step by step, to Shared Autonomy,
-                where human intent guided the robot, up to Full Automation, where the system acted independently
-                after goal selection.
-              </p>
-            </div>
-
+            <p>
+              These signals were mapped via different user interfaces to increasing levels of robot autonomy:
+              from Assisted Teleoperation, where users managed movements step by step, to Shared Autonomy,
+              where human intent guided the robot, up to Full Automation, where the system acted independently
+              after goal selection.
+            </p>
           </div>
+
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Horizontal Scroll Video Strip -->
-  <section id="autonomy-videos-strip"
-      style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
+  <section id="autonomy-videos-strip" style="background-color: #000; overflow: hidden; position: relative; top: -80px;">
 
     <!-- Scrollable Video Container -->
     <div id="video-strip" style="
@@ -321,184 +394,158 @@
       scrollbar-width: none;
     ">
       <!-- Video 1 -->
-    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-      <video src="static/videos/Level_1.mp4" autoplay muted loop playsinline
-        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-        onclick="openLightbox(this)">
-      </video>
-      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
-        Level 1<br>Assisted Teleoperation
-      </p>
-    </div>
+      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+        <video src="static/videos/Level_1.mp4" autoplay muted loop playsinline
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+          onclick="openLightbox(this)">
+        </video>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+          Level 1<br>Assisted Teleoperation
+        </p>
+      </div>
 
-    <!-- Video 2 -->
-    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-      <video src="static/videos/Level_2.mp4" autoplay muted loop playsinline
-        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-        onclick="openLightbox(this)">
-      </video>
-      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
-        Level 2<br>Shared Autonomy
-      </p>
-    </div>
+      <!-- Video 2 -->
+      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+        <video src="static/videos/Level_2.mp4" autoplay muted loop playsinline
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+          onclick="openLightbox(this)">
+        </video>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+          Level 2<br>Shared Autonomy
+        </p>
+      </div>
 
       <!-- Video 3 -->
-    <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-      <video src="static/videos/Level_3.mp4" autoplay muted loop playsinline
-        style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
-        onclick="openLightbox(this)">
-      </video>
-      <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
-        Level 3<br>Full Automation
-      </p>
-    </div>
+      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
+        <video src="static/videos/Level_3.mp4" autoplay muted loop playsinline
+          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+          onclick="openLightbox(this)">
+        </video>
+        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+          Level 3<br>Full Automation
+        </p>
+      </div>
 
-    <!-- Bottom Navigation Arrows -->
-    <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
-      <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
-      <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+      <!-- Bottom Navigation Arrows -->
+      <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
+        <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
+        <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+      </div>
     </div>
   </section>
 
   <!-- Lightbox overlay -->
   <div id="lightbox" style="
-      display:none;
-      position:fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.9);
-      justify-content:center;
-      align-items:center;
-      z-index:1000;
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
   ">
     <video id="lightbox-video" controls style="max-width:90%; max-height:90%; border-radius:10px;"></video>
   </div>
 
   <script>
-  // --- LIGHTBOX (unchanged, left as you provided) ---
-  function openLightbox(videoElement) {
-      var lightbox = document.getElementById('lightbox');
-      var lbVideo = document.getElementById('lightbox-video');
-      lbVideo.src = videoElement.src;
-      lbVideo.currentTime = 0;
-      lbVideo.play();
-      lightbox.style.display = "flex";
-  }
+    // --- LIGHTBOX (unchanged, left as you provided) ---
+    function openLightbox(videoElement) {
+        var lightbox = document.getElementById('lightbox');
+        var lbVideo = document.getElementById('lightbox-video');
+        lbVideo.src = videoElement.src;
+        lbVideo.currentTime = 0;
+        lbVideo.play();
+        lightbox.style.display = "flex";
+    }
 
-  // Close lightbox on click outside video (unchanged)
-  document.getElementById('lightbox').addEventListener('click', function(e){
-      if(e.target.id === 'lightbox'){
-          var lbVideo = document.getElementById('lightbox-video');
-          lbVideo.pause();
-          lbVideo.src = "";
-          this.style.display = "none";
-      }
-  });
+    // Close lightbox on click outside video (unchanged)
+    document.getElementById('lightbox').addEventListener('click', function(e){
+        if(e.target.id === 'lightbox'){
+            var lbVideo = document.getElementById('lightbox-video');
+            lbVideo.pause();
+            lbVideo.src = "";
+            this.style.display = "none";
+        }
+    });
 
-  // --- Carousel centering logic (minimal modifications only) ---
+    // --- Carousel centering logic (minimal modifications only) ---
 
-  // Keep your original constants (unused parts left intact to avoid touching other code)
-  const videoStrip = document.getElementById('video-strip');
-  const gap = 64;
-  const videoWidth = 800;
-  const sidePadding = 200; // left/right padding you may have used
+    // Keep your original constants (unused parts left intact to avoid touching other code)
+    const videoStrip = document.getElementById('video-strip');
+    const gap = 64;
+    const videoWidth = 800;
+    const sidePadding = 200; // left/right padding you may have used
 
-  // Collect the video items
-  const videos = document.querySelectorAll('.video-item');
+    // Collect the video items
+    const videos = document.querySelectorAll('.video-item');
 
-  // currentView: 0 = left view (video 1), 1 = center view (video 2), 2 = right view (video 3)
-  let currentView = 1; // start in center view (Level 2)
+    // currentView: 0 = left view (video 1), 1 = center view (video 2), 2 = right view (video 3)
+    let currentView = 1; // start in center view (Level 2)
 
-  // Helper: center a specific video element by index inside the visible viewport of the strip
-  function centerVideoByIndex(index) {
-      if (!videos || videos.length === 0) return;
-      const containerWidth = videoStrip.clientWidth;
-      // find the <video> element inside the .video-item
-      const videoEl = videos[index].querySelector('video');
-      if (!videoEl) return;
+    // Helper: center a specific video element by index inside the visible viewport of the strip
+    function centerVideoByIndex(index) {
+        if (!videos || videos.length === 0) return;
+        const containerWidth = videoStrip.clientWidth;
+        // find the <video> element inside the .video-item
+        const videoEl = videos[index].querySelector('video');
+        if (!videoEl) return;
 
-      // compute exact width of that video element (handles responsive sizes)
-      const videoRect = videoEl.getBoundingClientRect();
-      const videoActualWidth = videoRect.width;
+        // compute exact width of that video element (handles responsive sizes)
+        const videoRect = videoEl.getBoundingClientRect();
+        const videoActualWidth = videoRect.width;
 
-      // offsetLeft relative to scroll container
-      const offsetLeft = videoEl.offsetLeft;
+        // offsetLeft relative to scroll container
+        const offsetLeft = videoEl.offsetLeft;
 
-      // scrollTo value that centers the video in the container
-      const scrollTo = offsetLeft - (containerWidth / 2) + (videoActualWidth / 2);
+        // scrollTo value that centers the video in the container
+        const scrollTo = offsetLeft - (containerWidth / 2) + (videoActualWidth / 2);
 
-      videoStrip.scrollTo({
-          left: scrollTo,
-          behavior: 'smooth'
-      });
-  }
+        videoStrip.scrollTo({
+            left: scrollTo,
+            behavior: 'smooth'
+        });
+    }
 
-  // Map currentView to video index: view 0 -> index 0, view 1 -> index 1, view 2 -> index 2
-  function centerCurrentView() {
-      const idx = Math.min(Math.max(currentView, 0), videos.length - 1);
-      centerVideoByIndex(idx);
-  }
+    // Map currentView to video index: view 0 -> index 0, view 1 -> index 1, view 2 -> index 2
+    function centerCurrentView() {
+        const idx = Math.min(Math.max(currentView, 0), videos.length - 1);
+        centerVideoByIndex(idx);
+    }
 
-  // Replace the simple scrollBy listeners with "three-view" navigation (minimal change)
-  document.getElementById('scroll-left-img')?.addEventListener('click', () => {
-      // Move one view to the left (clamped), then center the corresponding video
-      if (currentView > 0) currentView--;
-      centerCurrentView();
-  });
+    // Replace the simple scrollBy listeners with "three-view" navigation (minimal change)
+    document.getElementById('scroll-left-img')?.addEventListener('click', () => {
+        // Move one view to the left (clamped), then center the corresponding video
+        if (currentView > 0) currentView--;
+        centerCurrentView();
+    });
 
-  document.getElementById('scroll-right-img')?.addEventListener('click', () => {
-      // Move one view to the right (clamped), then center the corresponding video
-      if (currentView < Math.min(2, videos.length - 1)) currentView++;
-      centerCurrentView();
-  });
+    document.getElementById('scroll-right-img')?.addEventListener('click', () => {
+        // Move one view to the right (clamped), then center the corresponding video
+        if (currentView < Math.min(2, videos.length - 1)) currentView++;
+        centerCurrentView();
+    });
 
-  // On load: ensure the center view is shown and Video 2 is centered
-  window.addEventListener('load', () => {
-      // ensure there are at least 2 videos; otherwise center the first
-      if (videos.length > 1) {
-          currentView = 1; // center view -> video index 1 (Level 2)
-      } else {
-          currentView = 0;
-      }
-      // small timeout to let layout settle (helps on slow renders)
-      setTimeout(() => centerCurrentView(), 50);
-  });
+    // On load: ensure the center view is shown and Video 2 is centered
+    window.addEventListener('load', () => {
+        // ensure there are at least 2 videos; otherwise center the first
+        if (videos.length > 1) {
+            currentView = 1; // center view -> video index 1 (Level 2)
+        } else {
+            currentView = 0;
+        }
+        // small timeout to let layout settle (helps on slow renders)
+        setTimeout(() => centerCurrentView(), 50);
+    });
   </script>
 
-
-  <style>
-  .nav-arrow {
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    font-size: 28px;
-  }
-
-  #video-strip::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Responsive Scaling */
-  @media (max-width: 1400px) { .video-item video { width: 600px; } }
-  @media (max-width: 1200px) { .video-item video { width: 500px; } }
-  @media (max-width: 992px)  { .video-item video { width: 400px; } }
-  @media (max-width: 768px)  { .video-item video { width: 300px; } }
-  @media (max-width: 480px)  { .video-item video { width: 250px; padding:0 16px; } }
-  </style>
-
-
-
-
   <!-- The Shared Autonomy Study Section -->
-  <section class="section" id="shared-autonomy-study">
+  <section class="section" id="shared-autonomy-study" style="position: relative; top: -48px;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">The Shared Autonomy Study</h2>
-          <div class="content">
+          <h2 class="title is-3">Shared Autonomy Study</h2>
+          <div class="content has-text-justified">
           <p>
           We conducted a within-subjects user study to examine how different levels of robot autonomy influence human–robot collaboration in activities of daily living. Each participant interacted with the system across three autonomy level—Assisted Teleoperation, Shared Autonomy, and Full Automation—presented in a randomized order.
           </p>
@@ -518,38 +565,38 @@
   </section>
 
   <!-- Results Section -->
-  <section class="section" id="results">
+  <section class="section" id="results"  style="position: relative; top: -62px;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Results</h2>
-      <div class="content">
-        <p>
-        Our study revealed clear differences across the three autonomy levels. Higher autonomy consistently improved task performance: Shared Autonomy and Full Automation required less user interaction, reduced workload, and enabled smoother task execution compared to Assisted Teleoperation. Participants reported the highest cognitive and physical effort during Assisted Teleoperation, highlighting the difficulty of fully manual gaze–EEG control.
-        </p>
+          <div class="content has-text-justified">
+            <p>
+            Our study revealed clear differences across the three autonomy levels. Higher autonomy consistently improved task performance: Shared Autonomy and Full Automation required less user interaction, reduced workload, and enabled smoother task execution compared to Assisted Teleoperation. Participants reported the highest cognitive and physical effort during Assisted Teleoperation, highlighting the difficulty of fully manual gaze–EEG control.
+            </p>
 
-        <p>
-        Usability also increased with autonomy, with system usability scores rising from Assisted Teleoperation to Shared Autonomy and Full Automation. Measures of agency and ownership showed that Assisted Teleoperation and Shared Autonomy provided a stronger sense of control and involvement, while Full Automation offered the greatest efficiency but at the cost of reduced direct control. Qualitative feedback confirmed that participants appreciated the balance offered by Shared Autonomy, recognized Full Automation as ideal for routine tasks, and found Assisted Teleoperation demanding and effortful.
-        </p>
+            <p>
+            Usability also increased with autonomy, with system usability scores rising from Assisted Teleoperation to Shared Autonomy and Full Automation. Measures of agency and ownership showed that Assisted Teleoperation and Shared Autonomy provided a stronger sense of control and involvement, while Full Automation offered the greatest efficiency but at the cost of reduced direct control. Qualitative feedback confirmed that participants appreciated the balance offered by Shared Autonomy, recognized Full Automation as ideal for routine tasks, and found Assisted Teleoperation demanding and effortful.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
 
-    <!-- Horizontal Scroll Image Strip with Zoom -->
-    <section id="results-images-strip"
-      style="padding: 4rem 0; background-color: #000; overflow: hidden; position: relative;">
+  <!-- Horizontal Scroll Image Strip with Zoom -->
+  <section id="results-images-strip" style="padding: 2rem 0; background-color: #000; overflow: hidden; position: relative; top: -48px;">
 
-      <!-- Scrollable Image Container -->
-      <div id="image-strip-images" style="
-          display: flex;
-          overflow-x: auto;
-          scroll-behavior: smooth;
-          gap: 64px;
-          padding: 2rem 200px;
-          scrollbar-width: none;
-        ">
+    <!-- Scrollable Image Container -->
+    <div id="image-strip-images" style="
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 64px;
+      padding: 2rem 200px;
+      scrollbar-width: none;
+    ">
 
       <!-- Image 1: NASA-TLX -->
       <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
@@ -558,10 +605,12 @@
             alt="NASA-TLX"
             class="zoomable-img"
             style="
-              height: 480px;
+              height: 340px;
               width: auto;
               object-fit: contain;
               border-radius: 5px;
+              outline: 10px solid white;
+              outline-offset: -1px;
               box-shadow: 0 6px 16px rgba(0,0,0,0.4);
               cursor: zoom-in;
             ">
@@ -594,10 +643,12 @@
             alt="SUS"
             class="zoomable-img"
             style="
-              height: 480px;
+              height: 340px;
               width: auto;
               object-fit: contain;
               border-radius: 5px;
+              outline: 10px solid white;
+              outline-offset: -1px;
               box-shadow: 0 6px 16px rgba(0,0,0,0.4);
               cursor: zoom-in;
             ">
@@ -630,10 +681,12 @@
             alt="SoARS"
             class="zoomable-img"
             style="
-              height: 480px;
+              height: 340px;
               width: auto;
               object-fit: contain;
               border-radius: 5px;
+              outline: 10px solid white;
+              outline-offset: -1px;
               box-shadow: 0 6px 16px rgba(0,0,0,0.4);
               cursor: zoom-in;
             ">
@@ -658,14 +711,13 @@
           &#128269;
         </div>
       </div>
-
-</div>
+    </div>
 
     <!-- ✅ Bottom Navigation Arrows -->
     <div id="image-strip-controls"
       style="
         position: absolute;
-        bottom: 24px;
+        bottom: 8px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -682,477 +734,394 @@
 
   </section>
 
-    <!-- LIGHTBOX specific for images (unique IDs to avoid conflicts) -->
-    <div id="img-lightbox-overlay" style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,0.95);
-        justify-content: center;
-        align-items: center;
-        z-index: 99999;
-        padding: 24px;
-      ">
-      <button id="img-lightbox-close" style="
-          position: absolute; top: 20px; right: 20px; z-index:100001;
-          background: rgba(255,255,255,0.9); border: none; border-radius: 8px; padding:8px 12px; cursor:pointer;
-        ">Close ✕</button>
+  <!-- LIGHTBOX specific for images (unique IDs to avoid conflicts) -->
+  <div id="img-lightbox-overlay" style="
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      padding: 24px;
+    ">
+    <button id="img-lightbox-close" style="
+        position: absolute; top: 20px; right: 20px; z-index:100001;
+        background: rgba(255,255,255,0.9); border: none; border-radius: 8px; padding:8px 12px; cursor:pointer;
+      ">Close ✕</button>
 
-      <!-- left/right inside lightbox -->
-      <button id="img-lightbox-prev" aria-label="Previous" style="
-          position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
-          background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width:44px; height:44px; cursor:pointer; z-index:100001;">&#10094;</button>
-      <button id="img-lightbox-next" aria-label="Next" style="
-          position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
-          background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width:44px; height:44px; cursor:pointer; z-index:100001;">&#10095;</button>
+    <!-- left/right inside lightbox -->
+    <button id="img-lightbox-prev" aria-label="Previous" style="
+        position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+        background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width:44px; height:44px; cursor:pointer; z-index:100001;">&#10094;</button>
+    <button id="img-lightbox-next" aria-label="Next" style="
+        position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+        background: rgba(255,255,255,0.9); border: none; border-radius: 50%; width:44px; height:44px; cursor:pointer; z-index:100001;">&#10095;</button>
 
-      <img id="img-lightbox-img" src="" alt="Expanded image" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); object-fit: contain;">
-    </div>
+    <img id="img-lightbox-img" src="" alt="Expanded image" style="max-width: 100%; max-height: 100%; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); object-fit: contain;">
+  </div>
 
-  </section>
+  <script>
+  (function(){
+    // minimal comments
+    let imageStrip, items, btnLeft, btnRight;
+    let currentView = 1; // 0 = left, 1 = center (SUS), 2 = right
+    let images = [];
+    let lightbox, lightboxImg, closeBtn, prevBtn, nextBtn;
+    let currentIndex = 0;
 
-<script>
-(function(){
-  // minimal comments
-  let imageStrip, items, btnLeft, btnRight;
-  let currentView = 1; // 0 = left, 1 = center (SUS), 2 = right
-  let images = [];
-  let lightbox, lightboxImg, closeBtn, prevBtn, nextBtn;
-  let currentIndex = 0;
+    function clampView(v) {
+      const maxView = Math.max(0, Math.min(2, items.length - 1));
+      return Math.max(0, Math.min(v, maxView));
+    }
 
-  function clampView(v) {
-    const maxView = Math.max(0, Math.min(2, items.length - 1));
-    return Math.max(0, Math.min(v, maxView));
-  }
+    // Center target index using viewport rects (robust with padding)
+    function centerImageByIndex(index, smooth = true) {
+      if (!imageStrip || !items || !items.length) return;
+      const idx = clampView(index);
+      const targetItem = items[idx];
+      if (!targetItem) return;
 
-  // Center target index using viewport rects (robust with padding)
-  function centerImageByIndex(index, smooth = true) {
-    if (!imageStrip || !items || !items.length) return;
-    const idx = clampView(index);
-    const targetItem = items[idx];
-    if (!targetItem) return;
+      const imgEl = targetItem.querySelector('img') || targetItem;
+      const containerRect = imageStrip.getBoundingClientRect();
+      const imgRect = imgEl.getBoundingClientRect();
 
-    const imgEl = targetItem.querySelector('img') || targetItem;
-    const containerRect = imageStrip.getBoundingClientRect();
-    const imgRect = imgEl.getBoundingClientRect();
+      // distance between centers in viewport coords
+      const containerCenter = containerRect.left + containerRect.width / 2;
+      const imgCenter = imgRect.left + imgRect.width / 2;
+      const delta = imgCenter - containerCenter;
 
-    // distance between centers in viewport coords
-    const containerCenter = containerRect.left + containerRect.width / 2;
-    const imgCenter = imgRect.left + imgRect.width / 2;
-    const delta = imgCenter - containerCenter;
+      // desired scrollLeft is current scrollLeft + delta
+      const desired = imageStrip.scrollLeft + delta;
+      imageStrip.scrollTo({ left: Math.max(0, Math.round(desired)), behavior: smooth ? 'smooth' : 'auto' });
+    }
 
-    // desired scrollLeft is current scrollLeft + delta
-    const desired = imageStrip.scrollLeft + delta;
-    imageStrip.scrollTo({ left: Math.max(0, Math.round(desired)), behavior: smooth ? 'smooth' : 'auto' });
-  }
+    function centerCurrent(smooth = true) {
+      currentView = clampView(currentView);
+      centerImageByIndex(currentView, smooth);
+    }
 
-  function centerCurrent(smooth = true) {
-    currentView = clampView(currentView);
-    centerImageByIndex(currentView, smooth);
-  }
+    function attachArrowHandlers() {
+      if (!btnLeft || !btnRight) return;
 
-  function attachArrowHandlers() {
-    if (!btnLeft || !btnRight) return;
-
-    btnLeft.addEventListener('click', (e) => {
-      e.stopPropagation();
-      currentView = clampView(currentView - 1);
-      centerCurrent();
-    });
-
-    btnRight.addEventListener('click', (e) => {
-      e.stopPropagation();
-      currentView = clampView(currentView + 1);
-      centerCurrent();
-    });
-  }
-
-  function openLightbox(index){
-    if (!lightbox || !lightboxImg) return;
-    currentIndex = index;
-    const img = images[index];
-    if (!img) return;
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox(){
-    if (!lightbox || !lightboxImg) return;
-    lightbox.style.display = 'none';
-    lightboxImg.src = '';
-    document.body.style.overflow = '';
-  }
-
-  function showPrev(){
-    if (images.length === 0) return;
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-    lightboxImg.src = images[currentIndex].src;
-  }
-
-  function showNext(){
-    if (images.length === 0) return;
-    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-    lightboxImg.src = images[currentIndex].src;
-  }
-
-  // Setup after load so sizes/styling/padding are ready
-  window.addEventListener('load', () => {
-    imageStrip = document.getElementById('image-strip-images');
-    items = Array.from(document.querySelectorAll('#image-strip-images .image-item'));
-    btnLeft = document.getElementById('scroll-left-img-btn');
-    btnRight = document.getElementById('scroll-right-img-btn');
-
-    lightbox = document.getElementById('img-lightbox-overlay');
-    lightboxImg = document.getElementById('img-lightbox-img');
-    closeBtn = document.getElementById('img-lightbox-close');
-    prevBtn = document.getElementById('img-lightbox-prev');
-    nextBtn = document.getElementById('img-lightbox-next');
-
-    images = Array.from(document.querySelectorAll('#image-strip-images .zoomable-img'));
-
-    // ensure view is set so SUS (index 1) is center on load
-    currentView = items.length > 1 ? 1 : 0;
-
-    // initial center (no animation first to avoid visual jump)
-    centerCurrent(false);
-    // slight delayed smooth recenter to ensure final layout settles
-    setTimeout(() => centerCurrent(true), 80);
-
-    // attach arrows
-    attachArrowHandlers();
-
-    // attach image/zoom handlers (zoom icon or image click)
-    images.forEach((img, idx) => {
-      const parent = img.parentElement;
-      const zoomIcon = parent?.querySelector('.zoom-icon');
-
-      img.addEventListener('click', (e) => {
+      btnLeft.addEventListener('click', (e) => {
         e.stopPropagation();
-        openLightbox(idx);
+        currentView = clampView(currentView - 1);
+        centerCurrent();
       });
 
-      if (zoomIcon) {
-        zoomIcon.addEventListener('click', (e) => {
+      btnRight.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentView = clampView(currentView + 1);
+        centerCurrent();
+      });
+    }
+
+    function openLightbox(index){
+      if (!lightbox || !lightboxImg) return;
+      currentIndex = index;
+      const img = images[index];
+      if (!img) return;
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      if (!lightbox || !lightboxImg) return;
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    function showPrev(){
+      if (images.length === 0) return;
+      currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    function showNext(){
+      if (images.length === 0) return;
+      currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    // Setup after load so sizes/styling/padding are ready
+    window.addEventListener('load', () => {
+      imageStrip = document.getElementById('image-strip-images');
+      items = Array.from(document.querySelectorAll('#image-strip-images .image-item'));
+      btnLeft = document.getElementById('scroll-left-img-btn');
+      btnRight = document.getElementById('scroll-right-img-btn');
+
+      lightbox = document.getElementById('img-lightbox-overlay');
+      lightboxImg = document.getElementById('img-lightbox-img');
+      closeBtn = document.getElementById('img-lightbox-close');
+      prevBtn = document.getElementById('img-lightbox-prev');
+      nextBtn = document.getElementById('img-lightbox-next');
+
+      images = Array.from(document.querySelectorAll('#image-strip-images .zoomable-img'));
+
+      // ensure view is set so SUS (index 1) is center on load
+      currentView = items.length > 1 ? 1 : 0;
+
+      // initial center (no animation first to avoid visual jump)
+      centerCurrent(false);
+      // slight delayed smooth recenter to ensure final layout settles
+      setTimeout(() => centerCurrent(true), 80);
+
+      // attach arrows
+      attachArrowHandlers();
+
+      // attach image/zoom handlers (zoom icon or image click)
+      images.forEach((img, idx) => {
+        const parent = img.parentElement;
+        const zoomIcon = parent?.querySelector('.zoom-icon');
+
+        img.addEventListener('click', (e) => {
           e.stopPropagation();
           openLightbox(idx);
         });
-      }
+
+        if (zoomIcon) {
+          zoomIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(idx);
+          });
+        }
+      });
+
+      // lightbox controls
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === closeBtn) closeLightbox();
+      });
+      closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+      prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+      nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+
+      // keyboard nav
+      window.addEventListener('keydown', (e) => {
+        if (!lightbox) return;
+        if (lightbox.style.display === 'flex') {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') showPrev();
+          if (e.key === 'ArrowRight') showNext();
+        }
+      });
+
+      // prevent strip click interference
+      imageStrip?.addEventListener('click', (e) => { e.stopPropagation(); });
+
+      // recenter on resize (final layout changed)
+      window.addEventListener('resize', () => {
+        // recenter without smooth to avoid odd animations during resize
+        setTimeout(() => centerCurrent(false), 80);
+        setTimeout(() => centerCurrent(true), 200);
+      });
     });
-
-    // lightbox controls
-    lightbox?.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === closeBtn) closeLightbox();
-    });
-    closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
-    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
-
-    // keyboard nav
-    window.addEventListener('keydown', (e) => {
-      if (!lightbox) return;
-      if (lightbox.style.display === 'flex') {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showPrev();
-        if (e.key === 'ArrowRight') showNext();
-      }
-    });
-
-    // prevent strip click interference
-    imageStrip?.addEventListener('click', (e) => { e.stopPropagation(); });
-
-    // recenter on resize (final layout changed)
-    window.addEventListener('resize', () => {
-      // recenter without smooth to avoid odd animations during resize
-      setTimeout(() => centerCurrent(false), 80);
-      setTimeout(() => centerCurrent(true), 200);
-    });
-  });
-})();
-</script>
-
-
-
-  <style>
-    .nav-arrow {
-      background-color: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      font-size: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* hide native scrollbar on WebKit */
-    #image-strip-images::-webkit-scrollbar { display: none; }
-
-    @media (max-width: 1400px) { .image-item img { width: 600px; } }
-    @media (max-width: 1200px) { .image-item img { width: 500px; } }
-    @media (max-width: 992px)  { .image-item img { width: 400px; } }
-    @media (max-width: 768px)  { .image-item img { width: 300px; } }
-    @media (max-width: 480px)  { .image-item img { width: 250px; padding:0 16px; } }
-
-    /* zoom icon hover */
-    .zoom-icon:hover { background: rgba(255,255,255,0.9); color:#000; transition: all 0.15s ease; }
-
-    /* lightbox transitions */
-    #img-lightbox-overlay { transition: opacity 0.12s ease; }
-    #img-lightbox-overlay img { user-select: none; -webkit-user-drag: none; }
-
-  </style>
+  })();
+  </script>
 
   <!-- Takeaways Section -->
-  <section class="section" id="what-we-learned" style="padding: 4rem 0; background-color: #f9f9f9;">
+  <section class="section" id="what-we-learned" style="padding: 1.5rem 0;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Takeaways</h2>
-        <div class="content">
+          <div class="content">
 
-          <p>
-            <strong>Assisted Teleoperation</strong><br>
-            The most demanding mode, requiring continuous attention and fine control. Participants felt strongly involved, but the effort and fatigue were noticeably higher.
-          </p>
+            <p>
+              <strong class="has-text-centered">Assisted Teleoperation</strong><br>
+            </p>
+            <p class="has-text-justified" style="position: relative; top: -12px;">
+              The most demanding mode, requiring continuous attention and fine control. Participants felt strongly involved, but the effort and fatigue were noticeably higher.
+            </p>
 
-          <p>
-            <strong>Shared Autonomy</strong><br>
-            The most balanced mode. Users remained in control while receiving meaningful assistance, resulting in smoother interaction, lower workload, and a natural sense of agency.
-          </p>
+            <p>
+              <strong>Shared Autonomy</strong><br>
+            </p>
+            <p class="has-text-justified" style="position: relative; top: -12px;">
+              The most balanced mode. Users remained in control while receiving meaningful assistance, resulting in smoother interaction, lower workload, and a natural sense of agency.
+            </p>
 
-          <p>
-            <strong>Full Automation</strong><br>
-            The fastest and most efficient level. Workload was minimal, though participants reported reduced direct control as the robot handled most of the task independently.
-          </p>
+            <p>
+              <strong>Full Automation</strong><br>
+            </p>
+            <p class="has-text-justified" style="position: relative; top: -12px;">
+              The fastest and most efficient level. Workload was minimal, though participants reported reduced direct control as the robot handled most of the task independently.
+            </p>
 
-          <p>
-            <strong>General Findings</strong><br>
-            Higher autonomy improved performance and reduced workload, while lower autonomy increased engagement and sense of control.
-          </p>
-
-          <p>
-            Overall, Shared Autonomy emerged as the most appreciated balance between effort and efficiency.
-          </p>
+            <p>
+              <strong>General Findings</strong><br>
+            </p>
+            <p class="has-text-justified" style="position: relative; top: -12px;">
+              Higher autonomy improved performance and reduced workload, while lower autonomy increased engagement and sense of control.
+              Overall, Shared Autonomy emerged as the most appreciated balance between effort and efficiency.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Citation Section -->
+  <section class="section" id="citation" style="padding: 1.5rem 0;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 auto;">
+      <h2 class="title is-3" style="text-align: center;">Citation</h2>
+      
+      <pre style="
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #333;
+        white-space: pre-wrap;
+        border-radius: 10px;
+        text-wrap: inherit;
+      ">
+@article{douglas2026levels,
+    title   = {Levels of shared autonomy in brain-robot interfaces: enabling multi-robot multi-human collaboration for activities of daily living},
+    author  = {Douglas, Hannah and Di Vincenzo, Marina and Dossa, Rousslan Fernand Julien and Nunziante, Luca and Sujit, Shivakanth and Arulkumaran, Kai},
+    journal = {Frontiers in Human Neuroscience},
+    volume  = {x},
+    pages   = {x},
+    year    = {2026}
+}</pre>
+    </div>
+  </section>
 
+  <!-- Meet the Team Section -->
+  <section class="section" id="meet-the-team" style="padding: 2.5rem 0;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Meet the Team</h2>
 
+          <!-- Team Image Strip -->
+          <div id="team-image-strip" style="
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 2rem;
+          ">
 
-
-
-
-        <!-- Meet the Team Section -->
-    <section class="section" id="meet-the-team" style="padding: 4rem 0; background-color: #f9f9f9;">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Meet the Team</h2>
-
-            <!-- Team Image Strip -->
-            <div id="team-image-strip" style="
-              display: flex;
-              flex-wrap: nowrap;
-              justify-content: center;
-              gap: 16px;
-              margin-top: 2rem;
-            ">
-
-              <!-- 1. Anna -->
-              <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/1.png" alt="Anna" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <div class="member_name">Hannah Kodama Douglas</div>
-                <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="mailto:hannah_kodama_douglas@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
-                  <a href="https://x.com/hmdougla" target="_blank"><i class="fab fa-twitter"></i></a>                  
-                  <a href="https://scholar.google.com/citations?user=UGqp8vUAAAAJ " target="_blank"><i class="fab fa-google"></i></a>
-                </div>
+            <!-- 1. Anna -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/1.png" alt="Anna" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <div class="member_name">Hannah Kodama Douglas</div>
+              <div class="member_links" style="margin-top: 0.5rem;">
+                <a href="mailto:hannah_kodama_douglas@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://x.com/hmdougla" target="_blank"><i class="fab fa-twitter"></i></a>                  
+                <a href="https://scholar.google.com/citations?user=UGqp8vUAAAAJ " target="_blank"><i class="fa fa-graduation-cap"></i></a>
               </div>
+            </div>
 
-              <!-- 2. Marina -->
-              <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/2.png" alt="Marina" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <div class="member_name">Marina Di Vincenzo</div>
-                <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="mailto:marina_vincenzo@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
-                  <a href="https://scholar.google.com/citations?user=SYGaeJIAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                </div>
+            <!-- 2. Marina -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/2.png" alt="Marina" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <div class="member_name">Marina Di Vincenzo</div>
+              <div class="member_links" style="margin-top: 0.5rem;">
+                <a href="mailto:marina_vincenzo@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=SYGaeJIAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
               </div>
+            </div>
 
-              <!-- 3. Rousslan -->
-              <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/3.png" alt="Rousslan" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <div class="member_name">Rousslan Dossa, Ph.D.</div>
-                <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://dosssman.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
-                  <a href="mailto:dossa@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
-                  <a href="https://twitter.com/RousslanDossa" target="_blank"><i class="fab fa-twitter"></i></a>
-                  <a href="https://scholar.google.com/citations?user=ZDWS2CMAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                </div>
+            <!-- 3. Rousslan -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/3.png" alt="Rousslan" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <div class="member_name">Rousslan Dossa, Ph.D.</div>
+              <div class="member_links" style="margin-top: 0.5rem;">
+                <a href="https://dosssman.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
+                <a href="mailto:dossa@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://twitter.com/RousslanDossa" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://scholar.google.com/citations?user=ZDWS2CMAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
               </div>
+            </div>
 
-              <!-- 4. Luca -->
-              <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/4.png" alt="Luca" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <div class="member_name">Luca Nunziante</div>
-                <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="mailto:luca_nunziante@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
-                  <a href="https://https://x.com/lucanunz" target="_blank"><i class="fab fa-twitter"></i></a>
-                  <a href="https://scholar.google.com/citations?user=0XjgMocAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                </div>
+            <!-- 4. Luca -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/4.png" alt="Luca" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <div class="member_name">Luca Nunziante</div>
+              <div class="member_links" style="margin-top: 0.5rem;">
+                <a href="mailto:luca_nunziante@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://https://x.com/lucanunz" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://scholar.google.com/citations?user=0XjgMocAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
               </div>
+            </div>
 
-              <!-- 5. Shiva -->
-              <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/5.png" alt="Shiva" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <div class="member_name">Shivakanth Sujit</div>
-                <div class="member_links" style="margin-top: 0.5rem;">
-                  <a href="https://shivakanthsujit.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
-                  <a href="mailto:sujit_shivakanth@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
-                  <a href="https://twitter.com/ShivaSujit" target="_blank"><i class="fab fa-twitter"></i></a>
-                  <a href="https://scholar.google.com/citations?user=oXpK8V8AAAAJ" target="_blank"><i class="fab fa-google"></i></a>
-                </div>
+            <!-- 5. Shiva -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/5.png" alt="Shiva" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <div class="member_name">Shivakanth Sujit</div>
+              <div class="member_links" style="margin-top: 0.5rem;">
+                <a href="https://shivakanthsujit.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
+                <a href="mailto:sujit_shivakanth@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://twitter.com/ShivaSujit" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://scholar.google.com/citations?user=oXpK8V8AAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
               </div>
+            </div>
 
-              <!-- 6. Kai -->
-              <div style="flex: 0 0 auto; text-align: center;">
-                <img src="static/images/6.png" alt="Kai" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <div class="member_name">Kai Arulkumaran, Ph.D.</div>
-                <div class="member_links" style="margin-top: 0.5rem;">
+            <!-- 6. Kai -->
+            <div style="flex: 0 0 auto; text-align: center;">
+              <img src="static/images/6.png" alt="Kai" style="width: 200px; height: auto; border-radius: 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+              <div class="member_name">Kai Arulkumaran, Ph.D.</div>
+              <div class="member_links" style="margin-top: 0.5rem;">
                 <a href="http://kaixhin.com" target="_blank"><i class="fas fa-globe"></i></a>
                 <a href="mailto:kai_arulkumaran@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
                 <a href="https://twitter.com/kaixhin" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://scholar.google.com/citations?user=QKCypSoAAAAJ" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="https://scholar.google.com/citations?user=QKCypSoAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
               </div>
-
             </div>
+
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <!-- Funding Section -->
+  <section class="section" id="funding" style="padding: 1.5rem 0;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <h2 class="title is-3">Funding</h2>
 
-  <style>
-    #team-video-strip::-webkit-scrollbar {
-      display: none;
-    }
+      <p style="margin-top: 1.2rem; font-size: 1rem; color: #333;" class="has=has-text-justified">
+        This work was supported by JST under Moonshot R&amp;D Grant Number JPMJMS2012.
+      </p>
 
-    @media (max-width: 1200px) {
-      #team-video-strip video {
-        width: 180px;
-      }
-    }
+      <div style="margin-top: 2.5rem; display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;">
+        
+        <!-- <a href="https://research.araya.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/static/images/araya.jpg"
+              alt="Araya"
+              style="height: 90px; vertical-align: middle;">
+        </a> -->
 
-    @media (max-width: 992px) {
-      #team-video-strip video {
-        width: 160px;
-      }
-    }
+        <!-- <a href="https://brains.link/en" target="_blank" rel="noopener noreferrer">
+          <img src="/static/images/iob.png"
+              alt="Internet of Brains"
+              style="height: 72px; vertical-align: middle;">
+        </a> -->
 
-    @media (max-width: 768px) {
-      #team-video-strip video {
-        width: 140px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      #team-video-strip video {
-        width: 120px;
-      }
-    }
-  </style>
-
-
-
-
-      <!-- Funding Section -->
-    <section class="section" id="funding" style="padding: 3.5rem 0; background-color: #ffffff;">
-      <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
-
-        <h2 class="title is-4">Funding</h2>
-
-        <p style="margin-top: 1.2rem; font-size: 1rem; color: #333;">
-          This work was supported by JST under Moonshot R&amp;D Grant Number JPMJMS2012.
-        </p>
-
-        <div style="margin-top: 2.5rem; display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;">
-          
-          <a href="https://research.araya.org/" target="_blank" rel="noopener noreferrer">
-            <img src="/static/images/araya.jpg"
-                alt="Araya"
-                style="height: 90px; vertical-align: middle;">
-          </a>
-
-          <a href="https://brains.link/en" target="_blank" rel="noopener noreferrer">
-            <img src="/static/images/iob.png"
-                alt="Internet of Brains"
-                style="height: 72px; vertical-align: middle;">
-          </a>
-
-        </div>
-
+        <!-- All in One logo with aligned text, but loses the link -->
+        <img src="/static/images/araya-iob-logo.png"
+            alt="Araya x Internet of Brains"
+            style="vertical-align: middle;">
       </div>
-    </section>
+
+    </div>
+  </section>
 
 
-    <!-- Citation Section -->
-    <section class="section" id="citation" style="padding: 4rem 0; background-color: #f9f9f9;">
-      <div class="container" style="max-width: 1000px; margin: 0 auto;">
-        <h2 class="title is-3" style="text-align: center;">Citation</h2>
-
-        <div style="
-          margin-top: 2rem;
-          background-color: #fdfdfd;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          padding: 2rem 3rem;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        ">
-
-    <pre style="
-      margin: 0;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.95rem;
-      line-height: 1.6;
+  <footer style="
+      background-color: #e0e0e0;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
       color: #333;
-      white-space: pre;
     ">
-    @article{douglas2026levels,
-      title   = {Levels of shared autonomy in brain-robot interfaces:
-                enabling multi-robot multi-human collaboration
-                for activities of daily living},
-      author  = {Douglas, Hannah and
-                Di Vincenzo, Marina and
-                Dossa, Rousslan Fernand Julien and
-                Nunziante, Luca and
-                Sujit, Shivakanth and
-                Arulkumaran, Kai},
-      journal = {Frontiers in Human Neuroscience},
-      volume  = {x},
-      pages   = {x},
-      year    = {2026}
-    }
-    </pre>
-
-        </div>
-      </div>
-    </section>
-
-    <footer style="
-    background-color: #e0e0e0;
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #333;
-  ">
     Website template borrowed from
     <a href="https://mobipi.github.io/" target="_blank" rel="noopener noreferrer"><strong>Mobi-π</strong></a>
     and

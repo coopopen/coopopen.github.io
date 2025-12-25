@@ -118,7 +118,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero" style="position: relative; top: -14px;">
+  <section class="hero" style="position: relative; padding-top: 1.2rem;">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -174,7 +174,7 @@
   </section>
 
   <!-- Abstract Section -->
-  <section class="section" id="abstract" style="position: relative; top: -60px;">
+  <section class="section" id="abstract" style="position: relative; padding-top: 0.5rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -202,7 +202,7 @@
   </section>
 
   <!-- Motivation Section -->
-  <section class="section" id="motivation" style="position: relative; top: -96px;">
+  <section class="section" id="motivation" style="position: relative; padding-top: 1rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -223,7 +223,7 @@
   </section>
 
   <!-- Assistive Kitchen Section -->
-  <section class="section" id="assistive-kitchen" style="position: relative; top: -106px;">
+  <section class="section" id="assistive-kitchen" style="position: relative; padding-top: 1.5rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -252,7 +252,7 @@
   </section>
 
   <!-- Mobile Manipulators -->
-  <section class="section" id="robots-task-execution" style="position: relative; top: -116px;">
+  <section class="section" id="robots-task-execution" style="position: relative; padding-top: 1rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -261,7 +261,7 @@
             <p>
             Each participant is given control of a mobile manipulator robot—a <a href="https://franka.de/" target="_blank">Franka</a> Panda Emika arm on top of a <a href="https://tidybot2.github.io/" target="_blank">Tidybot++</a> holonomic mobile base.
             The mobile base is controlled via path planning, and the robot arm is trained to perform manipulation tasks via imitation learning.
-            For the latter, we use the <a href="https://rise-policy.github.io/" target="_blank">RISE</a> point cloud encoder, trained with a flow matching objective on 70 human demonstrations per task. With the same dataset, we also finetuned a single multitask VLA &pi;<sub>0.5</sub> <a href="https://www.physicalintelligence.company/blog/pi05" target="_blank">[link]</a> that we will use in future iterations of this work.
+            For the latter, we use the <a href="https://rise-policy.github.io/" target="_blank">RISE</a> point cloud encoder, trained with a flow matching objective on 70 human demonstrations per task.
             We ensure safe and reliable motion using an <a href="https://stanfordasl.github.io/oscbf/" target="_blank">operational space control barrier function</a> controller on top of the learned policy.
             </p>
           </div>
@@ -391,6 +391,7 @@
       scroll-behavior: smooth;
       gap: 64px;
       padding: 2rem 200px;
+      min-height: 640px;
       scrollbar-width: none;
     ">
       <!-- Video 1 -->
@@ -586,7 +587,14 @@
 
 
   <!-- Horizontal Scroll Image Strip with Zoom -->
-  <section id="results-images-strip" style="padding: 2rem 0; background-color: #000; overflow: hidden; position: relative; top: -48px;">
+  <section id="results-images-strip" style="
+    padding: 2rem 0;
+    background-color:#000;
+    overflow: hidden;
+    position: relative;
+    top: -48px;
+    min-height: 540px;
+  ">
 
     <!-- Scrollable Image Container -->
     <div id="image-strip-images" style="

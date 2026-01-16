@@ -176,3 +176,184 @@ body {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
+
+.video-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.video-element {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.video-caption {
+  color: #fff;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+#video-strip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 4rem;
+  padding: 2rem clamp(1rem, 5vw, 6rem);
+  scrollbar-width: none;
+}
+
+.video-nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.video-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+/* ============================
+   📱 MOBILE FIX — CLEAN
+   ============================ */
+@media (max-width: 768px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  section.section {
+    padding: 1rem !important;
+  }
+
+  h1, h2, h3, .title {
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .publication-title {
+    font-size: 1.45rem !important;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-authors,
+  .authors,
+  .subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .author-block {
+    display: block;
+    margin: 0.15rem 0;
+  }
+
+  .publication-video,
+  .video-element {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  #video-strip {
+    padding: 0.75rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .video-caption {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .araya-button {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .publication-title,
+  .subtitle {
+    white-space: normal !important; 
+    word-break: break-word !important; 
+    font-size: 1.3rem !important; /* opzionale: riduce un po' la dimensione per stare meglio */
+  }
+}
+
+#team-container {
+  display: flex;
+  overflow-x: auto; 
+  gap: 1rem;
+  padding: 0.5rem;
+  -webkit-overflow-scrolling: touch; /* smooth scroll */
+}
+
+#team-container .team-member {
+  flex: 0 0 auto; 
+  width: 120px; 
+  text-align: center;
+}
+/* Center Araya button under title */
+.araya-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem; /* space below title */
+  width: 100%;
+}
+/* Hero section title and subtitle sizing */
+.publication-title {
+  font-size: 2.2rem; /* large main title */
+  font-weight: 700;  /* bold */
+  line-height: 1.2;  /* tighter line spacing */
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;  /* smaller than title */
+  font-weight: 400;   /* normal weight */
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+/* Authors styling */
+.publication-authors {
+  font-size: 0.95rem; /* readable, slightly smaller */
+  font-weight: 700;   /* bold names */
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+/* Optional: make subtitle wrap on mobile if needed */
+@media (max-width: 768px) {
+  .publication-title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .publication-authors {
+    font-size: 0.85rem;
+  }
+}

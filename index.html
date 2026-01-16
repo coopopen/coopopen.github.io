@@ -24,92 +24,88 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
-  <style>
-    .nav-arrow {
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      font-size: 28px;
-    }
+<style>
+  .nav-arrow {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    #video-strip::-webkit-scrollbar {
-      display: none;
-    }
+  #video-strip::-webkit-scrollbar {
+    display: none;
+  }
 
-    /* Responsive Scaling */
-    @media (max-width: 1400px) { .video-item video { width: 600px; } }
-    @media (max-width: 1200px) { .video-item video { width: 500px; } }
-    @media (max-width: 992px)  { .video-item video { width: 400px; } }
-    @media (max-width: 768px)  { .video-item video { width: 300px; } }
-    @media (max-width: 480px)  { .video-item video { width: 250px; padding:0 16px; } }
+  /* hide native scrollbar on WebKit */
+  #image-strip-images::-webkit-scrollbar {
+    display: none;
+  }
 
-    .nav-arrow {
-      background-color: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      font-size: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
+  /* zoom icon hover */
+  .zoom-icon:hover {
+    background: rgba(255,255,255,0.9);
+    color:#000;
+    transition: all 0.15s ease;
+  }
 
-    /* hide native scrollbar on WebKit */
-    #image-strip-images::-webkit-scrollbar { display: none; }
+  /* lightbox transitions */
+  #img-lightbox-overlay {
+    transition: opacity 0.12s ease;
+  }
 
-    @media (max-width: 1400px) { .image-item img { width: 600px; } }
-    @media (max-width: 1200px) { .image-item img { width: 500px; } }
-    @media (max-width: 992px)  { .image-item img { width: 400px; } }
-    @media (max-width: 768px)  { .image-item img { width: 300px; } }
-    @media (max-width: 480px)  { .image-item img { width: 250px; padding:0 16px; } }
+  #img-lightbox-overlay img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
 
-    /* zoom icon hover */
-    .zoom-icon:hover { background: rgba(255,255,255,0.9); color:#000; transition: all 0.15s ease; }
-
-    /* lightbox transitions */
-    #img-lightbox-overlay { transition: opacity 0.12s ease; }
-    #img-lightbox-overlay img { user-select: none; -webkit-user-drag: none; }
-
-        #team-video-strip::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media (max-width: 1200px) {
-      #team-video-strip video {
-        width: 180px;
-      }
-    }
-
-    @media (max-width: 992px) {
-      #team-video-strip video {
-        width: 160px;
-      }
-    }
-
+  #team-video-strip::-webkit-scrollbar {
+    display: none;
+  }
+  /* MOBILE FIX */
     @media (max-width: 768px) {
-      #team-video-strip video {
-        width: 140px;
+      body {
+        overflow-x: hidden;
       }
-    }
 
-    @media (max-width: 480px) {
-      #team-video-strip video {
-        width: 120px;
+      .container, .section {
+        max-width: 100%;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1, h2, h3 {
+        text-align: center;
+        word-break: break-word;
+      }
+
+      .paper-title, .hero-title {
+        font-size: 1.35rem !important;
+        line-height: 1.4;
+      }
+
+      .authors {
+        font-size: 0.95rem;
+        text-align: center;
       }
     }
-  </style>
+</style>
+
+
 
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar-start" style="flex-grow: 1; justify-content: center; margin-top: 24px;" >
+  <!-- Navbar Button Centered -->
+  <div class="araya-button-container">
     <a class="araya-button"
       href="https://research.araya.org/research/reinforcement-learning-team"
       target="_blank">
@@ -120,12 +116,13 @@
   <!-- Hero Section -->
   <section class="hero" style="position: relative; padding-top: 1.2rem;">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title" style="white-space: nowrap;">
-              Levels of Shared Autonomy in Brain-Robot Interfaces
-            </h1>
+          <h1 class="title is-1 publication-title">
+            Levels of Shared Autonomy<br>in Brain-Robot Interfaces
+          </h1>
+
             <h2 class="subtitle is-4" style="white-space: nowrap;">
               Enabling Multi-Human Multi-Robot Collaboration for Activities of Daily Living
             </h2>
@@ -178,7 +175,7 @@
 
   <!-- Abstract Section -->
   <section class="section" id="abstract" style="position: relative; padding-top: 0.5rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
@@ -206,7 +203,7 @@
 
   <!-- Motivation Section -->
   <section class="section" id="motivation" style="position: relative; padding-top: 1rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Motivation</h2>
@@ -227,7 +224,7 @@
 
   <!-- Assistive Kitchen Section -->
   <section class="section" id="assistive-kitchen" style="position: relative; padding-top: 1.5rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Assistive Kitchen</h2>
@@ -256,7 +253,7 @@
 
   <!-- Mobile Manipulators -->
   <section class="section" id="robots-task-execution" style="position: relative; padding-top: 1rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Mobile Manipulators</h2>
@@ -275,7 +272,7 @@
 
   <!-- Robot Task Videos Grid -->
   <section id="robot-task-videos" style="position: relative; padding-top: 0.25rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem 0.5rem;">
 
         <!-- Video 1 -->
@@ -348,7 +345,7 @@
 
   <!-- User Interface Devices and Control -->
   <section class="section" id="system-interface" style="position: relative; padding-top: 4rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
 
@@ -386,57 +383,70 @@
 
   <!-- TODO: rigorously speaking, probably want to using only padding top for this one, and bring the lightbox div inside ? -->
   <!-- Horizontal Scroll Video Strip -->
-  <section id="autonomy-videos-strip" style="background-color: #000; overflow: hidden; position: relative;">
+  <section id="autonomy-videos-strip"
+    style="background-color: #000; overflow: hidden; position: relative;">
 
     <!-- Scrollable Video Container -->
-    <div id="video-strip" style="
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 64px;
-      padding: 2rem 200px;
-      min-height: 640px;
-      scrollbar-width: none;
-    ">
+    <div id="video-strip">
+
       <!-- Video 1 -->
-      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-        <video src="static/videos/Level_1.mp4" autoplay muted loop playsinline
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+      <div class="video-item">
+        <video
+          src="static/videos/Level_1.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="video-element"
           onclick="openLightbox(this)">
         </video>
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+        <p class="video-caption">
           Level 1<br>Assisted Teleoperation
         </p>
       </div>
 
       <!-- Video 2 -->
-      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-        <video src="static/videos/Level_2.mp4" autoplay muted loop playsinline
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+      <div class="video-item">
+        <video
+          src="static/videos/Level_2.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="video-element"
           onclick="openLightbox(this)">
         </video>
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+        <p class="video-caption">
           Level 2<br>Shared Autonomy
         </p>
       </div>
 
       <!-- Video 3 -->
-      <div class="video-item" style="flex: 0 0 auto; text-align: center;">
-        <video src="static/videos/Level_3.mp4" autoplay muted loop playsinline
-          style="width: 800px; height: auto; object-fit: cover; border-radius: 5px; box-shadow: 0 6px 16px rgba(0,0,0,0.4); cursor:pointer;"
+      <div class="video-item">
+        <video
+          src="static/videos/Level_3.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="video-element"
           onclick="openLightbox(this)">
         </video>
-        <p style="color:#fff; margin-top:0.5rem; font-size:1.2rem;">
+        <p class="video-caption">
           Level 3<br>Full Automation
         </p>
       </div>
 
-      <!-- Bottom Navigation Arrows -->
-      <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px;">
-        <button id="scroll-left-img" class="nav-arrow" aria-label="Scroll Left">&#10094;</button>
-        <button id="scroll-right-img" class="nav-arrow" aria-label="Scroll Right">&#10095;</button>
+    </div>
+
+    <!-- Navigation arrows (still INSIDE black section) -->
+    <div class="video-nav-wrapper">
+      <div class="video-nav">
+        <button id="scroll-left-img" class="nav-arrow">&#10094;</button>
+        <button id="scroll-right-img" class="nav-arrow">&#10095;</button>
       </div>
     </div>
+
   </section>
 
   <!-- Lightbox overlay -->
@@ -546,7 +556,7 @@
 
   <!-- The Shared Autonomy Study Section -->
   <section class="section" id="shared-autonomy-study" style="position: relative; padding-top: 4rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Shared Autonomy Study</h2>
@@ -571,7 +581,7 @@
 
   <!-- Results Section -->
   <section class="section" id="results"  style="position: relative; padding-top: 2rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Results</h2>
@@ -938,7 +948,7 @@
 
   <!-- Takeaways Section -->
   <section class="section" id="what-we-learned" style="padding-top: 4rem 0;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Takeaways</h2>
@@ -1006,7 +1016,7 @@
 
   <!-- Meet the Team Section -->
   <section class="section" id="meet-the-team" style="padding-top:1.5rem;">
-    <div class="container is-max-desktop">
+    <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Meet the Team</h2>

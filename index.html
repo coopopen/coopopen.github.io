@@ -656,12 +656,22 @@
       overflow-x: auto;
       scroll-behavior: smooth;
       gap: 64px;
-      padding: 2rem 0;;
+      padding: 2rem 0;
       scrollbar-width: none;
+      scroll-snap-type: x mandatory;
     ">
 
+
       <!-- Image 1: NASA-TLX -->
-      <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
+      <div class="image-item" style="
+        flex: 0 0 420px;
+        width: 420px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      ">
         <img data-index="0" src="static/images/nasa.png" alt="NASA-TLX" class="zoomable-img" style="
               height: 340px;
               width: auto;
@@ -695,7 +705,15 @@
       </div>
 
       <!-- Image 2: SUS (reference height) -->
-      <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
+      <div class="image-item" style="
+        flex: 0 0 420px;
+        width: 420px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      ">
         <img data-index="1" src="static/images/sus.png" alt="SUS" class="zoomable-img" style="
               height: 340px;
               width: auto;
@@ -729,7 +747,15 @@
       </div>
 
       <!-- Image 3: SoARS -->
-      <div class="image-item" style="flex: 0 0 auto; text-align: center; position: relative;">
+      <div class="image-item" style="
+        flex: 0 0 420px;
+        width: 420px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      ">
         <img data-index="2" src="static/images/soas.png" alt="SoARS" class="zoomable-img" style="
               height: 340px;
               width: auto;
@@ -830,26 +856,25 @@
         return Math.max(0, Math.min(v, maxView));
       }
 
-      // Center target index using viewport rects (robust with padding)
       function centerImageByIndex(index, smooth = true) {
-        if (!imageStrip || !items || !items.length) return;
+        if (!items || !items.length || !imageStrip) return;
+
         const idx = clampView(index);
         const targetItem = items[idx];
         if (!targetItem) return;
 
-        const imgEl = targetItem.querySelector('img') || targetItem;
-        const containerRect = imageStrip.getBoundingClientRect();
-        const imgRect = imgEl.getBoundingClientRect();
+        const itemOffsetLeft = targetItem.offsetLeft;
+        const itemWidth = targetItem.offsetWidth;
+        const stripWidth = imageStrip.clientWidth;
 
-        // distance between centers in viewport coords
-        const containerCenter = containerRect.left + containerRect.width / 2;
-        const imgCenter = imgRect.left + imgRect.width / 2;
-        const delta = imgCenter - containerCenter;
+        const targetScrollLeft = itemOffsetLeft - (stripWidth / 2) + (itemWidth / 2);
 
-        // desired scrollLeft is current scrollLeft + delta
-        const desired = imageStrip.scrollLeft + delta;
-        imageStrip.scrollTo({ left: Math.max(0, Math.round(desired)), behavior: smooth ? 'smooth' : 'auto' });
+        imageStrip.scrollTo({
+          left: Math.max(0, targetScrollLeft),
+          behavior: smooth ? 'smooth' : 'auto'
+        });
       }
+
 
       function centerCurrent(smooth = true) {
         currentView = clampView(currentView);
@@ -920,9 +945,10 @@
         currentView = items.length > 1 ? 1 : 0;
 
         // initial center (no animation first to avoid visual jump)
-        centerCurrent(false);
+        setTimeout(() => centerCurrent(false), 100);
         // slight delayed smooth recenter to ensure final layout settles
         setTimeout(() => centerCurrent(true), 80);
+        setTimeout(() => centerCurrent(true), 300);
 
         // attach arrows
         attachArrowHandlers();

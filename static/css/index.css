@@ -440,14 +440,6 @@ body {
   }
 }
 
-/* === Restore desktop size for result images === */
-@media (min-width: 769px) {
-  #image-strip-images .zoomable-img {
-    height: 340px !important;
-    width: auto !important;
-  }
-}
-
 /* === Fix overlap between captions and arrows in results carousel === */
 #results-images-strip {
   padding-bottom: 4rem !important;  /* space for arrows */
@@ -485,3 +477,65 @@ body {
     height: auto;
   }
 }
+/* === Desktop: restore correct video size === */
+@media (min-width: 769px) {
+
+  #video-strip {
+    padding: 2rem 200px;
+  }
+
+  .video-item {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+
+  .video-item video.video-element {
+    width: 800px !important;
+    max-width: none !important;
+    height: auto !important;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+
+  .video-caption {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 769px) {
+  #results-images-strip {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #image-strip-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 10vw;
+    scroll-snap-type: x mandatory;
+  }
+
+  #image-strip-images .image-item {
+    flex: 0 0 700px;
+    max-width: 700px;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  #image-strip-images .zoomable-img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  #image-strip-images p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
